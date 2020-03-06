@@ -7,9 +7,6 @@ import SEO from "../components/seo"
 class WebApps extends Component{
     constructor(){
         super()
-        this.state = {
-            name: 'Dom Exley'
-        }
     }
 
     render() {
@@ -19,9 +16,6 @@ class WebApps extends Component{
                 <h1>Hello Welcome to Web Apps</h1>
                 <p>We build software that powers the world wide web.</p>
                 <p>My name is {this.state.name}</p>
-                <Link to="/page-2/">Go to page 2</Link><br />
-                <Link to="/massmedia/">Go to Mass Media</Link><br />
-                <Link to="/">Back Home</Link>
             </Layout>
         )
     }
