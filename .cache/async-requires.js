@@ -7,7 +7,6 @@ exports.components = {
   "component---src-pages-digitalcommerce-js": () => import("./../src/pages/digitalcommerce.js" /* webpackChunkName: "component---src-pages-digitalcommerce-js" */),
   "component---src-pages-index-js": () => import("./../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-interactivemedia-js": () => import("./../src/pages/interactivemedia.js" /* webpackChunkName: "component---src-pages-interactivemedia-js" */),
-  "component---src-pages-lessons-js": () => import("./../src/pages/lessons.js" /* webpackChunkName: "component---src-pages-lessons-js" */),
   "component---src-pages-massmedia-js": () => import("./../src/pages/massmedia.js" /* webpackChunkName: "component---src-pages-massmedia-js" */),
   "component---src-pages-page-2-js": () => import("./../src/pages/page-2.js" /* webpackChunkName: "component---src-pages-page-2-js" */),
   "component---src-pages-webapps-js": () => import("./../src/pages/webapps.js" /* webpackChunkName: "component---src-pages-webapps-js" */)

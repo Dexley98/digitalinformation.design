@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `digital-information.design`,
-    description: `The new site for Winthrop's Digital Information Design Degree Program.`
+    description: `The new site for Winthrop's Digital Information Design Degree Program.`,
+    author: `Dom Exley`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
