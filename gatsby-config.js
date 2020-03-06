@@ -1,16 +1,15 @@
 module.exports = {
   siteMetadata: {
     title: `digital-information.design`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `The new site for Winthrop's Digital Information Design Degree Program.`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: '3z4vqef8qlos',
-        accessToken: '8AHCaFsvRQfYetgv35xSto184NIFWWFp_N3CG9OLbCU'
+        spaceId: 'lqp6zgwtjv0p',
+        accessToken: 'tzOWclSHIhgCi0bvVCUSIrQzvcgtNbr_nfU1CmQ6cLQ'
       }
     },
     {
