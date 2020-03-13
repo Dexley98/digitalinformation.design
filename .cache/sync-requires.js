@@ -10,8 +10,9 @@ exports.components = {
   "component---src-pages-digitalcommerce-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/digitalcommerce.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/index.js"))),
   "component---src-pages-interactivemedia-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/interactivemedia.js"))),
+  "component---src-pages-jobs-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/Jobs.js"))),
   "component---src-pages-massmedia-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/massmedia.js"))),
-  "component---src-pages-webapps-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/webapps.js"))),
-  "component---src-pages-jobs-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/Jobs.js")))
+  "component---src-pages-test-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/test.js"))),
+  "component---src-pages-webapps-js": hot(preferDefault(require("/home/dom/Desktop/school/spring4/451/digitalinformation.design/src/pages/webapps.js")))
 }
 

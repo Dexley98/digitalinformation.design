@@ -1,5 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Job from "../components/Job"
+
 
 
 export default () => {
@@ -18,10 +20,10 @@ export default () => {
             }
         `
     )
-    console.log(data);
+    const nodes = data.data.allContentfulJob.nodes;
     return(
         <div>
-            <p>Hello</p>
+            
         </div>
     )
 }
