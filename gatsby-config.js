@@ -5,7 +5,8 @@ module.exports = {
     author: `Dom Exley`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    // this is where the issues are coming from in npm install. Leaves vulnerabilites and changes to ../files.? 
+    // no current fix, but this mean the data is open to manipulation.
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -13,6 +14,7 @@ module.exports = {
         accessToken: 'yxAghvc5iozeGSfZ1sP0JX8P0_3ndEBSRYLJoPyPAYY'
       }
     },
+    // I am considering removing all of these plugins. If it were for the fact that I don't know if we need them.
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,8 +22,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
