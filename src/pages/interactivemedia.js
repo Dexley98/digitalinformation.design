@@ -3,20 +3,21 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Menu from "../components/main-menu"
 
 class IM extends Component{
     constructor(){
         super()
         this.state = {
-            name: 'Dom Exley'
+            name: 'Alissa Melsopp'
         }
     }
 
     render() {
         return(
             <Layout>
-                <SEO title="Web Apps" />
-                <h1>Hello Welcome to Web Apps</h1>
+                <SEO title="Interactive Media" />
+                <h1>Hello Welcome to Interactive Media</h1>
                 <p>We build software that powers the world wide web.</p>
                 <p>My name is {this.state.name}</p>
                 <Link to="/page-2/">Go to page 2</Link><br />
