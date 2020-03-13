@@ -6,7 +6,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="main-menu">
-      <img src="../images/DIFD-logo.png" />
+        <img src="../images/DIFD-logo.png" />
         <a href="">About</a>
         <button class="dropbtn">Dropdown</button>
           <div class="dropdown-content">
@@ -21,6 +21,7 @@ class Menu extends React.Component {
             <a href="#">Professors</a>
             <a href="#">Graduates</a>
           </div>
+        <a href="" class="apply-button">Apply Now</a>
       </div>
     );
   }

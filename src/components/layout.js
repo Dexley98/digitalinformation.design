@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Menu from "../components/main-menu"
-import Header from "./header"
 import "../css/layout.css"
 
 const Layout = ({ children }) => {
@@ -20,7 +19,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <Menu />
       <div
         style={{
