@@ -25,6 +25,7 @@ class Test extends Component {
          console.log(splashMedia)
 
          return(
+<<<<<<< HEAD
             <Layout>
                 <div>
                     <section className="splashMedia-block">
@@ -61,6 +62,42 @@ class Test extends Component {
                     
                 </div>
              </Layout>
+=======
+             <div>
+                <section className="splashMedia-block">
+                    <img src={splashMedia[0].fixed.src} alt="splash media" />
+                    <h2>{tagline}</h2>
+                    <h1>{taglineList[2]}</h1>
+                </section>
+                <section className="concentrationSummary-block">
+                    <h2>{slug}</h2>
+                    <p>{concentrationSummary}</p>
+                </section>
+                <section className="whatDoesItMean-block">
+                    <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} />
+                    <h2>WHAT DOES IT MEAN?</h2>
+                    <p>{WhatDoesItMean.WhatDoesItMean}</p>
+                </section>
+                <section className="career-block">
+                    <h2>CAREERS</h2>
+                    <p>THIS IS GOING TO BE WHERE THE CAREER COMPONENTS GO.</p>
+                    <p>Do you want to learn more about the careers that our program can prepare you for?</p>
+                    <p>LINK WILL GO HERE.</p>
+                </section>
+                <section className="graduate-block">
+                    <h2>HEAR FROM OUR GRADUATES</h2>
+                    <p>LOREM IPSUM IS HERE CURRENTLY. DESCRIBE THE CAREERS YO.</p>
+                    <p>THIS IS GOING TO BE WHERE THE GRADUATES COMPONENTS WILL GO.</p>
+                </section>
+                <section className="learningOutcomes-block">
+                    <h2>KEY LEARNING OUTCOMES</h2>
+                    <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
+                    <img src={learningOutcomeAsset.fixed.src} alt={learningOutcomeAsset.description} />
+                    <p>LEARNING OUTCOMES COMPONENTS WILL GO HERE.</p>
+                </section>
+                 
+             </div>
+>>>>>>> origin
          )
      }
 }
@@ -77,24 +114,24 @@ query concentrationPageHomeQuery($slug: String!){
       tagline
       taglineList
       splashMedia {
-        fluid {
+        fixed {
           src
         }
       }
       slug
       concentrationSummary
       concentrationAsset {
-        fluid {
+        description
+        fixed {
           src
         }
-        description
       }
       WhatDoesItMean {
         WhatDoesItMean
       }
       learningOutcomeAsset {
         description
-        fluid {
+        fixed {
           src
         }
       }

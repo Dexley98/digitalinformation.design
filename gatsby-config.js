@@ -14,6 +14,7 @@ module.exports = {
         accessToken: 'yxAghvc5iozeGSfZ1sP0JX8P0_3ndEBSRYLJoPyPAYY'
       }
     },
+
     // I am considering removing all of these plugins. If it were for the fact that I don't know if we need them.
     {
       resolve: `gatsby-source-filesystem`,
@@ -25,13 +26,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `digitalinformation.design`,
+        short_name: `DIF.D`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/DIFD-logo.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

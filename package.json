@@ -1,18 +1,19 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "digitalinformation.design",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "New digitalinformation.design site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Dom Exley <dominique.exley@gmail.com>",
   "dependencies": {
     "gatsby": "^2.19.29",
     "gatsby-cli": "^2.10.9",
     "gatsby-image": "^2.2.42",
-    "gatsby-plugin-manifest": "^2.2.42",
+    "gatsby-plugin-manifest": "^2.3.2",
     "gatsby-plugin-offline": "^3.0.35",
-    "gatsby-source-contentful": "^2.1.89",
+    "gatsby-remark-images-contentful": "^2.2.2",
+    "gatsby-source-contentful": "^2.2.3",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-transformer-sharp": "^2.3.16",
+    "gatsby-transformer-sqip": "^2.2.2",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
@@ -23,7 +24,13 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "digital",
+    "information",
+    "Design",
+    "mass media",
+    "commerce",
+    "web applications",
+    "interactive media"
   ],
   "license": "MIT",
   "scripts": {
