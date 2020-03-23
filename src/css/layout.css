@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Book.otf) format('opentype');
+  src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Light.otf) format('opentype');
+  src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Roman.otf) format('opentype');
+}
+body{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+h1{
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+}
+/* MAIN MENU CSS */
+.main-menu{
+  overflow: hidden;
+  background-color: #332531;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;}
+.main-menu > img{
+  align-self: flex-start;
+}
+.main-menu a{
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 50px;}
+.dropbtn {
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #332531;
+  border: none;}
+.dropdown {
+  position: relative;
+  display: inline-block;}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;}
+.dropdown-content a {
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #3e8e41;}

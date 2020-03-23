@@ -12,6 +12,11 @@
     "gatsby-plugin-offline": "^3.0.35",
     "gatsby-source-contentful": "^2.1.89",
     "gatsby-source-filesystem": "^2.1.48",
+<<<<<<< HEAD
+=======
+    "gatsby-transformer-sharp": "^2.3.16",
+    "node-sass": "^4.13.1",
+>>>>>>> fd8488c7b26811c80a52205f25baa7f24272de83
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
