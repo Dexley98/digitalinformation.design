@@ -30,7 +30,7 @@ class WebApps extends Component{
 }
 
 export default WebApps
-
+ /*
 export const query = graphql`
     query{
         allContentfulConcentrationPageHome(filter: {concentration: {eq: "Web Applications"}}) {
@@ -73,4 +73,4 @@ export const query = graphql`
             }
         }
         }
-    }`
+    }` */
