@@ -25,7 +25,7 @@ class Test extends Component {
          return(
              <div>
                 <section className="splashMedia-block">
-                    <img src={splashMedia[0].fluid.src} alt="splash media" />
+                    <img src={splashMedia[0].fixed.src} alt="splash media" />
                     <h2>{tagline}</h2>
                     <h1>{taglineList[2]}</h1>
                 </section>
@@ -34,7 +34,7 @@ class Test extends Component {
                     <p>{concentrationSummary}</p>
                 </section>
                 <section className="whatDoesItMean-block">
-                    <img src={concentrationAsset.fluid.src} alt={concentrationAsset.description} />
+                    <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} />
                     <h2>WHAT DOES IT MEAN?</h2>
                     <p>{WhatDoesItMean.WhatDoesItMean}</p>
                 </section>
@@ -52,7 +52,7 @@ class Test extends Component {
                 <section className="learningOutcomes-block">
                     <h2>KEY LEARNING OUTCOMES</h2>
                     <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
-                    <img src={learningOutcomeAsset.fluid.src} alt={learningOutcomeAsset.description} />
+                    <img src={learningOutcomeAsset.fixed.src} alt={learningOutcomeAsset.description} />
                     <p>LEARNING OUTCOMES COMPONENTS WILL GO HERE.</p>
                 </section>
                  
@@ -73,24 +73,24 @@ query concentrationPageHomeQuery($slug: String!){
       tagline
       taglineList
       splashMedia {
-        fluid {
+        fixed {
           src
         }
       }
       slug
       concentrationSummary
       concentrationAsset {
-        fluid {
+        description
+        fixed {
           src
         }
-        description
       }
       WhatDoesItMean {
         WhatDoesItMean
       }
       learningOutcomeAsset {
         description
-        fluid {
+        fixed {
           src
         }
       }
