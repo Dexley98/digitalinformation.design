@@ -14,6 +14,10 @@ module.exports = {
         accessToken: 'yxAghvc5iozeGSfZ1sP0JX8P0_3ndEBSRYLJoPyPAYY'
       }
     },
+
+    {
+      resolve: `gatsby-transformer-sharp`
+    },
     // I am considering removing all of these plugins. If it were for the fact that I don't know if we need them.
     {
       resolve: `gatsby-source-filesystem`,
