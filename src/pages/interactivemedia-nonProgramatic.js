@@ -1,10 +1,13 @@
 import React, {Component} from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-class DigitalCommerce extends Component{
+
+
+
+class IM extends Component{
     constructor(){
         super()
         this.state = {
@@ -13,10 +16,13 @@ class DigitalCommerce extends Component{
     }
 
     render() {
+        
+
         return(
-            <Layout>
+
+             <Layout>
                 <SEO title="Web Apps" />
-                <h1>Hello Welcome to Web Apps</h1>
+                <h1>Hello Welcome to interactive Media</h1>
                 <p>We build software that powers the world wide web.</p>
                 <p>My name is {this.state.name}</p>
                 <Link to="/page-2/">Go to page 2</Link><br />
@@ -27,4 +33,5 @@ class DigitalCommerce extends Component{
     }
 }
 
-export default DigitalCommerce
+export default IM
+
