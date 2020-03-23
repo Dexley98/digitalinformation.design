@@ -21,11 +21,7 @@ const IndexPage = () => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-<<<<<<< HEAD
-    <Link to="/page-2/">Go to page 2</Link><br />
-=======
     <Link to="/interactivemedia/">Go to Interactive Media</Link><br />
->>>>>>> fd8488c7b26811c80a52205f25baa7f24272de83
     <Link to="/webapps/">Go to Web Apps</Link><br />
     <Link to="/massmedia/">Go to Mass Media </Link>
   </Layout>
