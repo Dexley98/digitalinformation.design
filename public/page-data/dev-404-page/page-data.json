@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 {"componentChunkName":"component---cache-dev-404-page-js","path":"/dev-404-page/","result":{"data":{"allSitePage":{"nodes":[{"path":"/massmedia"},{"path":"/webapps"},{"path":"/interactivemedia"},{"path":"/commerce"},{"path":"/404/"},{"path":"/digitalcommerce-nonProgramatic/"},{"path":"/"},{"path":"/interactivemedia-nonProgramatic/"},{"path":"/massmedia-nonProgramatic/"},{"path":"/test/"},{"path":"/webapps-nonProgramatic/"},{"path":"/404.html"}]}},"pageContext":{}}}
-=======
-{"componentChunkName":"component---cache-dev-404-page-js","path":"/dev-404-page/","result":{"data":{"allSitePage":{"nodes":[{"path":"/404/"},{"path":"/digitalcommerce/"},{"path":"/"},{"path":"/interactivemedia/"},{"path":"/massmedia/"},{"path":"/webapps/"},{"path":"/404.html"}]}},"pageContext":{}}}
->>>>>>> fd8488c7b26811c80a52205f25baa7f24272de83
