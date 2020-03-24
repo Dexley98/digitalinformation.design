@@ -1,10 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import loader, { PageResourceStatus } from "./loader"
+import loader from "./loader"
 import redirects from "./redirects.json"
 import { apiRunner } from "./api-runner-browser"
 import emitter from "./emitter"
-import { RouteAnnouncerProps } from "./route-announcer-props"
 import { navigate as reachNavigate } from "@reach/router"
 import { globalHistory } from "@reach/router/lib/history"
 import { parsePath } from "gatsby-link"
@@ -82,7 +81,7 @@ const navigate = (to, options = {}) => {
     // back, the browser will just change the URL and expect JS to handle
     // the change, which won't always work since it might not be a Gatsby
     // page.
-    if (!pageResources || pageResources.status === PageResourceStatus.Error) {
+    if (!pageResources || pageResources.status === `error`) {
       window.history.replaceState({}, ``, location.href)
       window.location = pathname
       clearTimeout(timeoutId)
@@ -186,7 +185,25 @@ class RouteAnnouncer extends React.Component {
   }
 
   render() {
-    return <div {...RouteAnnouncerProps} ref={this.announcementRef}></div>
+    return (
+      <div
+        id="gatsby-announcer"
+        style={{
+          position: `absolute`,
+          top: 0,
+          width: 1,
+          height: 1,
+          padding: 0,
+          overflow: `hidden`,
+          clip: `rect(0, 0, 0, 0)`,
+          whiteSpace: `nowrap`,
+          border: 0,
+        }}
+        aria-live="assertive"
+        aria-atomic="true"
+        ref={this.announcementRef}
+      ></div>
+    )
   }
 }
 

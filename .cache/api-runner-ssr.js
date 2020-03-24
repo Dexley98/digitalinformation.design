@@ -1,11 +1,6 @@
 var plugins = [{
-<<<<<<< HEAD
       plugin: require('/Users/thesqueeze/Desktop/DIFD451/digitalinformation.design/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"gatsby-starter-default","short_name":"starter","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
-=======
-      plugin: require('/home/dom/Desktop/school/spring4/451/digitalinformation.design/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"digitalinformation.design","short_name":"DIF.D","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/DIFD-logo.png"},
->>>>>>> e5f2606bfeb7c7b2a24196b74331f1215941273b
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
