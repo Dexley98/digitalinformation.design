@@ -31,7 +31,12 @@ class studentPage extends Component {
                 <section className="splashMedia-block">
                     <img src={splashMedia[0].fixed.src} alt="splash media" />
                     <h2>{tagline}</h2>
-                    <h1>{taglineList[2]}</h1>
+                    <div className="word-container">
+                        {taglineList.map((item) =>{
+                          console.log('WHAT IS INSIDE TAGLINE LIST', item);
+                          return(<h1>{item}</h1>);
+                        })}
+                    </div>
                 </section>
                 <section className="concentrationSummary-block">
                     <h2>{slug}</h2>
