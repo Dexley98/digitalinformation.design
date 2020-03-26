@@ -2,15 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-function dropDown() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
 class Menu extends React.Component {
   render() {
     return (
@@ -41,6 +32,15 @@ class Menu extends React.Component {
         <a href="#home" class="active">About</a>
     </div>
     );
+  }
+}
+
+function dropDown() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
   }
 }
 
