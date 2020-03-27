@@ -55,9 +55,11 @@ class studentPage extends Component {
                 </section>
                 <section className="career-block">
                     <h2>CAREERS</h2>
+                    <div className="job-blob-container">
                     {jobList.map((index) =>{
                       return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
                     })}
+                    </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p>LINK WILL GO HERE.</p>
                 </section>
@@ -100,7 +102,7 @@ export default studentPage
 
 export const pageQuery = graphql`
 query jobQueryAndConcentrationPageHomeQuery($slug: String!){
-    
+
   contentfulConcentrationPageHome(slug: {eq: $slug}) {
       id
       slug

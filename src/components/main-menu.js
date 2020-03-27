@@ -6,7 +6,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="topnav" id="myTopnav">
-        <a href="javascript:void(0);" className="icon" onclick="dropDown()">&#9776;</a>
+        <a className="icon" onClick="dropDown()">&#9776;</a>
         <a href="#about" className="apply-now">Apply Now</a>
         <div className="dropdown">
           <button className="dropbtn">Our People

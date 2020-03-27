@@ -26,7 +26,7 @@ h2{
   font-weight: 900;
 }
 p{
-  
+
 }
 .topnav {
   background-color: #332531;
@@ -204,4 +204,9 @@ div.tagline-item h1{
 }
 h1.tagline{
   z-index: auto;
+}
+
+/* JOB BLOB AREAS */
+.job-blob-container{
+  
 }
