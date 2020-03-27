@@ -6,6 +6,7 @@ import Menu from "../components/main-menu"
 import Footer from "../components/footer"
 
 import Job from '../components/job'
+import Grad from '../components/grad'
 
 class studentPage extends Component {
      render(){
@@ -22,6 +23,7 @@ class studentPage extends Component {
       } = this.props.data.contentfulConcentrationPageHome
 
       const jobList = this.props.data.allContentfulJob.edges
+      const gradList = this.props.data.allContentfulGraduate.edges
 
          for(var i = 0; i<taglineList.length; i++){
              console.log('tagline list number '+ i + ' ' + taglineList[i])
@@ -30,6 +32,7 @@ class studentPage extends Component {
          //console.log(splashMedia)
 
          console.log('Job list', jobList)
+         console.log('Grad List', gradList)
 
          return(
 
@@ -56,17 +59,21 @@ class studentPage extends Component {
                 <section className="career-block">
                     <h2>CAREERS</h2>
                     <div className="job-blob-container">
-                    {jobList.map((index) =>{
-                      return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
-                    })}
+                      {jobList.map((index) =>{
+                        return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
+                      })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p>LINK WILL GO HERE.</p>
                 </section>
                 <section className="graduate-block">
                     <h2>HEAR FROM OUR GRADUATES</h2>
-                    <p>LOREM IPSUM IS HERE CURRENTLY. DESCRIBE THE CAREERS YO.</p>
-                    <p>THIS IS GOING TO BE WHERE THE GRADUATES COMPONENTS WILL GO.</p>
+                    <p>See where past members of our program are today.</p>
+                    <div className="grad-blob-container">
+                      {gradList.map((index) =>{
+                        return(<Grad imgSrc={index.node.picture.fixed.src} gradName={index.node.name} jobTitle={index.node.jobTitle} gradBio={index.node.bio.bio} />)
+                      })}
+                    </div>
                 </section>
                 <section className="learningOutcomes-block">
                     <h2>KEY LEARNING OUTCOMES</h2>
@@ -146,4 +153,24 @@ query jobQueryAndConcentrationPageHomeQuery($slug: String!){
         }
       }
     }
+
+    allContentfulGraduate(filter: {concentration: {eq: $slug}}) {
+      edges {
+        node {
+          concentration
+          picture {
+            fixed {
+              src
+            }
+          }
+          name
+          jobTitle
+          bio {
+            bio
+          }
+        }
+      }
+    }
+
+
 }`

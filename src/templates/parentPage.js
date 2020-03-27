@@ -6,6 +6,7 @@ import Menu from '../components/main-menu'
 import Footer from '../components/footer'
 
 import Job from '../components/job'
+import Grad from '../components/grad'
 
 export default class parentPage extends Component {
     render() {
@@ -21,6 +22,7 @@ export default class parentPage extends Component {
          } = this.props.data.contentfulConcentrationPageParents
 
          const jobList = this.props.data.allContentfulJob.edges
+         const gradList = this.props.data.allContentfulGraduate.edges
 
         return (
             <div>
@@ -55,8 +57,12 @@ export default class parentPage extends Component {
                 </section>
                 <section className="graduate-block">
                     <h2>HEAR FROM OUR GRADUATES</h2>
-                    <p>LOREM IPSUM IS HERE CURRENTLY. DESCRIBE THE CAREERS YO.</p>
-                    <p>THIS IS GOING TO BE WHERE THE GRADUATES COMPONENTS WILL GO.</p>
+                    <p>See where past members of our program are today.</p>
+                    <div className="grad-blob-container">
+                      {gradList.map((index) =>{
+                        return(<Grad imgSrc={index.node.picture.fixed.src} gradName={index.node.name} jobTitle={index.node.jobTitle} gradBio={index.node.bio.bio} />)
+                      })}
+                    </div>
                 </section>
                 <section className="student-work-block">
                     <h3>STUDENT WORK</h3>
@@ -119,6 +125,24 @@ query jobAndConcentrationPageParentsQuery($slug: String!){
             title
             description {
               description
+            }
+          }
+        }
+      }
+
+      allContentfulGraduate(filter: {concentration: {eq: $slug}}) {
+        edges {
+          node {
+            concentration
+            picture {
+              fixed {
+                src
+              }
+            }
+            name
+            jobTitle
+            bio {
+              bio
             }
           }
         }
