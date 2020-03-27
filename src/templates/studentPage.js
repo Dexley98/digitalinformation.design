@@ -9,7 +9,6 @@ class studentPage extends Component {
      render(){
       const {
         slug,
-        tagline,
         taglineList,
         splashMedia,
         concentrationSummary,
@@ -96,7 +95,6 @@ export default studentPage
 export const pageQuery = graphql`
 query concentrationPageHomeQuery($slug: String!){
     contentfulConcentrationPageHome(slug: {eq: $slug}) {
-      tagline
       taglineList
       splashMedia {
         fixed {
