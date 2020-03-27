@@ -21,7 +21,7 @@ class studentPage extends Component {
         learningOutcomesSummary
       } = this.props.data.contentfulConcentrationPageHome
 
-      const jobList = this.props.data.allContentfulJob.edges;
+      const jobList = this.props.data.allContentfulJob.edges
 
          for(var i = 0; i<taglineList.length; i++){
              console.log('tagline list number '+ i + ' ' + taglineList[i])
