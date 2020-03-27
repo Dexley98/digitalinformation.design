@@ -9,19 +9,27 @@ import Job from '../components/job'
 
 class studentPage extends Component {
      render(){
-        const {
-          slug,
-          concentrationTitle,
-          taglineList,
-          splashMedia,
-          concentrationSummary,
-          concentrationAsset,
-          WhatDoesItMean,
-          learningOutcomeAsset,
-          learningOutcomesSummary
-        } = this.props.data.contentfulConcentrationPageHome
+      const {
+        slug,
+        concentrationTitle,
+        taglineList,
+        splashMedia,
+        concentrationSummary,
+        concentrationAsset,
+        WhatDoesItMean,
+        learningOutcomeAsset,
+        learningOutcomesSummary
+      } = this.props.data.contentfulConcentrationPageHome
 
-        const jobList = this.props.data.allContentfulJob.edges
+      const jobList = this.props.data.allContentfulJob.edges
+
+         for(var i = 0; i<taglineList.length; i++){
+             console.log('tagline list number '+ i + ' ' + taglineList[i])
+         }
+
+         //console.log(splashMedia)
+
+         console.log('Job list', jobList)
 
          return(
 
