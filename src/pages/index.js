@@ -13,7 +13,6 @@ import '../fonts/Raleway-BlackItalic.ttf'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Menu from "../components/main-menu"
-import Footer from "../components/footer"
 
 const IndexPage = () => (
   <Layout>
@@ -25,7 +24,6 @@ const IndexPage = () => (
     <Link to="/interactivemedia/">Go to Interactive Media</Link><br />
     <Link to="/webapps/">Go to Web Apps</Link><br />
     <Link to="/massmedia/">Go to Mass Media </Link>
-    <Footer></Footer>
   </Layout>
 )
 
