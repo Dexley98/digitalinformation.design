@@ -25,8 +25,22 @@ h2{
   color: #EC6A12;
   font-weight: 900;
 }
+h4{
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  color: #FFF8F2;
+  line-height: 22px;
+  text-align: center;
+}
 p{
-
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
 }
 .topnav {
   background-color: #332531;
@@ -208,5 +222,35 @@ h1.tagline{
 
 /* JOB BLOB AREAS */
 .job-blob-container{
-  
+  display: flex;
+  justify-content: center;
+}
+.job-blob{
+  max-width: 220px;
+  margin: 10px 20px;
+  padding: 20px 40px;
+  background-color: #644E53;
+  box-shadow: 1px 6px 8px #D3C5AE;
+  border-radius: 53% 47% 51% 49% / 40% 62% 38% 60%;
+  animation: wobble 12s linear alternate infinite;
+}
+@keyframes wobble {
+  25% {
+    border-radius: 45% 55% 45% 55% / 50% 51% 49% 50%;
+  }
+  50%{
+    border-radius: 40% 60% 49% 51% / 43% 43% 57% 57%;
+  }
+  75%{
+    border-radius: 51% 49% 62% 38% / 36% 36% 64% 64% ;
+  }
+  100% {
+    border-radius: 47% 53% 54% 46% / 45% 46% 54% 55%;
+  }
+}
+.job-blob h4{
+
+}
+.job-blob p{
+  color: #FDFCF3; 
 }
