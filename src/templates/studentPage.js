@@ -2,7 +2,8 @@ import React, {Component} from "react"
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby'
 
-
+import Menu from "../components/main-menu"
+import Footer from "../components/footer"
 
 class studentPage extends Component {
      render(){
@@ -16,8 +17,8 @@ class studentPage extends Component {
         learningOutcomeAsset,
         learningOutcomesSummary
       } = this.props.data.contentfulConcentrationPageHome
-      
-    
+
+
 
          for(var i = 0; i<taglineList.length; i++){
              console.log('tagline list number '+ i + ' ' + taglineList[i])
@@ -26,10 +27,13 @@ class studentPage extends Component {
          console.log(splashMedia)
 
          return(
+
              <div>
+             <Menu />
                 <section className="splashMedia-block">
                     <img src={splashMedia[0].fixed.src} alt="splash media" />
-                    <div className="word-container">
+                    <img className="hero-image" src={splashMedia[0].fixed.src} alt="splash media" />
+                    <div className="tagline-item">
                         {taglineList.map((item) =>{
                           console.log('WHAT IS INSIDE TAGLINE LIST', item);
                           return(<h1>{item}</h1>);
@@ -76,6 +80,7 @@ class studentPage extends Component {
                   <p>Interested? Put your future on the right track today!</p>
                   <p>APPLY NOW LINK WILL GO HERE.</p>
                 </section>
+                <Footer />
              </div>
          )
      }
@@ -118,4 +123,3 @@ query concentrationPageHomeQuery($slug: String!){
       }
     }
   }`
-  
