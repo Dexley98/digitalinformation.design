@@ -8,7 +8,7 @@ export default () => {
     const data = useStaticQuery(
         graphql`
             query{
-                allContentfulJob {
+                allContentfulJob{
                     nodes {
                         title
                         description {

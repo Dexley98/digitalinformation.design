@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
-import Layout from "../components/layout"
+
+import Menu from '../components/main-menu'
+import Footer from '../components/footer'
+
+import Job from '../components/job'
 
 export default class parentPage extends Component {
     render() {
@@ -14,11 +18,13 @@ export default class parentPage extends Component {
             jobOpportunities,
             concentrationAsset,
             medianSalary
-         } = this.props.data.contentfulConcentrationPageParents;
+         } = this.props.data.contentfulConcentrationPageParents
+
+         const jobList = this.props.data.allContentfulJob.edges
 
         return (
-            <Layout>
-                <div>
+            <div>
+                <Menu />
                 <section className="splashMedia-block">
                     <img src={splashMedia[0].fixed.src} alt={splashMedia[0].description} />
                     <h1>{concentrationTitle}</h1>
@@ -38,7 +44,9 @@ export default class parentPage extends Component {
                 </section>
                 <section className="career-block">
                     <h2>CAREERS</h2>
-                    <p>THIS IS GOING TO BE WHERE THE CAREER COMPONENTS GO.</p>
+                    {jobList.map((index) =>{
+                      return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
+                    })}
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p>LINK WILL GO HERE.</p>
                 </section>
@@ -51,17 +59,17 @@ export default class parentPage extends Component {
                     <p>THIS IS GOING TO BE WHERE THE GRADUATES COMPONENTS WILL GO.</p>
                 </section>
                 <section className="student-work-block">
-                  <h3>STUDENT WORK</h3>
-                  <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
-                  <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
+                    <h3>STUDENT WORK</h3>
+                    <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
+                    <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
                 </section>
                 <section className="apply-now-block">
-                  <h3>APPLY NOW</h3>
-                  <p>Interested? Put your future on the right track today!</p>
-                  <p>APPLY NOW LINK WILL GO HERE.</p>
+                    <h3>APPLY NOW</h3>
+                    <p>Interested? Put your future on the right track today!</p>
+                    <p>APPLY NOW LINK WILL GO HERE.</p>
                 </section>
-                </div>
-            </Layout>
+                <Footer />
+            </div>
         )
     }
 }
@@ -71,7 +79,8 @@ parentPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-query concentrationPageParentsQuery($slug: String!){
+query jobAndConcentrationPageParentsQuery($slug: String!){
+
     contentfulConcentrationPageParents(slug: {eq: $slug}) {
         id
         slug
@@ -102,4 +111,16 @@ query concentrationPageParentsQuery($slug: String!){
             medianSalary
         }
     }
+
+    allContentfulJob(filter: {slugMatch: {eq: $slug}}) {
+        edges {
+          node {
+            slugMatch
+            title
+            description {
+              description
+            }
+          }
+        }
+      }
 }`
