@@ -32,8 +32,8 @@ class studentPage extends Component {
              <div>
              <Menu />
                 <section className="splashMedia-block">
+                    <img src={splashMedia[0].fixed.src} alt="splash media" />
                     <img className="hero-image" src={splashMedia[0].fixed.src} alt="splash media" />
-                    <h1 className="tagline">{tagline}</h1>
                     <div className="tagline-item">
                         {taglineList.map((item) =>{
                           console.log('WHAT IS INSIDE TAGLINE LIST', item);
@@ -66,6 +66,20 @@ class studentPage extends Component {
                     <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
                     <img src={learningOutcomeAsset.fixed.src} alt={learningOutcomeAsset.description} />
                     <p>LEARNING OUTCOMES COMPONENTS WILL GO HERE.</p>
+                </section>
+                <section className="student-work-block">
+                  <h3>STUDENT WORK</h3>
+                  <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
+                  <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
+                </section>
+                <section className="coursework-block">
+                  <p>Here's a taste of the classes you may take while in DIFD.</p>
+                  <p>BIG ASS BLOCK OF COURSES WILL GO HERE.</p>
+                </section>
+                <section className="apply-now-block">
+                  <h3>APPLY NOW</h3>
+                  <p>Interested? Put your future on the right track today!</p>
+                  <p>APPLY NOW LINK WILL GO HERE.</p>
                 </section>
                 <Footer />
              </div>
