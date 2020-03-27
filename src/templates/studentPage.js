@@ -5,10 +5,13 @@ import { graphql } from 'gatsby'
 import Menu from "../components/main-menu"
 import Footer from "../components/footer"
 
+import Job from '../components/job'
+
 class studentPage extends Component {
      render(){
       const {
         slug,
+        concentrationTitle,
         taglineList,
         splashMedia,
         concentrationSummary,
@@ -18,13 +21,15 @@ class studentPage extends Component {
         learningOutcomesSummary
       } = this.props.data.contentfulConcentrationPageHome
 
-
+      const jobList = this.props.data.allContentfulJob.edges;
 
          for(var i = 0; i<taglineList.length; i++){
              console.log('tagline list number '+ i + ' ' + taglineList[i])
          }
 
-         console.log(splashMedia)
+         //console.log(splashMedia)
+
+         console.log('Job list', jobList)
 
          return(
 
@@ -40,7 +45,7 @@ class studentPage extends Component {
                     </div>
                 </section>
                 <section className="concentrationSummary-block">
-                    <h2>{slug}</h2>
+                    <h2>{concentrationTitle}</h2>
                     <p>{concentrationSummary}</p>
                 </section>
                 <section className="whatDoesItMean-block">
@@ -50,7 +55,9 @@ class studentPage extends Component {
                 </section>
                 <section className="career-block">
                     <h2>CAREERS</h2>
-                    <p>THIS IS GOING TO BE WHERE THE CAREER COMPONENTS GO.</p>
+                    {jobList.map((index) =>{
+                      return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
+                    })}
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p>LINK WILL GO HERE.</p>
                 </section>
@@ -92,8 +99,12 @@ studentPage.propTypes = {
 export default studentPage
 
 export const pageQuery = graphql`
-query concentrationPageHomeQuery($slug: String!){
-    contentfulConcentrationPageHome(slug: {eq: $slug}) {
+query jobQueryAndConcentrationPageHomeQuery($slug: String!){
+    
+  contentfulConcentrationPageHome(slug: {eq: $slug}) {
+      id
+      slug
+      concentrationTitle
       taglineList
       splashMedia {
         fixed {
@@ -121,4 +132,16 @@ query concentrationPageHomeQuery($slug: String!){
         learningOutcomesSummary
       }
     }
-  }`
+
+    allContentfulJob(filter: {slugMatch: {eq: $slug}}) {
+      edges {
+        node {
+          slugMatch
+          title
+          description {
+            description
+          }
+        }
+      }
+    }
+}`
