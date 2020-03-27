@@ -7,6 +7,7 @@
 @font-face {
   font-family: 'Raleway';
   src: local('Raleway'), url(../fonts/Raleway-ExtraBold.ttf) format('truetype');
+  src: local('Raleway'), url(../fonts/Raleway-Black.ttf) format('truetype');
 }
 body{
   max-width: 1440px;
@@ -25,7 +26,7 @@ h2{
   font-weight: 900;
 }
 p{
-
+  
 }
 .topnav {
   background-color: #332531;

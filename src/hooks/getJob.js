@@ -8,9 +8,8 @@ export default () => {
     const data = useStaticQuery(
         graphql`
             query{
-                allContentfulJob(filter: {concentration: {eq: "Web Apps"}}) {
+                allContentfulJob {
                     nodes {
-                        concentration
                         title
                         description {
                             description
@@ -23,7 +22,7 @@ export default () => {
     const nodes = data.data.allContentfulJob.nodes;
     return(
         <div>
-            
+
         </div>
     )
 }

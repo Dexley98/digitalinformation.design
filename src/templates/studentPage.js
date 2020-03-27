@@ -65,20 +65,6 @@ class studentPage extends Component {
                     <img src={learningOutcomeAsset.fixed.src} alt={learningOutcomeAsset.description} />
                     <p>LEARNING OUTCOMES COMPONENTS WILL GO HERE.</p>
                 </section>
-                <section className="student-work-block">
-                  <h3>STUDENT WORK</h3>
-                  <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
-                  <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
-                </section>
-                <section className="coursework-block">
-                  <p>Here's a taste of the classes you may take while in DIFD.</p>
-                  <p>BIG ASS BLOCK OF COURSES WILL GO HERE.</p>
-                </section>
-                <section className="apply-now-block">
-                  <h3>APPLY NOW</h3>
-                  <p>Interested? Put your future on the right track today!</p>
-                  <p>APPLY NOW LINK WILL GO HERE.</p>
-                </section>
                 <Footer />
              </div>
          )
