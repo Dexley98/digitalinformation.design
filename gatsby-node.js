@@ -49,7 +49,7 @@ exports.createPages = ({ actions, graphql }) => {
 		// Create blog pages
 		result.data.parents.edges.forEach((edge) => {
 			createPage({
-				path: edge.node.slug,
+				path: edge.node.slug + '/parents',
         component: parentTemplate,
         context: {
             slug: edge.node.slug
