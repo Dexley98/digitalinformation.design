@@ -31,7 +31,6 @@ class studentPage extends Component {
              <div>
              <Menu />
                 <section className="splashMedia-block">
-                    <img src={splashMedia[0].fixed.src} alt="splash media" />
                     <img className="hero-image" src={splashMedia[0].fixed.src} alt="splash media" />
                     <div className="tagline-item">
                         {taglineList.map((item) =>{
