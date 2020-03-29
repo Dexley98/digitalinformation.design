@@ -4,8 +4,8 @@ import { graphql } from 'gatsby'
 
 import Menu from "../components/main-menu"
 import Footer from "../components/footer"
-
 import Job from '../components/job'
+
 
 class studentPage extends Component {
      render(){
@@ -50,8 +50,10 @@ class studentPage extends Component {
                 </section>
                 <section className="whatDoesItMean-block">
                     <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} />
-                    <h2>WHAT DOES IT MEAN?</h2>
-                    <p>{WhatDoesItMean.WhatDoesItMean}</p>
+                    <div>
+                      <h2>WHAT DOES IT MEAN?</h2>
+                      <p>{WhatDoesItMean.WhatDoesItMean}</p>
+                    </div>
                 </section>
                 <section className="career-block">
                     <h2>CAREERS</h2>
