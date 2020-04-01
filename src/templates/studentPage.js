@@ -45,11 +45,12 @@ class studentPage extends Component {
                     </div>
                 </section>
                 <section className="concentrationSummary-block">
+                    <div className="background-shape"></div>
                     <h2>{concentrationTitle}</h2>
                     <p>{concentrationSummary}</p>
                 </section>
                 <section className="whatDoesItMean-block">
-                    <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} />
+                    <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} className=""/>
                     <div>
                       <h2>WHAT DOES IT MEAN?</h2>
                       <p>{WhatDoesItMean.WhatDoesItMean}</p>
@@ -63,7 +64,7 @@ class studentPage extends Component {
                     })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p>LINK WILL GO HERE.</p>
+                    <p><a href="" className="learn-more">LINK WILL GO HERE.</a></p>
                 </section>
                 <section className="graduate-block">
                     <h2>HEAR FROM OUR GRADUATES</h2>
