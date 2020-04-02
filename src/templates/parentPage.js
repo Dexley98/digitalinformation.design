@@ -26,9 +26,11 @@ export default class parentPage extends Component {
             <div>
                 <Menu />
                 <section className="splashMedia-block">
-                    <img src={splashMedia[0].fixed.src} alt={splashMedia[0].description} />
-                    <h1>{concentrationTitle}</h1>
-                    <h2>{mainActivity}</h2>
+                    <img className="hero-image" src={splashMedia[0].fixed.src} alt={splashMedia[0].description} />
+                    <div className="parent-splash">
+                      <h1 className="parent-splash">{concentrationTitle}</h1>
+                      <h2 className="parent-splash">{mainActivity}</h2>
+                    </div>
                 </section>
                 <section className="summary-block">
                     <h3>What is {concentrationTitle}</h3>
@@ -39,14 +41,18 @@ export default class parentPage extends Component {
                 </section>
                 <section className="job-oppurtunities-block">
                     <h3>Job Opportunities</h3>
+                    <div className="job-blob-container">
                     <p>{jobOpportunities.jobOpportunities}</p>
+                    </div>
                     <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} />
                 </section>
                 <section className="career-block">
                     <h2>CAREERS</h2>
+                    <div className="job-blob-container">
                     {jobList.map((index) =>{
                       return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
                     })}
+                    </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p>LINK WILL GO HERE.</p>
                 </section>

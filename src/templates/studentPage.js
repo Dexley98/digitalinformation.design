@@ -59,9 +59,9 @@ class studentPage extends Component {
                 <section className="career-block">
                     <h2>CAREERS</h2>
                     <div className="job-blob-container">
-                    {jobList.map((index) =>{
-                      return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
-                    })}
+                      {jobList.map((index) =>{
+                        return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
+                      })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p><a href="" className="learn-more">LINK WILL GO HERE.</a></p>
@@ -72,13 +72,17 @@ class studentPage extends Component {
                     <p>THIS IS GOING TO BE WHERE THE GRADUATES COMPONENTS WILL GO.</p>
                 </section>
                 <section className="learningOutcomes-block">
-                    <h2>KEY LEARNING OUTCOMES</h2>
-                    <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
+                  <div className="learningOutcomes-info">
+                    <div>
+                      <h2>KEY LEARNING OUTCOMES</h2>
+                      <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
+                    </div>
                     <img src={learningOutcomeAsset.fixed.src} alt={learningOutcomeAsset.description} />
+                  </div>
                     <p>LEARNING OUTCOMES COMPONENTS WILL GO HERE.</p>
                 </section>
                 <section className="student-work-block">
-                  <h3>STUDENT WORK</h3>
+                  <h2>STUDENT WORK</h2>
                   <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
                   <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
                 </section>
@@ -87,7 +91,7 @@ class studentPage extends Component {
                   <p>BIG ASS BLOCK OF COURSES WILL GO HERE.</p>
                 </section>
                 <section className="apply-now-block">
-                  <h3>APPLY NOW</h3>
+                  <h2>APPLY NOW</h2>
                   <p>Interested? Put your future on the right track today!</p>
                   <p>APPLY NOW LINK WILL GO HERE.</p>
                 </section>

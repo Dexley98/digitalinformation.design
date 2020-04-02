@@ -81,7 +81,8 @@ p > a.learn-more {
   border-radius: 12px;
   text-align: center;
   padding: 6px 16px;
-  transition: all 0.5s;}
+  transition: all 0.5s;
+  }
   @media (min-width: 1024px) {
     p > a.learn-more {
       font-size: 14px;
@@ -90,6 +91,7 @@ p > a.learn-more {
     color: #fff;
     background-color: #644E53;
   }
+
 .topnav {
   background-color: #332531;
   overflow: hidden;}
@@ -348,64 +350,57 @@ div.tagline-item{
       padding: 0px 10px 0px 100px;} }
 
 /* CAREER BLOCKS */
+.career-block > p{
+  margin: 50px 0px;
+}
 .job-blob-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;}
-@media (min-width: 700px) {
-  .job-blob-container{
-    flex-wrap: nowrap;} }
-@media (min-width: 1024px) {
-  .job-blob-container{
-    } }
+  @media (min-width: 700px) {
+    .job-blob-container{
+      flex-wrap: nowrap;} }
+  @media (min-width: 1024px) {
+    .job-blob-container{
+      } }
 .job-blob{
   max-width: 220px;
   margin: 10px 20px;
   padding: 20px 40px;
   background-color: #644E53;
-  box-shadow: 1px 6px 8px #D3C5AE;
-
-}
-.job-blob:nth-child(1){
-  border-radius: 53% 47% 51% 49% / 40% 62% 38% 60%;
-  animation: wobble 12s linear alternate infinite;
-}
-.job-blob:nth-child(2){
-  border-radius: 51% 49% 52% 48% / 36% 54% 46% 64% ;
-  animation: wobble2 12s linear alternate infinite;
-}
-.job-blob:nth-child(3){
-  border-radius: 38% 62% 58% 42% / 35% 48% 52% 65% ;
-  animation: wobble3 12s linear alternate infinite;
-}
-.job-blob:nth-child(4){
-  border-radius: 56% 44% 58% 42% / 35% 55% 45% 65% ;
-  animation: wobble4 12s linear alternate infinite;
-}
-@keyframes wobble {
-  25%{ border-radius: 45% 55% 45% 55% / 50% 51% 49% 50%;}
-  50%{ border-radius: 40% 60% 49% 51% / 43% 43% 57% 57%;}
-  75%{ border-radius: 51% 49% 62% 38% / 36% 36% 64% 64% ;}
-  100%{ border-radius: 47% 53% 54% 46% / 45% 46% 54% 55%;}
-}
-@keyframes wobble2 {
-  25%{ border-radius: 46% 54% 49% 51% / 43% 32% 68% 57%;}
-  50%{ border-radius: 40% 60% 49% 51% / 52% 39% 61% 48%;}
-  75%{ border-radius: 27% 73% 41% 59% / 55% 39% 61% 45%;}
-  100%{ border-radius: 45% 55% 34% 66% / 62% 39% 61% 38%;}
-}
-@keyframes wobble3 {
-  25%{ border-radius: 64% 36% 58% 42% / 35% 64% 36% 65%  ;}
-  50%{ border-radius: 58% 42% 53% 47% / 40% 57% 43% 60% ;}
-  75%{ border-radius: 57% 43% 46% 54% / 48% 47% 53% 52% ;}
-  100%{ border-radius: 54% 46% 38% 62% / 57% 41% 59% 43% ;}
-}
-@keyframes wobble4 {
-  25%{ border-radius: 49% 51% 51% 49% / 41% 50% 50% 59%;}
-  50%{ border-radius: 53% 47% 55% 45% / 34% 56% 44% 66%;}
-  75%{ border-radius: 60% 40% 61% 39% / 32% 61% 39% 68%;}
-  100%{ border-radius: 51% 49% 55% 45% / 40% 58% 42% 60%;}
-}
+  box-shadow: 1px 6px 8px #D3C5AE;}
+  .job-blob:nth-child(1){
+    border-radius: 53% 47% 51% 49% / 40% 62% 38% 60%;
+    animation: wobble 12s linear alternate infinite;}
+  .job-blob:nth-child(2){
+    border-radius: 51% 49% 52% 48% / 36% 54% 46% 64% ;
+    animation: wobble2 12s linear alternate infinite;}
+  .job-blob:nth-child(3){
+    border-radius: 38% 62% 58% 42% / 35% 48% 52% 65% ;
+    animation: wobble3 12s linear alternate infinite;}
+  .job-blob:nth-child(4){
+    border-radius: 56% 44% 58% 42% / 35% 55% 45% 65% ;
+    animation: wobble4 12s linear alternate infinite;}
+    @keyframes wobble {
+      25%{ border-radius: 45% 55% 45% 55% / 50% 51% 49% 50%;}
+      50%{ border-radius: 40% 60% 49% 51% / 43% 43% 57% 57%;}
+      75%{ border-radius: 51% 49% 62% 38% / 36% 36% 64% 64% ;}
+      100%{ border-radius: 47% 53% 54% 46% / 45% 46% 54% 55%;}}
+    @keyframes wobble2 {
+      25%{ border-radius: 46% 54% 49% 51% / 43% 32% 68% 57%;}
+      50%{ border-radius: 40% 60% 49% 51% / 52% 39% 61% 48%;}
+      75%{ border-radius: 27% 73% 41% 59% / 55% 39% 61% 45%;}
+      100%{ border-radius: 45% 55% 34% 66% / 62% 39% 61% 38%;}}
+    @keyframes wobble3 {
+      25%{ border-radius: 64% 36% 58% 42% / 35% 64% 36% 65%  ;}
+      50%{ border-radius: 58% 42% 53% 47% / 40% 57% 43% 60% ;}
+      75%{ border-radius: 57% 43% 46% 54% / 48% 47% 53% 52% ;}
+      100%{ border-radius: 54% 46% 38% 62% / 57% 41% 59% 43% ;}}
+    @keyframes wobble4 {
+      25%{ border-radius: 49% 51% 51% 49% / 41% 50% 50% 59%;}
+      50%{ border-radius: 53% 47% 55% 45% / 34% 56% 44% 66%;}
+      75%{ border-radius: 60% 40% 61% 39% / 32% 61% 39% 68%;}
+      100%{ border-radius: 51% 49% 55% 45% / 40% 58% 42% 60%;}}
 .job-blob h4{
 
 }
@@ -414,3 +409,70 @@ div.tagline-item{
   font-size: 12px;
   line-height: 16px;
 }
+
+/* KEY LEARNING OUTCOMES*/
+div.learningOutcomes-info{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;}
+  @media (min-width: 700px) {
+    div.learningOutcomes-info{
+      } }
+  @media (min-width: 1024px) {
+    div.learningOutcomes-info{
+
+      } }
+div.learningOutcomes-info h2{
+  text-align: left;
+  padding: 10% 10% 0px 10%;}
+div.learningOutcomes-info p{
+  text-align: left;
+  padding: 0px 10%;
+  line-height: 1.6;
+}
+div.learningOutcomes-info img{
+  width: 800px;
+}
+/*PARENTS PAGE*/
+div.parent-splash{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+}
+h1.parent-splash{
+  font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
+  color: #FDFCF3;
+  padding: 0px 10px;
+  text-align: center;
+  margin: 0 auto !important;
+  text-shadow: 2px 2px 8px #332531;
+  text-transform: uppercase;
+  position: relative;
+  }
+  @media (min-width: 700px) {
+    h1.parent-splash{
+      } }
+  @media (min-width: 1024px) {
+    h1.parent-splash{
+      font-size: 60px;
+      font-weight: 900;
+      width: 100%;} }
+h2.parent-splash{
+  font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
+  color: #FDFCF3;
+  padding: 0px 10px;
+  text-align: center;
+  margin: 0 auto !important;
+  text-shadow: 2px 2px 8px #332531;
+  text-transform: uppercase;}
+  @media (min-width: 700px) {
+    h2.parent-splash{
+      } }
+  @media (min-width: 1024px) {
+    h2.parent-splash{
+      font-size: 40px;
+      font-weight: 900;
+      width: 100%;
+      padding: 10px 0px;} }
