@@ -14,6 +14,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Menu from "../components/main-menu"
 
+
 const IndexPage = () => (
   <Layout>
 
@@ -24,6 +25,7 @@ const IndexPage = () => (
     <Link to="/interactivemedia/">Go to Interactive Media</Link><br />
     <Link to="/webapps/">Go to Web Apps</Link><br />
     <Link to="/massmedia/">Go to Mass Media </Link>
+
   </Layout>
 )
 
