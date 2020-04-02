@@ -23,10 +23,10 @@ class Menu extends React.Component {
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <a href="#">Digital Commerce</a>
-            <a href="#">Digital Mass Media</a>
-            <a href="#">Interactive Media</a>
-            <a href="#">Web Applications</a>
+            <a href="/commerce">Digital Commerce</a>
+            <a href="/massmedia">Digital Mass Media</a>
+            <a href="/interactivemedia">Interactive Media</a>
+            <a href="/webapps">Web Applications</a>
           </div>
         </div>
         <a href="#home" className="active">About</a>
