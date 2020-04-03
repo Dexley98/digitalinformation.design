@@ -23,6 +23,13 @@ class studentPage extends Component {
         learningOutcomesSummary
       } = this.props.data.contentfulConcentrationPageHome
 
+      const {
+        whyWinthrop1,
+        whyWinthropAssets
+      }  = this.props.data.contentfulWhyWinthrop
+
+      const whyWinthropAsset1 = whyWinthropAssets[0];
+
       const jobList = this.props.data.allContentfulJob.edges
       const gradList = this.props.data.allContentfulGraduate.edges
       const learningOutcomeList = this.props.data.allContentfulLearningOutcome.edges
@@ -31,11 +38,12 @@ class studentPage extends Component {
              console.log('tagline list number '+ i + ' ' + taglineList[i])
          }
 
-         //console.log(splashMedia)
-
          console.log('Job list', jobList)
          console.log('Grad List', gradList)
          console.log('Learning Outcome List ', learningOutcomeList)
+         console.log('whyWinthropAssets', whyWinthropAsset1)
+         console.log('splashMedia', splashMedia)
+
 
          return(
 
@@ -45,7 +53,7 @@ class studentPage extends Component {
                   <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
                 </nav>
                 <section className="splashMedia-block">
-                    <img className="hero-image" src={splashMedia[0].fixed.src} alt="splash media" />
+                    <img className="hero-image" src={splashMedia[0].file.url} alt="splash media" />
                     <div className="tagline-item">
                         {taglineList.map((item) =>{
                           console.log('WHAT IS INSIDE TAGLINE LIST', item);
@@ -59,7 +67,7 @@ class studentPage extends Component {
                     <p>{concentrationSummary}</p>
                 </section>
                 <section className="whatDoesItMean-block">
-                    <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} className=""/>
+                    <img src={concentrationAsset.file.url} alt={concentrationAsset.description} className=""/>
                     <div>
                       <h2>WHAT DOES IT MEAN?</h2>
                       <p>{WhatDoesItMean.WhatDoesItMean}</p>
@@ -85,11 +93,11 @@ class studentPage extends Component {
                     <div className="grad-blob-container">
                       {gradList.map((index) =>{
                         return(
-                        <Grad
-                          imgSrc={index.node.picture.fixed.src}
-                          gradName={index.node.name}
-                          jobTitle={index.node.jobTitle}
-                          gradBio={index.node.bio.bio}
+                        <Grad 
+                          imgSrc={index.node.picture.file.url} 
+                          gradName={index.node.name} 
+                          jobTitle={index.node.jobTitle} 
+                          gradBio={index.node.bio.bio} 
                         />)
                       })}
                     </div>
@@ -100,7 +108,7 @@ class studentPage extends Component {
                       <h2>KEY LEARNING OUTCOMES</h2>
                       <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
                     </div>
-                    <img src={learningOutcomeAsset.fixed.src} alt={learningOutcomeAsset.description} />
+                    <img src={learningOutcomeAsset.file.url} alt={learningOutcomeAsset.description} />
                   </div>
                   <div className="learningOutcome-blob-container">
                       {learningOutcomeList.map((index) => {
@@ -120,6 +128,13 @@ class studentPage extends Component {
                 <section className="coursework-block">
                   <p>Here's a taste of the classes you may take while in DIFD.</p>
                   <p>BIG ASS BLOCK OF COURSES WILL GO HERE.</p>
+                </section>
+                <section className="why-winthrop-block">
+                  <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
+                  <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
+                  <p>{whyWinthrop1.whyWinthrop1}</p>
+                  <img src={whyWinthropAsset1.file.url} />
+                  <Link to="/about">Learn More</Link>
                 </section>
                 <section className="apply-now-block">
                   <h2>APPLY NOW</h2>
@@ -147,16 +162,15 @@ query studentPageQuery($slug: String!){
       concentrationTitle
       taglineList
       splashMedia {
-        fixed {
-          src
+        file {
+          url
         }
       }
-      slug
       concentrationSummary
       concentrationAsset {
         description
-        fixed {
-          src
+        file {
+          url
         }
       }
       WhatDoesItMean {
@@ -164,8 +178,8 @@ query studentPageQuery($slug: String!){
       }
       learningOutcomeAsset {
         description
-        fixed {
-          src
+        file {
+          url
         }
       }
       learningOutcomesSummary {
@@ -190,8 +204,8 @@ query studentPageQuery($slug: String!){
         node {
           concentration
           picture {
-            fixed {
-              src
+            file {
+              url
             }
           }
           name
@@ -219,6 +233,15 @@ query studentPageQuery($slug: String!){
       }
     }
 
-
-
+    contentfulWhyWinthrop {
+      whyWinthrop1{
+        whyWinthrop1
+      }
+      whyWinthropAssets {
+        description
+        file{
+          url
+        }
+      }
+    }
 }`
