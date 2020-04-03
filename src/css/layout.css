@@ -19,15 +19,21 @@
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);} }
-
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
-
 body{
   max-width: 1440px;
   margin: 0 auto;}
+section{
+  margin-bottom: 100px;}
+  @media (min-width: 700px) {
+    section {
+      margin-bottom: 160px;} }
+  @media (min-width: 1024px) {
+    section {
+      margin-bottom: 220px;;} }
 h1{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-size: 35px;
@@ -50,11 +56,18 @@ h4{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 12px;
   color: #FFF8F2;
   line-height: 22px;
-  text-align: center;
-}
+  text-align: center;}
+  @media (min-width: 700px) {
+    h4 {
+      font-size: 14px;
+      line-height: 20px;} }
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 16px;
+      line-height: 20px;} }
 p{
   font-family: Avenir, sans-serif;
   font-style: normal;
@@ -274,13 +287,13 @@ div.tagline-item{
 }
 /* CONCENTRATION SUMMARY */
 .concentrationSummary-block{
-  padding: 60px 10px 100px 10px;}
+  padding: 0px 10px;}
   @media (min-width: 700px) {
     .concentrationSummary-block{
-      padding: 40px 20px;} }
+      padding: 0px 20px;} }
   @media (min-width: 1024px) {
     .concentrationSummary-block{
-      padding: 100px 60px 150px 60px;;} }
+      padding: 0px 60px;} }
 .concentrationSummary-block h2{
   margin-bottom: -20px;
   font-size: 30px;}
@@ -303,16 +316,16 @@ div.tagline-item{
 /* WHAT DOES IT MEAN BLOCK */
 
 .whatDoesItMean-block{
-  padding: 60px 10px 100px 10px;
+  padding: 0px 10px;
   display: flex;
   flex-wrap: wrap;}
   @media (min-width: 700px) {
     .whatDoesItMean-block{
-      padding: 40px 20px;
+      padding: 0px 20px;
       } }
   @media (min-width: 1024px) {
     .whatDoesItMean-block{
-      padding: 0px 60px 150px 60px;} }
+      padding: 0px 60px;} }
 .whatDoesItMean-block img{
   max-width: 80%;
   position: relative;
@@ -420,7 +433,6 @@ div.learningOutcomes-info{
       } }
   @media (min-width: 1024px) {
     div.learningOutcomes-info{
-
       } }
 div.learningOutcomes-info h2{
   text-align: left;
@@ -431,8 +443,45 @@ div.learningOutcomes-info p{
   line-height: 1.6;
 }
 div.learningOutcomes-info img{
-  width: 800px;
+  width: 100%;
+  padding: 0px 0px 0px 100px;
 }
+
+/* GARDUATE SECTION*/
+
+
+.graduate-block h2, .graduate-block p{
+  text-align: left;
+  padding: 0px 0px 0px 100px;
+}
+.grad-blob-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;}
+  @media (min-width: 700px) {
+    .grad-blob-container{
+      } }
+  @media (min-width: 1024px) {
+    .grad-blob-container{
+      padding: 0px 10%;} }
+.grad-blob{
+  }
+  @media (min-width: 700px) {
+    .grad-blob{
+      } }
+  @media (min-width: 1024px) {
+    .grad-blob{
+      max-width: 320px;} }
+.grad-blob h4{
+  font-size: 22px;
+  line-height: 25px;
+  color: #664363;}
+  @media (min-width: 700px) {
+    .grad-blob{
+      } }
+  @media (min-width: 1024px) {
+    .grad-blob{
+      max-width: 320px;} }
 /*PARENTS PAGE*/
 div.parent-splash{
   top: 50%;
