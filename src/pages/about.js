@@ -9,6 +9,7 @@ import Footer from '../components/footer'
 import Grad from '../components/grad'
 import Track from '../components/track'
 import Outcome from '../components/outcome'
+import Apply from '../components/apply'
 
 export default class About extends Component {
     render() {
@@ -85,11 +86,7 @@ export default class About extends Component {
                     })}
                     </div>
                 </section>
-                <section className="apply-now-block">
-                    <h2>APPLY NOW</h2>
-                    <p>Interested? Put your future on the right track today!</p>
-                    <p>APPLY NOW LINK WILL GO HERE.</p>
-                </section>
+                <Apply />
             <Footer />
             </div>
          )

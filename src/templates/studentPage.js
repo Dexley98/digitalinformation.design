@@ -7,6 +7,7 @@ import Footer from "../components/footer"
 import Job from '../components/job'
 import Grad from '../components/grad'
 import Outcome from '../components/outcome'
+import Apply from '../components/apply'
 
 
 class studentPage extends Component {
@@ -134,13 +135,10 @@ class studentPage extends Component {
                   <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} />
-                  <Link to="/about">Learn More</Link>
+                  {/*Should this link go to about or to winthrop? */}
+                  <Link to="/about">Learn More</Link> 
                 </section>
-                <section className="apply-now-block">
-                  <h2>APPLY NOW</h2>
-                  <p>Interested? Put your future on the right track today!</p>
-                  <p>APPLY NOW LINK WILL GO HERE.</p>
-                </section>
+                <Apply />
                 <Footer />
              </div>
          )
