@@ -9,6 +9,7 @@ import Footer from '../components/footer'
 import Grad from '../components/grad'
 import Track from '../components/track'
 import Outcome from '../components/outcome'
+import Apply from '../components/apply'
 
 export default class About extends Component {
     render() {
@@ -28,17 +29,22 @@ export default class About extends Component {
         const allLearningOutcomes = this.props.data.allContentfulLearningOutcome.edges;
 
         const randomGradsList = getRandomGrads(allGraduates);
-        console.log(randomGradsList);
+        
+        const {
+          whyWinthrop1,
+          whyWinthrop2,
+          whyWinthropAssets
+        }  = this.props.data.contentfulWhyWinthrop
 
-        randomGradsList.map((index) => {
-            console.log(index);
-        })
+
+        const whyWinthropAsset1 = whyWinthropAssets[0]
+        const whyWinthropAsset2 = whyWinthropAssets[1]
 
         return(
             <div>
             <Menu />
                 <section className="about-bannerImg-block">
-                    <img src={bannerImage.file.url} alt={bannerImage.description} />
+                    <img src={bannerImage.file.url} alt={bannerImage.description} /> 
                 </section>
                 <section className="what-is-difd-block">
                     <h1>WHAT IS <span className="purple-highlight">DIFD</span></h1>
@@ -85,11 +91,19 @@ export default class About extends Component {
                     })}
                     </div>
                 </section>
-                <section className="apply-now-block">
-                    <h2>APPLY NOW</h2>
-                    <p>Interested? Put your future on the right track today!</p>
-                    <p>APPLY NOW LINK WILL GO HERE.</p>
+                <section id="tour" className="why-winthrop-block">
+                  <h2>OUR CAMPUS</h2>
+                  {/*top content */}
+                  <p>{whatIsDifd.whatIsDifd}</p>
+                  <p>{whyWinthrop1.whyWinthrop1}</p>
+                  <img src={whyWinthropAsset1.file.url} alt={whyWinthropAsset2.description} />
+                  {/*bpttom content */}
+                  <p>{whyWinthrop2.whyWinthrop2}</p>
+                  <p>If you can’t make it out to see our campus we can bring it to you. View our virtual tour below to experience everything our campus has to offer from the comfort of your home.</p>
+                  <img src={whyWinthropAsset2.file.url} alt={whyWinthropAsset2.description} />
+                  <a href="https://www.winthrop.edu/virtualtour/">Take the Tour</a>
                 </section>
+                <Apply />
             <Footer />
             </div>
          )
@@ -216,6 +230,9 @@ query aboutPageQuery {
       contentfulWhyWinthrop {
         whyWinthrop1{
           whyWinthrop1
+        }
+        whyWinthrop2{
+          whyWinthrop2
         }
         whyWinthropAssets {
           description
