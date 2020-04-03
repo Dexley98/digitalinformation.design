@@ -28,7 +28,7 @@ export default class parentPage extends Component {
             <div>
                 <Menu />
                 <section className="splashMedia-block">
-                    <img className="hero-image" src={splashMedia[0].fixed.src} alt={splashMedia[0].description} />
+                    <img className="hero-image" src={splashMedia[0].file.url} alt={splashMedia[0].description} />
                     <div className="parent-splash">
                       <h1 className="parent-splash">{concentrationTitle}</h1>
                       <h2 className="parent-splash">{mainActivity}</h2>
@@ -46,7 +46,7 @@ export default class parentPage extends Component {
                     <div className="job-blob-container">
                     <p>{jobOpportunities.jobOpportunities}</p>
                     </div>
-                    <img src={concentrationAsset.fixed.src} alt={concentrationAsset.description} />
+                    <img src={concentrationAsset.file.url} alt={concentrationAsset.description} />
                 </section>
                 <section className="career-block">
                     <h2>CAREERS</h2>
@@ -66,7 +66,7 @@ export default class parentPage extends Component {
                     <p>See where past members of our program are today.</p>
                     <div className="grad-blob-container">
                       {gradList.map((index) =>{
-                        return(<Grad imgSrc={index.node.picture.fixed.src} gradName={index.node.name} jobTitle={index.node.jobTitle} gradBio={index.node.bio.bio} />)
+                        return(<Grad imgSrc={index.node.picture.file.url} gradName={index.node.name} jobTitle={index.node.jobTitle} gradBio={index.node.bio.bio} />)
                       })}
                     </div>
                 </section>
@@ -100,8 +100,8 @@ query parentPageQuery($slug: String!){
         mainActivity
         splashMedia {
             description
-            fixed {
-                src
+            file {
+                url
             }
         }
         concentrationSummary {
@@ -115,8 +115,8 @@ query parentPageQuery($slug: String!){
         }
         concentrationAsset {
             description
-            fixed {
-                src
+            file {
+                url
             }
         }
         medianSalary {
@@ -141,8 +141,8 @@ query parentPageQuery($slug: String!){
           node {
             concentration
             picture {
-              fixed {
-                src
+              file {
+                url
               }
             }
             name

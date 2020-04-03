@@ -212,4 +212,17 @@ query aboutPageQuery {
           }
         }
       }
+
+      contentfulWhyWinthrop {
+        whyWinthrop1{
+          whyWinthrop1
+        }
+        whyWinthropAssets {
+          description
+          file{
+            url
+          }
+        }
+      }
+  
 }`
