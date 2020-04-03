@@ -139,7 +139,7 @@ studentPage.propTypes = {
 export default studentPage
 
 export const pageQuery = graphql`
-query jobQueryAndConcentrationPageHomeQuery($slug: String!){
+query studentPageQuery($slug: String!){
 
   contentfulConcentrationPageHome(slug: {eq: $slug}) {
       id

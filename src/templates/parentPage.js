@@ -91,7 +91,7 @@ parentPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-query jobAndConcentrationPageParentsQuery($slug: String!){
+query parentPageQuery($slug: String!){
 
     contentfulConcentrationPageParents(slug: {eq: $slug}) {
         id
