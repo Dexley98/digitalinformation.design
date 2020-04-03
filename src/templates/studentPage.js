@@ -41,7 +41,7 @@ class studentPage extends Component {
 
              <div>
              <Menu />
-                <nav>
+                <nav className="hide">
                   <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
                 </nav>
                 <section className="splashMedia-block">
@@ -70,8 +70,8 @@ class studentPage extends Component {
                     <div className="job-blob-container">
                       {jobList.map((index) =>{
                         return(
-                        <Job 
-                          jobTitle={index.node.title} 
+                        <Job
+                          jobTitle={index.node.title}
                           jobDesc={index.node.description.description}
                         />)
                       })}
@@ -85,11 +85,11 @@ class studentPage extends Component {
                     <div className="grad-blob-container">
                       {gradList.map((index) =>{
                         return(
-                        <Grad 
-                          imgSrc={index.node.picture.fixed.src} 
-                          gradName={index.node.name} 
-                          jobTitle={index.node.jobTitle} 
-                          gradBio={index.node.bio.bio} 
+                        <Grad
+                          imgSrc={index.node.picture.fixed.src}
+                          gradName={index.node.name}
+                          jobTitle={index.node.jobTitle}
+                          gradBio={index.node.bio.bio}
                         />)
                       })}
                     </div>
@@ -105,8 +105,8 @@ class studentPage extends Component {
                   <div className="learningOutcome-blob-container">
                       {learningOutcomeList.map((index) => {
                         return(
-                        <Outcome 
-                          iconSrc={index.node.icon.file.url} 
+                        <Outcome
+                          iconSrc={index.node.icon.file.url}
                           description={index.node.description.description}
                           />)
                       })}

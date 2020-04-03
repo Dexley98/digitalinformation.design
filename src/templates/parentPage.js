@@ -34,8 +34,8 @@ export default class parentPage extends Component {
                       <h2 className="parent-splash">{mainActivity}</h2>
                     </div>
                 </section>
-                <section className="summary-block">
-                    <h3>What is {concentrationTitle}</h3>
+                <section className="whatDoesItMean-block-parents">
+                    <h2>What is {concentrationTitle}</h2>
                     <p>{concentrationSummary.concentrationSummary}</p>
                 </section>
                 <section className="employment-outlook-block">
