@@ -35,11 +35,7 @@ class studentPage extends Component {
         const whyWinthropAsset1 = whyWinthropAssets[0];
 
 // student project 'meta' info
-        const {
-          title,
-          shortDescription,
-          pictures
-        } = this.props.data.allContentfulProject
+        const allTrackProjects = this.props.data.allContentfulProject.edges
 
 // job, grads, and learning outcomes to pull into indiviudal components
         const jobList = this.props.data.allContentfulJob.edges
@@ -59,15 +55,19 @@ class studentPage extends Component {
          console.log('whyWinthropAssets', whyWinthropAsset1)
          console.log('splashMedia', splashMedia)
 **********************************End Debugging Block *************************************************/
-
+console.log(this.props.data.allContentfulProject)
 
          return(
 
              <div>
              <Menu />
+
+{/* Parent Nav */}                
                 <nav className="hide">
                   <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
                 </nav>
+
+{/* Splash Media Section */}                                
                 <section className="splashMedia-block">
                     <img className="hero-image" src={splashMedia[0].file.url} alt="splash media" />
                     <div className="tagline-item">
@@ -77,11 +77,15 @@ class studentPage extends Component {
                         })}
                     </div>
                 </section>
+                
+{/* Concentration Summary Section */}                
                 <section className="concentrationSummary-block">
                     <div className="background-shape"></div>
                     <h2>{concentrationTitle}</h2>
                     <p>{concentrationSummary}</p>
                 </section>
+                
+{/* What Does it Mean Section */}                
                 <section className="whatDoesItMean-block">
                     <img src={concentrationAsset.file.url} alt={concentrationAsset.description} className=""/>
                     <img src={concentrationLogo.file.url} alt={concentrationLogo.description} className="" />
@@ -90,6 +94,8 @@ class studentPage extends Component {
                       <p>{WhatDoesItMean.WhatDoesItMean}</p>
                     </div>
                 </section>
+                
+{/* Career Section (with Jobs) */}                
                 <section className="career-block">
                     <h2>CAREERS</h2>
                     <div className="job-blob-container">
@@ -104,6 +110,8 @@ class studentPage extends Component {
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p><a href="" className="learn-more">LINK WILL GO HERE.</a></p>
                 </section>
+                
+{/* Graduate Section */}                
                 <section className="graduate-block">
                     <h2>HEAR FROM OUR GRADUATES</h2>
                     <p>See where past members of our program are today.</p>
@@ -119,6 +127,8 @@ class studentPage extends Component {
                       })}
                     </div>
                 </section>
+                
+{/* Learning Outcome Section */}                
                 <section className="learningOutcomes-block">
                   <div className="learningOutcomes-info">
                     <div>
@@ -137,23 +147,33 @@ class studentPage extends Component {
                       })}
                   </div>
                 </section>
+                
+{/* Student Work Section*/}                
                 <section className="student-work-block">
                   <h2>STUDENT WORK</h2>
                   <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
-                  <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
+                  {allTrackProjects.map((index) =>{
+                    return(
+                      <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} />
+                      )
+                  })}
                 </section>
+                
+{/* Coursework Section */}               
                 <section className="coursework-block">
                   <p>Here's a taste of the classes you may take while in DIFD.</p>
                   <p>BIG ASS BLOCK OF COURSES WILL GO HERE.</p>
                 </section>
+                
+{/* Why Winthrop? Section */}                
                 <section className="why-winthrop-block">
                   <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
                   <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} />
-                  {/*Should this link go to about or to winthrop? */}
                   <Link to="/about#tour">Learn More</Link> 
                 </section>
+                
                 <Apply />
                 <Footer />
              </div>
@@ -259,13 +279,6 @@ query studentPageQuery($slug: String!){
           concentrationTag
           title
           shortDescription
-          pictures {
-            description
-            file {
-              url
-              contentType
-            }
-          }
         }
       }
     }

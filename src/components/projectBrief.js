@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 
 export default class ProjectBrief extends Component {
     render() {
         return (
             <div className="projectBrief-blob">
-                <h4>{this.props.Title}</h4>
+                <h3>{this.props.title}</h3>
                 <p>{this.props.shortDesc}</p>
+                <iframe src={this.props.fileUrl}></iframe>
             </div>
         )
     }
