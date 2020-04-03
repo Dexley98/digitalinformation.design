@@ -71,7 +71,7 @@ export default class parentPage extends Component {
                     </div>
                 </section>
                 <section className="student-work-block">
-                    <h3>STUDENT WORK</h3>
+                    <h3>STUDENT WORK</h3>  
                     <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
                     <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
                 </section>
