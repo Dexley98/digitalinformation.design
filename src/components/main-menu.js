@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
 class Menu extends React.Component {
@@ -7,7 +6,7 @@ class Menu extends React.Component {
     return (
       <div className="topnav" id="myTopnav">
         <a className="icon" onClick="dropDown()">&#9776;</a>
-        <a href="#about" className="apply-now">Apply Now</a>
+        <a href="https://apply.winthrop.edu/apply/" className="apply-now">Apply Now</a>
         <div className="dropdown">
           <button className="dropbtn">Our People
             <i className="fa fa-caret-down"></i>
@@ -23,13 +22,13 @@ class Menu extends React.Component {
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <a href="/commerce">Digital Commerce</a>
-            <a href="/massmedia">Digital Mass Media</a>
-            <a href="/interactivemedia">Interactive Media</a>
-            <a href="/webapps">Web Applications</a>
+            <Link to="/commerce">Digital Commerce</Link>
+            <Link to="/massmedia">Digital Mass Media</Link>
+            <Link to="/interactivemedia">Interactive Media</Link>
+            <Link to="/webapps">Web Applications</Link>
           </div>
         </div>
-        <a href="#home" className="active">About</a>
+        <Link to="/about" className="active">About</Link>
     </div>
     );
   }

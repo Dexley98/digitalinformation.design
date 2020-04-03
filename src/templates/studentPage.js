@@ -19,6 +19,7 @@ class studentPage extends Component {
         splashMedia,
         concentrationSummary,
         concentrationAsset,
+        concentrationLogo,
         WhatDoesItMean,
         learningOutcomeAsset,
         learningOutcomesSummary
@@ -70,6 +71,7 @@ class studentPage extends Component {
                 </section>
                 <section className="whatDoesItMean-block">
                     <img src={concentrationAsset.file.url} alt={concentrationAsset.description} className=""/>
+                    <img src={concentrationLogo.file.url} alt={concentrationLogo.description} className="" />
                     <div>
                       <h2>WHAT DOES IT MEAN?</h2>
                       <p>{WhatDoesItMean.WhatDoesItMean}</p>
@@ -169,6 +171,12 @@ query studentPageQuery($slug: String!){
       concentrationAsset {
         description
         file {
+          url
+        }
+      }
+      concentrationLogo{
+        description
+        file{
           url
         }
       }
