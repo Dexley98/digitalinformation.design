@@ -8,35 +8,47 @@ import Job from '../components/job'
 import Grad from '../components/grad'
 import Outcome from '../components/outcome'
 import Apply from '../components/apply'
+import ProjectBrief from '../components/projectBrief'
 
 
 class studentPage extends Component {
      render(){
-      const {
-        slug,
-        concentrationTitle,
-        taglineList,
-        splashMedia,
-        concentrationSummary,
-        concentrationAsset,
-        concentrationLogo,
-        WhatDoesItMean,
-        learningOutcomeAsset,
-        learningOutcomesSummary
-      } = this.props.data.contentfulConcentrationPageHome
+// major content for page
+        const {
+          slug,
+          concentrationTitle,
+          taglineList,
+          splashMedia,
+          concentrationSummary,
+          concentrationAsset,
+          concentrationLogo,
+          WhatDoesItMean,
+          learningOutcomeAsset,
+          learningOutcomesSummary
+        } = this.props.data.contentfulConcentrationPageHome
 
-      const {
-        whyWinthrop1,
-        whyWinthropAssets
-      }  = this.props.data.contentfulWhyWinthrop
+// campus info and assets
+        const {
+          whyWinthrop1,
+          whyWinthropAssets
+        }  = this.props.data.contentfulWhyWinthrop
+        const whyWinthropAsset1 = whyWinthropAssets[0];
 
-  
-      const whyWinthropAsset1 = whyWinthropAssets[0];
+// student project 'meta' info
+        const {
+          title,
+          shortDescription,
+          pictures
+        } = this.props.data.allContentfulProject
 
-      const jobList = this.props.data.allContentfulJob.edges
-      const gradList = this.props.data.allContentfulGraduate.edges
-      const learningOutcomeList = this.props.data.allContentfulLearningOutcome.edges
+// job, grads, and learning outcomes to pull into indiviudal components
+        const jobList = this.props.data.allContentfulJob.edges
+        const gradList = this.props.data.allContentfulGraduate.edges
+        const learningOutcomeList = this.props.data.allContentfulLearningOutcome.edges
 
+
+
+/*******************************Start Debugging Block***************************************************
          for(var i = 0; i<taglineList.length; i++){
              console.log('tagline list number '+ i + ' ' + taglineList[i])
          }
@@ -46,6 +58,7 @@ class studentPage extends Component {
          console.log('Learning Outcome List ', learningOutcomeList)
          console.log('whyWinthropAssets', whyWinthropAsset1)
          console.log('splashMedia', splashMedia)
+**********************************End Debugging Block *************************************************/
 
 
          return(
@@ -235,6 +248,23 @@ query studentPageQuery($slug: String!){
           }
           description {
             description
+          }
+        }
+      }
+    }
+
+    allContentfulProject(filter: {concentrationTag: {eq: $slug}}) {
+      edges {
+        node {
+          concentrationTag
+          title
+          shortDescription
+          pictures {
+            description
+            file {
+              url
+              contentType
+            }
           }
         }
       }
