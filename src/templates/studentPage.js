@@ -29,6 +29,7 @@ class studentPage extends Component {
         whyWinthropAssets
       }  = this.props.data.contentfulWhyWinthrop
 
+  
       const whyWinthropAsset1 = whyWinthropAssets[0];
 
       const jobList = this.props.data.allContentfulJob.edges
@@ -136,7 +137,7 @@ class studentPage extends Component {
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
-                  <Link to="/about">Learn More</Link> 
+                  <Link to="/about#tour">Learn More</Link> 
                 </section>
                 <Apply />
                 <Footer />
