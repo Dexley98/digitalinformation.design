@@ -42,18 +42,13 @@ export default class parentPage extends Component {
                     <p>{employmentOutlook.employmentOutlook}</p>
                 </section>
                 <section className="job-oppurtunities-block">
-                    <h3>Job Opportunities</h3>
-                    <div className="job-blob-container">
-                    <p>{jobOpportunities.jobOpportunities}</p>
-                    </div>
+                    <h2>Job Opportunities</h2>
                     <img src={concentrationAsset.file.url} alt={concentrationAsset.description} />
-                </section>
-                <section className="career-block">
-                    <h2>CAREERS</h2>
+                    <p>{jobOpportunities.jobOpportunities}</p>
                     <div className="job-blob-container">
-                    {jobList.map((index) =>{
-                      return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
-                    })}
+                      {jobList.map((index) =>{
+                        return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
+                      })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p>LINK WILL GO HERE.</p>
