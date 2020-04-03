@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'gatsby'
 
 export default class Grad extends Component {
     render() {
@@ -8,7 +9,7 @@ export default class Grad extends Component {
                 <h4>{this.props.gradName}</h4>
                 <h5>{this.props.jobTitle}</h5>
                 <p>{this.props.gradBio}</p>
-                <a href="#graduates">Learn More</a>
+                <p><Link to="#gradutes">Learn More</Link></p>
             </div>
         )
     }
