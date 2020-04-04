@@ -588,7 +588,22 @@ div.learningOutcomes-info img{
 }
 
 /* APPLY NOW */
+.apply-now-block{
+  margin-bottom: 0;
+}
+.apply-now-block div:first-child{
+  background-color: #FFF8F2;
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+  padding: 40px 0px 0px 0px;
+  margin-bottom: 0px;}
 
+.apply-now-block div:last-child{
+  text-align: center;
+  margin: 0px;
+  padding: 20px 0px 100px 0px;
+  background-color: #FFF8F2;
+
+}
 /*PARENTS PAGE*/
 
 /* SPLASH IMAGE */
