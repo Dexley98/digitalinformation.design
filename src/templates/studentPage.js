@@ -16,6 +16,7 @@ class studentPage extends Component {
 // major content for page
         const {
           slug,
+          id,
           concentrationTitle,
           taglineList,
           splashMedia,
@@ -176,7 +177,6 @@ class studentPage extends Component {
                 <section className="coursework-block">
                   <p>Here's a taste of the classes you may take while in DIFD.</p>
                   <CourseBlock courseList={allCourseArray} slug={slug}/>
-                  <p>BIG ASS BLOCK OF COURSES WILL GO HERE.</p>
                 </section>
                 
 {/* Why Winthrop? Section */}                
