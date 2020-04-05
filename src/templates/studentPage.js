@@ -30,7 +30,7 @@ class studentPage extends Component {
         whyWinthropAssets
       }  = this.props.data.contentfulWhyWinthrop
 
-  
+
       const whyWinthropAsset1 = whyWinthropAssets[0];
 
       const jobList = this.props.data.allContentfulJob.edges
@@ -50,7 +50,7 @@ class studentPage extends Component {
 
          return(
 
-             <div>
+             <div className="body">
              <Menu />
                 <nav className="hide">
                   <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
@@ -70,14 +70,19 @@ class studentPage extends Component {
                     <p>{concentrationSummary}</p>
                 </section>
                 <section className="whatDoesItMean-block">
-                    <img src={concentrationAsset.file.url} alt={concentrationAsset.description} className=""/>
-                    <img src={concentrationLogo.file.url} alt={concentrationLogo.description} className="" />
+                    <div>
+                      <div className="meaning-image-background">
+                        <img src={concentrationAsset.file.url} alt={concentrationAsset.description} className="meaning-image"/>
+                      </div>
+                        <img src={concentrationLogo.file.url} alt={concentrationLogo.description} className="meaning-logo" />
+                    </div>
                     <div>
                       <h2>WHAT DOES IT MEAN?</h2>
                       <p>{WhatDoesItMean.WhatDoesItMean}</p>
                     </div>
                 </section>
                 <section className="career-block">
+                    <div></div>
                     <h2>CAREERS</h2>
                     <div className="job-blob-container">
                       {jobList.map((index) =>{
@@ -89,7 +94,8 @@ class studentPage extends Component {
                       })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p><a href="" className="learn-more">LINK WILL GO HERE.</a></p>
+                    <p><a href="" className="main-link">LINK WILL GO HERE.</a></p>
+                    <div></div>
                 </section>
                 <section className="graduate-block">
                     <h2>HEAR FROM OUR GRADUATES</h2>
@@ -97,11 +103,11 @@ class studentPage extends Component {
                     <div className="grad-blob-container">
                       {gradList.map((index) =>{
                         return(
-                        <Grad 
-                          imgSrc={index.node.picture.file.url} 
-                          gradName={index.node.name} 
-                          jobTitle={index.node.jobTitle} 
-                          gradBio={index.node.bio.bio} 
+                        <Grad
+                          imgSrc={index.node.picture.file.url}
+                          gradName={index.node.name}
+                          jobTitle={index.node.jobTitle}
+                          gradBio={index.node.bio.bio}
                         />)
                       })}
                     </div>
@@ -139,7 +145,7 @@ class studentPage extends Component {
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
-                  <Link to="/about#tour">Learn More</Link> 
+                  <p><Link to="/about#tour" className="main-link">Learn More</Link></p>
                 </section>
                 <Apply />
                 <Footer />
