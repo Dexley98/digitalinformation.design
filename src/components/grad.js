@@ -9,7 +9,7 @@ export default class Grad extends Component {
                 <h4>{this.props.gradName}</h4>
                 <h5>{this.props.jobTitle}</h5>
                 <p>{this.props.gradBio}</p>
-                <p><Link to="#gradutes">Learn More</Link></p>
+                <p><Link to="#gradutes" className="main-link">Learn More</Link></p>
             </div>
         )
     }

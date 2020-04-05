@@ -9,7 +9,7 @@ import Grad from '../components/grad'
 import Outcome from '../components/outcome'
 import Apply from '../components/apply'
 import ProjectBrief from '../components/projectBrief'
-
+import CourseBlock from '../components/course'
 
 class studentPage extends Component {
      render(){
@@ -37,6 +37,10 @@ class studentPage extends Component {
 // student project 'meta' info
         const allTrackProjects = this.props.data.allContentfulProject.edges
 
+// all course object declared then converted to array
+        const allCourseObject = this.props.data.allContentfulCourse.edges
+        const allCourseArray = getAllCourseArray(allCourseObject)
+
 // job, grads, and learning outcomes to pull into indiviudal components
         const jobList = this.props.data.allContentfulJob.edges
         const gradList = this.props.data.allContentfulGraduate.edges
@@ -54,12 +58,15 @@ class studentPage extends Component {
          console.log('Learning Outcome List ', learningOutcomeList)
          console.log('whyWinthropAssets', whyWinthropAsset1)
          console.log('splashMedia', splashMedia)
+         console.log(this.props.data.allContentfulProject)
+         console.log(this.props.data.allContentfulCourse)
 **********************************End Debugging Block *************************************************/
-console.log(this.props.data.allContentfulProject)
+        
+
 
          return(
 
-             <div>
+             <div className="body">
              <Menu />
 
 {/* Parent Nav */}                
@@ -87,8 +94,12 @@ console.log(this.props.data.allContentfulProject)
                 
 {/* What Does it Mean Section */}                
                 <section className="whatDoesItMean-block">
-                    <img src={concentrationAsset.file.url} alt={concentrationAsset.description} className=""/>
-                    <img src={concentrationLogo.file.url} alt={concentrationLogo.description} className="" />
+                    <div>
+                      <div className="meaning-image-background">
+                        <img src={concentrationAsset.file.url} alt={concentrationAsset.description} className="meaning-image"/>
+                      </div>
+                        <img src={concentrationLogo.file.url} alt={concentrationLogo.description} className="meaning-logo" />
+                    </div>
                     <div>
                       <h2>WHAT DOES IT MEAN?</h2>
                       <p>{WhatDoesItMean.WhatDoesItMean}</p>
@@ -97,6 +108,7 @@ console.log(this.props.data.allContentfulProject)
                 
 {/* Career Section (with Jobs) */}                
                 <section className="career-block">
+                    <div></div>
                     <h2>CAREERS</h2>
                     <div className="job-blob-container">
                       {jobList.map((index) =>{
@@ -108,7 +120,8 @@ console.log(this.props.data.allContentfulProject)
                       })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p><a href="" className="learn-more">LINK WILL GO HERE.</a></p>
+                    <p><a href="" className="main-link">LINK WILL GO HERE.</a></p>
+                    <div></div>
                 </section>
                 
 {/* Graduate Section */}                
@@ -118,11 +131,11 @@ console.log(this.props.data.allContentfulProject)
                     <div className="grad-blob-container">
                       {gradList.map((index) =>{
                         return(
-                        <Grad 
-                          imgSrc={index.node.picture.file.url} 
-                          gradName={index.node.name} 
-                          jobTitle={index.node.jobTitle} 
-                          gradBio={index.node.bio.bio} 
+                        <Grad
+                          imgSrc={index.node.picture.file.url}
+                          gradName={index.node.name}
+                          jobTitle={index.node.jobTitle}
+                          gradBio={index.node.bio.bio}
                         />)
                       })}
                     </div>
@@ -162,6 +175,7 @@ console.log(this.props.data.allContentfulProject)
 {/* Coursework Section */}               
                 <section className="coursework-block">
                   <p>Here's a taste of the classes you may take while in DIFD.</p>
+                  <CourseBlock courseList={allCourseArray} slug={slug}/>
                   <p>BIG ASS BLOCK OF COURSES WILL GO HERE.</p>
                 </section>
                 
@@ -171,13 +185,23 @@ console.log(this.props.data.allContentfulProject)
                   <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} />
-                  <Link to="/about#tour">Learn More</Link> 
+                  {/*Should this link go to about or to winthrop? */}
+                  <p><Link to="/about#tour" className="main-link">Learn More</Link></p>
                 </section>
                 
                 <Apply />
                 <Footer />
              </div>
          )
+
+// put all courses into an array so that it can be pushed as a prop.
+         function getAllCourseArray(courseObject){
+           let allCourseArray = []
+           courseObject.map((index) => {
+             allCourseArray.push(index.node)
+           })
+           return allCourseArray;
+         }
      }
 }
 
@@ -279,6 +303,18 @@ query studentPageQuery($slug: String!){
           concentrationTag
           title
           shortDescription
+        }
+      }
+    }
+
+    allContentfulCourse {
+      edges {
+        node {
+          coreCompetency
+          coreElective
+          designator
+          name
+          hours
         }
       }
     }
