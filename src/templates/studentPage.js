@@ -16,7 +16,6 @@ class studentPage extends Component {
 // major content for page
         const {
           slug,
-          id,
           concentrationTitle,
           taglineList,
           splashMedia,
@@ -80,7 +79,6 @@ class studentPage extends Component {
                     <img className="hero-image" src={splashMedia[0].file.url} alt="splash media" />
                     <div className="tagline-item">
                         {taglineList.map((item) =>{
-                          console.log('WHAT IS INSIDE TAGLINE LIST', item);
                           return(<h1>{item}</h1>);
                         })}
                     </div>
@@ -168,7 +166,7 @@ class studentPage extends Component {
                   <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
                   {allTrackProjects.map((index) =>{
                     return(
-                      <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} />
+                      <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
                       )
                   })}
                 </section>
@@ -303,6 +301,12 @@ query studentPageQuery($slug: String!){
           concentrationTag
           title
           shortDescription
+          projectMedia {
+            file{
+              contentType
+              url
+            }
+          }
         }
       }
     }
