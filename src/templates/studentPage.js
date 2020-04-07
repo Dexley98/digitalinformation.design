@@ -61,7 +61,7 @@ class studentPage extends Component {
          console.log(this.props.data.allContentfulProject)
          console.log(this.props.data.allContentfulCourse)
 **********************************End Debugging Block *************************************************/
-        
+
 
 
          return(
@@ -69,12 +69,12 @@ class studentPage extends Component {
              <div className="body">
              <Menu />
 
-{/* Parent Nav */}                
+{/* Parent Nav */}
                 <nav className="hide">
                   <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
                 </nav>
 
-{/* Splash Media Section */}                                
+{/* Splash Media Section */}
                 <section className="splashMedia-block">
                     <img className="hero-image" src={splashMedia[0].file.url} alt="splash media" />
                     <div className="tagline-item">
@@ -83,15 +83,15 @@ class studentPage extends Component {
                         })}
                     </div>
                 </section>
-                
-{/* Concentration Summary Section */}                
+
+{/* Concentration Summary Section */}
                 <section className="concentrationSummary-block">
                     <div className="background-shape"></div>
                     <h2>{concentrationTitle}</h2>
                     <p>{concentrationSummary}</p>
                 </section>
-                
-{/* What Does it Mean Section */}                
+
+{/* What Does it Mean Section */}
                 <section className="whatDoesItMean-block">
                     <div>
                       <div className="meaning-image-background">
@@ -104,8 +104,8 @@ class studentPage extends Component {
                       <p>{WhatDoesItMean.WhatDoesItMean}</p>
                     </div>
                 </section>
-                
-{/* Career Section (with Jobs) */}                
+
+{/* Career Section (with Jobs) */}
                 <section className="career-block">
                     <div></div>
                     <h2>CAREERS</h2>
@@ -119,12 +119,14 @@ class studentPage extends Component {
                       })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p><a href="" className="main-link">LINK WILL GO HERE.</a></p>
+                    <p><a href="" className="main-link">View Careers</a></p>
                     <div></div>
                 </section>
-                
-{/* Graduate Section */}                
+
+{/* Graduate Section */}
                 <section className="graduate-block">
+                  <div className="top-curve"></div>
+                  <div className="middle-bg">
                     <h2>HEAR FROM OUR GRADUATES</h2>
                     <p>See where past members of our program are today.</p>
                     <div className="grad-blob-container">
@@ -138,9 +140,11 @@ class studentPage extends Component {
                         />)
                       })}
                     </div>
+                  </div>
+                  <div className="bottom-curve"></div>
                 </section>
-                
-{/* Learning Outcome Section */}                
+
+{/* Learning Outcome Section */}
                 <section className="learningOutcomes-block">
                   <div className="learningOutcomes-info">
                     <div>
@@ -159,8 +163,8 @@ class studentPage extends Component {
                       })}
                   </div>
                 </section>
-                
-{/* Student Work Section*/}                
+
+{/* Student Work Section*/}
                 <section className="student-work-block">
                   <h2>STUDENT WORK</h2>
                   <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
@@ -170,14 +174,15 @@ class studentPage extends Component {
                       )
                   })}
                 </section>
-                
-{/* Coursework Section */}               
+
+{/* Coursework Section */}
                 <section className="coursework-block">
+                  <h2>COURSEWORK</h2>
                   <p>Here's a taste of the classes you may take while in DIFD.</p>
                   <CourseBlock courseList={allCourseArray} slug={slug}/>
                 </section>
-                
-{/* Why Winthrop? Section */}                
+
+{/* Why Winthrop? Section */}
                 <section className="why-winthrop-block">
                   <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
                   <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
@@ -186,7 +191,7 @@ class studentPage extends Component {
                   {/*Should this link go to about or to winthrop? */}
                   <p><Link to="/about#tour" className="main-link">Learn More</Link></p>
                 </section>
-                
+
                 <Apply />
                 <Footer />
              </div>

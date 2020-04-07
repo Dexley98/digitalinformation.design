@@ -18,14 +18,6 @@ html, body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;}
-section{
-  margin-bottom: 100px;}
-  @media (min-width: 700px) {
-    section {
-      margin-bottom: 160px;} }
-  @media (min-width: 1024px) {
-    section {
-      margin-bottom: 220px;;} }
 h1{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-size: 35px;
@@ -121,6 +113,25 @@ a.main-link{
     @media (min-width: 1024px) {
       a.main-link{
         } }
+
+/* CURVED SECTION BACKGROUNDS */
+
+.top-curve{
+  background-color: #FFF8F2;
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+  padding: 40px 0px 0px 0px;
+  margin-bottom: 0px;
+}
+.middle-bg{
+  background-color: #FFF8F2;
+  padding: 100px 0px 50px 0px;
+}
+.bottom-curve{
+  background-color: #FFF8F2;
+  border-radius: 50% 50% 50% 50% / 0% 0% 100% 100% ;
+  padding: 0px 0px 40px 0px;
+  margin-top: 0px;
+}
 
 /* MAIN MENU CSS */
 
@@ -461,8 +472,6 @@ div.tagline-item{
     .whatDoesItMean-block p{
       padding: 0 2%;} }
 
-
-
 /* CAREER BLOCKS */
 
 .career-block{
@@ -552,10 +561,6 @@ div.tagline-item{
 
 /* GARDUATE SECTION*/
 
-.graduate-block{
-  background-color: #FFF8F2;
-  padding: 100px 0px 100px 0px;
-}
 .graduate-block h2, .graduate-block p{
   text-align: center;}
   @media (min-width: 700px) {
@@ -577,7 +582,6 @@ div.tagline-item{
       margin: 50px auto;} }
   @media (min-width: 1024px) {
     .grad-blob-container{
-
       } }
 .grad-blob{
   margin: 60px 5% 0px 5%;}
@@ -622,34 +626,69 @@ div.tagline-item{
     .grad-blob p{
       } }
 
-
 /* KEY LEARNING OUTCOMES*/
 
+.learningOutcomes-block{
+  margin-top: 0px;
+  padding-top: 0px;
+}
 div.learningOutcomes-info{
   display: flex;
   flex-wrap: wrap;
   width: 100%;}
   @media (min-width: 700px) {
     div.learningOutcomes-info{
-      } }
+      flex-wrap: nowrap;
+      background-image: url("../images/blob-shape2-dark.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right top;} }
   @media (min-width: 1024px) {
     div.learningOutcomes-info{
-      flex-wrap: nowrap;} }
+      padding-top: 100px;
+
+      } }
 div.learningOutcomes-info h2{
   text-align: left;
-  padding: 10% 10% 0px 10%;}
+  padding: 10% 10% 0px 18%;}
+  @media (min-width: 700px) {
+    div.learningOutcomes-info h2{
+      text-align: left;
+      padding: 10% 10% 0px 15%;} }
+  @media (min-width: 1024px) {
+    div.learningOutcomes-info h2{
+      text-align: left;
+      padding: 10% 10% 0px 18%;} }
 div.learningOutcomes-info p{
   text-align: left;
-  padding: 0px 10%;
+  padding: 0px 10% 0px 18%;
   line-height: 1.6;}
+  @media (min-width: 700px) {
+    div.learningOutcomes-info p{
+      text-align: left;
+      padding: 4% 4% 0px 15%;} }
+  @media (min-width: 1024px) {
+    div.learningOutcomes-info p{
+      text-align: left;
+      padding: 10% 10% 0px 18%;} }
 div.learningOutcomes-info img{
-  width: 60%;
-  padding: 0px 0px 0px 100px;}
-
+  width: 40%;
+  margin: 50px 10px 0px 100px;
+  border-radius: 76% 24% 36% 64% / 43% 34% 66% 57% ;}
+  @media (min-width: 700px) {
+    div.learningOutcomes-info img{
+      text-align: left;
+      width: 40%;
+      margin: 50px 4% 0px 100px;} }
+  @media (min-width: 1024px) {
+    div.learningOutcomes-info img{
+      text-align: left;
+      margin: 50px 10px 0px 100px;} }
 .learningOutcome-blob-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 100px;
 }
 .learningOutcome-blob-container > div{
   max-width: 240px;
@@ -657,6 +696,61 @@ div.learningOutcomes-info img{
   margin: 0px 10px;
 }
 
+/* STUDENT WORK BLOCK */
+
+.student-work-block p{
+
+}
+  @media (min-width: 700px) {
+    .student-work-block p{
+      } }
+  @media (min-width: 1024px) {
+    .student-work-block p{
+      max-width: 700px;
+      margin: 0 auto;} }
+
+/* COURSEWORK BLOCK*/
+
+.coursework-block{
+
+}
+  @media (min-width: 700px) {
+    .coursework-block{
+      } }
+  @media (min-width: 1024px) {
+    .coursework-block{
+      } }
+.coursework-block p{
+
+}
+  @media (min-width: 700px) {
+    .coursework-block p{
+      } }
+  @media (min-width: 1024px) {
+    .coursework-block p{
+      } }
+.course-list-container button{
+  background-color: #332531;
+  color: #FDFCF3;
+  border: none;
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 16px 24px;
+  border-radius: 10px 10px 0px 0px;
+  transition: 0.5s ease;
+}
+.course-list-container button:focus{
+  border-bottom: 2px solid #F6BC93;
+  background-color: #423040;
+}
+.course-blob {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
 /* WHY WINTHROP BLOCK */
 
 .why-winthrop-block img{
@@ -668,11 +762,7 @@ div.learningOutcomes-info img{
 .apply-now-block{
   margin-bottom: 0;
 }
-.apply-now-block div:first-child{
-  background-color: #FFF8F2;
-  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
-  padding: 40px 0px 0px 0px;
-  margin-bottom: 0px;}
+
 .apply-now-block div:last-child{
   text-align: center;
   margin: 0px;

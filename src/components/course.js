@@ -32,25 +32,25 @@ export default class CourseBlock extends Component {
         //console.log('state inside render ', this.state.coreArray)
         return (
             <div className="course-list-container">
-                <button 
-                    id="difd-core-button" 
-                    className="course-button" 
-                    name="difd" 
-                    onClick={this.handleCoreClick}> 
-                        DIFD Core 
+                <button
+                    id="difd-core-button"
+                    className="course-button"
+                    name="difd"
+                    onClick={this.handleCoreClick}>
+                        DIFD Core
                 </button>
-                <button 
-                    id={`${this.props.slug}-core-button`} 
-                    className="course-button" name={this.props.slug} 
-                    onClick={this.handleCoreClick} > 
-                        {getTrackName(this.props.slug)} 
+                <button
+                    id={`${this.props.slug}-core-button`}
+                    className="course-button" name={this.props.slug}
+                    onClick={this.handleCoreClick} >
+                        {getTrackName(this.props.slug)}
                 </button>
-                <button 
+                <button
                     id="electives-button"
                     className="course-button"
-                    name="electives" 
-                    onClick={this.handleElectiveClick} > 
-                        Electives 
+                    name="electives"
+                    onClick={this.handleElectiveClick} >
+                        Electives
                 </button>
 {/*give functional componet CoreCourseList the coreArray for rendering */}
                 <div className="core-course-list">
@@ -62,7 +62,7 @@ export default class CourseBlock extends Component {
                         <p id="required-color-key-message">Required within the Core (color goes in the div above)</p>
                     </div>
                 </div>
-                
+
             </div>
         )
 
@@ -91,14 +91,14 @@ This Functional Component does the work to render all the classes from Contentfu
 returns the return of the array.map of the passed in array from state.
 the inner returns return three p elements wrapped in a div.
 The inner elements are are attained from the values within the array.
-if the coreElective field of the passed in array is true, add an aditional class for styling. 
+if the coreElective field of the passed in array is true, add an aditional class for styling.
 */
 
 const CoreCourseList = ({array}) => {
     if(array.length == 0){
         return(
             <div className="outside-electives-blob">
-                <p>For an approved list of general electives 
+                <p>For an approved list of general electives
                     <a href="https://www.winthrop.edu/uploadedFiles/recandreg/CourseSchedule/General-Ed-program.pdf">Click Here</a></p>
             </div>
         )
@@ -112,7 +112,7 @@ const CoreCourseList = ({array}) => {
                     <p className="hours">{index.hours}</p>
                     <p>I'M AN ELECTIVE!</p>
                 </div>
-            ) 
+            )
         }else{
             return(
                 <div className="course-blob">
@@ -128,8 +128,8 @@ const CoreCourseList = ({array}) => {
 
 /*
 All Course Array is the entire array of courses from contentful passed into the constructor as a prop
-coreName represents the name of the track or 'core'. 
-Fucntion filters the entire course array based on coreName and returns an array of courses relevant to a specified track. 
+coreName represents the name of the track or 'core'.
+Fucntion filters the entire course array based on coreName and returns an array of courses relevant to a specified track.
 */
 function getCoreArray(allCourseArray, coreName){
     let coreArray = []
@@ -155,9 +155,9 @@ function trimDesignator(designator){
         designatorArray.forEach(index => {
             updatedDesignator += index + " "
         });
-        return updatedDesignator    
+        return updatedDesignator
     }
     return designator
 
-    
+
 }

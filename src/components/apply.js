@@ -4,7 +4,7 @@ export default class Apply extends Component {
     render() {
         return (
             <section className="apply-now-block">
-              <div></div>
+              <div className="top-curve"></div>
               <div>
                 <h2>APPLY NOW</h2>
                 <p>Interested? Put your future on the right track today!</p>
