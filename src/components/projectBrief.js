@@ -21,7 +21,7 @@ const DisplayMedia = ({mediaInfo}) => {
     if(contentTypeSplit[0] == "video"){
         return(
                 <video controls>
-                    <source src={mediaInfo.file.url} type={`"${mediaInfo.file.contentType}"`} />
+                    <source src={mediaInfo.file.url} type={mediaInfo.file.contentType} />
                     Your browser does not support the video tag.
                 </video>
         )
