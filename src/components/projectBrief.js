@@ -8,27 +8,14 @@ export default class ProjectBrief extends Component {
                 <h3>{this.props.title}</h3>
                 <p>{this.props.shortDesc}</p>
                 <DisplayMedia mediaInfo= {this.props.projectMedia[0]} />
+                {/* Link to the project here or needs to wrap arond entire div. */}
             </div>
         )
     }
 }
 
 const DisplayMedia = ({mediaInfo}) => {
-    console.log(mediaInfo.file)
-    let contentTypeSplit = mediaInfo.file.contentType.split("/");
-    console.log(contentTypeSplit)
-    console.log(mediaInfo.file.contentType)
-    if(contentTypeSplit[0] == "video"){
-        return(
-                <video controls>
-                    <source src={mediaInfo.file.url} type={mediaInfo.file.contentType} />
-                    Your browser does not support the video tag.
-                </video>
-        )
-    }
-    if(contentTypeSplit[0] == "image"){
-        return(
-            <img src={mediaInfo.file.url} />
-        )
-    }
+    return(
+        <img src={mediaInfo.file.url} alt={mediaInfo.description}/>
+    )
 }

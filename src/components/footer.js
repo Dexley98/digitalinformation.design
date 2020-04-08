@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
 class Footer extends React.Component {
@@ -7,19 +6,19 @@ class Footer extends React.Component {
     return (
       <div className="footer">
         <div>
-          <a href="#">About the Major</a>
-          <a href="#">Visit Winthrop</a>
+          <Link to="/">About the Major</Link>
+          <Link to="/#tour">Visit Winthrop</Link>
         </div>
         <div>
-          <a href="#">Digital Commerce</a>
-          <a href="#">Digital Mass Media</a>
-          <a href="#">Interactive Media</a>
-          <a href="#">Web Applications</a>
+          <Link to="/commerce">Digital Commerce</Link>
+          <Link to="/massmedia">Digital Mass Media</Link>
+          <Link to="/interactivemedia">Interactive Media</Link>
+          <Link to="/webapps">Web Applications</Link>
         </div>
         <div>
-          <a href="#">Student Work</a>
-          <a href="#">Our Grads</a>
-          <a href="#">Apply Now</a>
+          <Link to="#">Student Work</Link>
+          <Link to="#">Our Grads</Link>
+          <a href="https://apply.winthrop.edu/apply/">Apply Now</a>
         </div>
       </div>
     );

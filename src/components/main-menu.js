@@ -28,7 +28,7 @@ class Menu extends React.Component {
             <Link to="/webapps">Web Applications</Link>
           </div>
         </div>
-        <Link to="/about" className="active">About</Link>
+        <Link to="/" className="active">About</Link>
     </div>
     );
   }

@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
+// Pull in Components
 import Menu from '../components/main-menu'
 import Footer from '../components/footer'
-
 import Job from '../components/job'
 import Grad from '../components/grad'
 import Apply from '../components/apply'
+import ProjectBrief from '../components/projectBrief'
 
 export default class parentPage extends Component {
     render() {
+// Major Content for Page
         const {
             concentrationTitle,
             mainActivity,
@@ -22,12 +24,17 @@ export default class parentPage extends Component {
             medianSalary
          } = this.props.data.contentfulConcentrationPageParents
 
+// Jobs, grads, and projects to pull into indiviudal components
          const jobList = this.props.data.allContentfulJob.edges
          const gradList = this.props.data.allContentfulGraduate.edges
+         const allTrackProjects = this.props.data.allContentfulProject.edges
+
 
         return (
             <div>
                 <Menu />
+
+{/* Splash Media Section */}
                 <section className="splashMedia-block">
                     <img className="hero-image" src={splashMedia[0].file.url} alt={splashMedia[0].description} />
                     <div className="parent-splash">
@@ -35,13 +42,19 @@ export default class parentPage extends Component {
                       <h2 className="parent-splash">{mainActivity}</h2>
                     </div>
                 </section>
+
+{/* What Does it Mean Parent Section */}
                 <section className="whatDoesItMean-block-parents">
-                    <h2>What is {concentrationTitle}</h2>
+                    <h2>What is {concentrationTitle}?</h2>
                     <p>{concentrationSummary.concentrationSummary}</p>
                 </section>
+
+{/* Employment Outlook Section */}
                 <section className="employment-outlook-block">
                     <p>{employmentOutlook.employmentOutlook}</p>
                 </section>
+            
+{/* Job Oppurtunities Section */}
                 <section className="job-oppurtunities-block">
                     <h2>Job Opportunities</h2>
                     <img src={concentrationAsset.file.url} alt={concentrationAsset.description} />
@@ -54,9 +67,13 @@ export default class parentPage extends Component {
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p>LINK WILL GO HERE.</p>
                 </section>
+
+{/* Median Salary Section */}
                 <section className="median-salary-block">
                     <p>{medianSalary.medianSalary}</p>
                 </section>
+
+{/* Graduate Section */}
                 <section className="graduate-block">
                     <h2>HEAR FROM OUR GRADUATES</h2>
                     <p>See where past members of our program are today.</p>
@@ -66,17 +83,30 @@ export default class parentPage extends Component {
                       })}
                     </div>
                 </section>
-                <section className="student-work-block">
-                    <h3>STUDENT WORK</h3>  
+
+{/* Student Work Section*/}
+                {allTrackProjects.length > 0 && 
+                  <section className="student-work-block">
+                    <h2>STUDENT WORK</h2>
                     <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
-                    <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
-                </section>
+                    {allTrackProjects.map((index) =>{
+                      return(
+                        <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
+                        )
+                    })}
+                  </section>
+                }
                 <Apply />
                 <Footer />
             </div>
         )
+/* END OF RETURN */
+
     }
+/* END OF RENDER */ 
+
 }
+/* END OF PARENT TEMPLATE CLASS */
 
 parentPage.propTypes = {
     data: PropTypes.object.isRequired
@@ -141,6 +171,23 @@ query parentPageQuery($slug: String!){
             jobTitle
             bio {
               bio
+            }
+          }
+        }
+      }
+
+      allContentfulProject(filter: {concentrationTag: {eq: $slug}}) {
+        edges {
+          node {
+            concentrationTag
+            title
+            shortDescription
+            projectMedia {
+              description
+              file{
+                contentType
+                url
+              }
             }
           }
         }
