@@ -16,12 +16,12 @@ class Footer extends React.Component {
           <Link to="/webapps">Web Applications</Link>
         </div>
         <div>
-          <Link to="#">Student Work</Link>
+          <Link to="/student-work">Student Work</Link>
           <Link to="#">Our Grads</Link>
           <a href="https://apply.winthrop.edu/apply/">Apply Now</a>
         </div>
       </div>
-    );
+    )
   }
 }
 

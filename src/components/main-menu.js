@@ -16,7 +16,7 @@ class Menu extends React.Component {
             <a href="#">Our Graduates</a>
           </div>
         </div>
-        <a href="#news">Student Work</a>
+        <Link to="/student-work">Student Work</Link>
         <div className="dropdown">
           <button className="dropbtn">DIFD Tracks
             <i className="fa fa-caret-down"></i>
