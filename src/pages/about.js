@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
-// bring in component files. 
+// bring in component files.
 import Menu from '../components/main-menu'
 import Footer from '../components/footer'
 import Grad from '../components/grad'
@@ -29,7 +29,7 @@ export default class About extends Component {
         const allLearningOutcomes = this.props.data.allContentfulLearningOutcome.edges;
 
         const randomGradsList = getRandomGrads(allGraduates);
-        
+
         const {
           whyWinthrop1,
           whyWinthrop2,
@@ -44,49 +44,55 @@ export default class About extends Component {
             <div>
             <Menu />
                 <section className="about-bannerImg-block">
-                    <img src={bannerImage.file.url} alt={bannerImage.description} /> 
+                    <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
                 <section className="what-is-difd-block">
-                    <h1>WHAT IS <span className="purple-highlight">DIFD</span></h1>
+                    <h1 className="about-header">WHAT IS <span className="purple-highlight">DIFD</span></h1>
                     <h3>(Digital Information Design)</h3>
                     <p>{whatIsDifd.whatIsDifd}</p>
-                </section> 
-                <section className="tracks-block">
-                    <h1>FOUR TRACKS</h1>
-                    <p>{tracksOverview.tracksOverview}</p>
-                    <div className="tracks-container">
-                       <Track slug="/interactivemedia" overview={imBlurb.imBlurb} />
-                       <Track slug="/webapps" overview={webAppsBlurb.webAppsBlurb} />
-                       <Track slug="/commerce" overview={commerceBlurb.commerceBlurb} />
-                       <Track slug="/massmedia" overview={massMediaBlurb.massMediaBlurb} />
-                    </div>
                 </section>
-                <section className="why-difd-blcok">
-                    <h1>WHY CHOOSE DIFD?</h1>
+                <section className="tracks-block">
+                  <div className="top-curve"></div>
+                    <div className="middle-bg">
+                      <h1 className="about-header">FOUR TRACKS</h1>
+                      <p>{tracksOverview.tracksOverview}</p>
+                      <div className="tracks-container">
+                         <Track slug="/interactivemedia" overview={imBlurb.imBlurb} />
+                         <Track slug="/webapps" overview={webAppsBlurb.webAppsBlurb} />
+                         <Track slug="/commerce" overview={commerceBlurb.commerceBlurb} />
+                         <Track slug="/massmedia" overview={massMediaBlurb.massMediaBlurb} />
+                      </div>
+                      </div>
+                    <div className="bottom-curve"></div>
+                </section>
+                <section className="why-difd-block">
+                    <h1 className="about-header">WHY CHOOSE DIFD?</h1>
                     <img src={whyAsset.file.url} alt={whyAsset.description} />
                 </section>
                 <section className="learningOutcome-block">
                     <h2>KEY LEARNING OUTCOMES</h2>
+                    <div className="learningOutcome-blob-container">
                     {allLearningOutcomes.map((index) => {
                         if(index.node.concentration.length == 4){
                             return(
-                                <Outcome 
-                                  iconSrc={index.node.icon.file.url} 
+                                <Outcome
+                                  iconSrc={index.node.icon.file.url}
                                   description={index.node.description.description}
                                   />)
                         }
                     })}
-                </section> 
+                    </div>
+                </section>
                 <section className="graduates-block">
                     <h2>LET OUR GRADUATES TELL YOU WHY</h2>
                     <div className="grad-blob-container">
                     {randomGradsList.map((index) =>{
-                        return(    
-                            <Grad 
-                            imgSrc={index.node.picture.fixed.src} 
-                            gradName={index.node.name} 
-                            jobTitle={index.node.jobTitle} 
-                            gradBio={index.node.bio.bio} 
+                        return(
+                            <Grad
+                            imgSrc={index.node.picture.fixed.src}
+                            gradName={index.node.name}
+                            jobTitle={index.node.jobTitle}
+                            gradBio={index.node.bio.bio}
                         />)
                     })}
                     </div>
@@ -112,7 +118,7 @@ export default class About extends Component {
 
 
 function getRandomGrads(gradList) {
-    // populate an array full of numbers and then shuffle it to get random grads. 
+    // populate an array full of numbers and then shuffle it to get random grads.
     let sequentialArray = []
     for(let i=0; i<gradList.length; i++){
         sequentialArray.push(i)
@@ -120,15 +126,15 @@ function getRandomGrads(gradList) {
     console.log('array one', sequentialArray)
     shuffle(sequentialArray)
     console.log('array two', sequentialArray)
-    
+
     let gradObject = []
 
     for(let a=0; a<3; a++){
         gradObject.push(gradList[sequentialArray[a]])
     }
-    
+
     return gradObject
-    
+
 }
 
 function shuffle(array){
@@ -146,7 +152,7 @@ function shuffle(array){
         array[currentIndex] = array[randIndex]
         array[randIndex] = tempVal
     }
-    
+
     return array
 }
 
@@ -210,7 +216,7 @@ query aboutPageQuery {
           }
         }
       }
-  
+
       allContentfulLearningOutcome {
         edges {
           node {
@@ -241,5 +247,5 @@ query aboutPageQuery {
           }
         }
       }
-  
+
 }`
