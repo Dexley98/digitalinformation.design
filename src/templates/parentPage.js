@@ -24,6 +24,9 @@ export default class parentPage extends Component {
             medianSalary
          } = this.props.data.contentfulConcentrationPageParents
 
+// trim the concentration title to get rid of parents suffix
+         const trimedConcentrationTitle = trimConcentrationName(concentrationTitle)
+        
 // Jobs, grads, and projects to pull into indiviudal components
          const jobList = this.props.data.allContentfulJob.edges
          const gradList = this.props.data.allContentfulGraduate.edges
@@ -38,14 +41,14 @@ export default class parentPage extends Component {
                 <section className="splashMedia-block">
                     <img className="hero-image" src={splashMedia[0].file.url} alt={splashMedia[0].description} />
                     <div className="parent-splash">
-                      <h1 className="parent-splash">{concentrationTitle}</h1>
+                      <h1 className="parent-splash">{trimedConcentrationTitle}</h1>
                       <h2 className="parent-splash">{mainActivity}</h2>
                     </div>
                 </section>
 
 {/* What Does it Mean Parent Section */}
                 <section className="whatDoesItMean-block-parents">
-                    <h2>What is {concentrationTitle}?</h2>
+                    <h2>What is {trimedConcentrationTitle}?</h2>
                     <p>{concentrationSummary.concentrationSummary}</p>
                 </section>
 
@@ -74,15 +77,27 @@ export default class parentPage extends Component {
                 </section>
 
 {/* Graduate Section */}
-                <section className="graduate-block">
-                    <h2>HEAR FROM OUR GRADUATES</h2>
-                    <p>See where past members of our program are today.</p>
-                    <div className="grad-blob-container">
-                      {gradList.map((index) =>{
-                        return(<Grad imgSrc={index.node.picture.file.url} gradName={index.node.name} jobTitle={index.node.jobTitle} gradBio={index.node.bio.bio} />)
-                      })}
+              { gradList.length > 0 &&
+                  <section className="graduate-block">
+                    <div className="top-curve"></div>
+                    <div className="middle-bg">
+                      <h2>HEAR FROM OUR GRADUATES</h2>
+                      <p>See where past members of our program are today.</p>
+                      <div className="grad-blob-container">
+                        {gradList.map((index) =>{
+                          return(
+                          <Grad
+                            imgSrc={index.node.picture.file.url}
+                            gradName={index.node.name}
+                            jobTitle={index.node.jobTitle}
+                            gradBio={index.node.bio.bio}
+                          />)
+                        })}
+                      </div>
                     </div>
-                </section>
+                    <div className="bottom-curve"></div>
+                  </section>
+              }
 
 {/* Student Work Section*/}
                 {allTrackProjects.length > 0 && 
@@ -102,7 +117,30 @@ export default class parentPage extends Component {
         )
 /* END OF RETURN */
 
-    }
+        function trimConcentrationName(concentrationName){
+          let trimedNameArray = concentrationName.split(" ")
+          let trimedName = ""
+
+          for(let i = 0; i<trimedNameArray.length; i++){
+            if( i == (trimedNameArray.length - 1) ){
+              // this is the last item in the trimed array. Should be 'Parents'. We won't add this to trimed name.
+            }
+
+            else if( i < (trimedNameArray.length - 2) ){
+              // this is everything except for the second to last index. We want to add a space inbetween the words.
+              trimedName += trimedNameArray[i] + " "
+            } 
+            
+            else {
+              // this is the second to last index. We don't want to add a space.
+              trimedName += trimedNameArray[i]
+            }
+          }
+
+          return trimedName
+
+        }
+  }
 /* END OF RENDER */ 
 
 }

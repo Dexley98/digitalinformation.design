@@ -68,7 +68,12 @@ class studentPage extends Component {
 
 {/* Parent Nav */}
                 <nav className="hide">
-                  <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
+                  <p>Are you a parent? 
+                    <Link to={`${slug}/parents`}
+                          state={{ prevPath: window.location.pathname}}>
+                            Click here!
+                    </Link>
+                  </p>
                 </nav>
 
 {/* Splash Media Section */}
@@ -121,25 +126,27 @@ class studentPage extends Component {
                 </section>
 
 {/* Graduate Section */}
-                <section className="graduate-block">
-                  <div className="top-curve"></div>
-                  <div className="middle-bg">
-                    <h2>HEAR FROM OUR GRADUATES</h2>
-                    <p>See where past members of our program are today.</p>
-                    <div className="grad-blob-container">
-                      {gradList.map((index) =>{
-                        return(
-                        <Grad
-                          imgSrc={index.node.picture.file.url}
-                          gradName={index.node.name}
-                          jobTitle={index.node.jobTitle}
-                          gradBio={index.node.bio.bio}
-                        />)
-                      })}
+              { gradList.length > 0 &&
+                  <section className="graduate-block">
+                    <div className="top-curve"></div>
+                    <div className="middle-bg">
+                      <h2>HEAR FROM OUR GRADUATES</h2>
+                      <p>See where past members of our program are today.</p>
+                      <div className="grad-blob-container">
+                        {gradList.map((index) =>{
+                          return(
+                          <Grad
+                            imgSrc={index.node.picture.file.url}
+                            gradName={index.node.name}
+                            jobTitle={index.node.jobTitle}
+                            gradBio={index.node.bio.bio}
+                          />)
+                        })}
+                      </div>
                     </div>
-                  </div>
-                  <div className="bottom-curve"></div>
-                </section>
+                    <div className="bottom-curve"></div>
+                  </section>
+              }
 
 {/* Learning Outcome Section */}
                 <section className="learningOutcomes-block">
@@ -156,7 +163,7 @@ class studentPage extends Component {
                         <Outcome
                           iconSrc={index.node.icon.file.url}
                           description={index.node.description.description}
-                          />)
+                        />)
                       })}
                   </div>
                 </section>
@@ -189,7 +196,13 @@ class studentPage extends Component {
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
-                  <p><Link to="/#tour" className="main-link">Learn More</Link></p>
+                  <p>
+                    <Link to="/#tour" 
+                          className="main-link"
+                          state={{ prevPath: window.location.pathname}}>
+                      Learn More
+                    </Link>
+                  </p>
                 </section>
 
                 <Apply />
@@ -204,7 +217,7 @@ class studentPage extends Component {
            courseObject.map((index) => {
              allCourseArray.push(index.node)
            })
-           return allCourseArray;
+           return allCourseArray
          }
      }
 /* END OF RENDER */

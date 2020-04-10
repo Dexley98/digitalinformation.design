@@ -23,7 +23,7 @@ export default class About extends Component {
             commerceBlurb,
             massMediaBlurb,
             whyAsset,
-        } = this.props.data.allContentfulAboutPage.edges[0].node
+        } = this.props.data.allContentfulAboutPage.nodes[0]
 
         const allGraduates = this.props.data.allContentfulGraduate.edges;
         const allLearningOutcomes = this.props.data.allContentfulLearningOutcome.edges;
@@ -103,7 +103,7 @@ export default class About extends Component {
                   <p>{whatIsDifd.whatIsDifd}</p>
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} alt={whyWinthropAsset2.description} />
-                  {/*bpttom content */}
+                  {/*bottom content */}
                   <p>{whyWinthrop2.whyWinthrop2}</p>
                   <p>If you can’t make it out to see our campus we can bring it to you. View our virtual tour below to experience everything our campus has to offer from the comfort of your home.</p>
                   <img src={whyWinthropAsset2.file.url} alt={whyWinthropAsset2.description} />
@@ -164,36 +164,35 @@ export const pageQuery = graphql`
 query aboutPageQuery {
 
     allContentfulAboutPage {
-      edges {
-        node {
-          bannerImage {
-            description
-            file {
-              url
-            }
+      nodes {
+        bannerImage {
+          description
+          file {
+            url
           }
-          whatIsDifd {
-            whatIsDifd
-          }
-          tracksOverview {
-            tracksOverview
-          }
-          imBlurb {
-            imBlurb
-          }
-          webAppsBlurb {
-            webAppsBlurb
-          }
-          commerceBlurb {
-            commerceBlurb
-          }
-          massMediaBlurb {
-            massMediaBlurb
-          }
-          whyAsset {
-            file {
-              url
-            }
+        }
+        whatIsDifd {
+          whatIsDifd
+        }
+        tracksOverview {
+          tracksOverview
+        }
+        imBlurb {
+          imBlurb
+        }
+        webAppsBlurb {
+          webAppsBlurb
+        }
+        commerceBlurb {
+          commerceBlurb
+        }
+        massMediaBlurb {
+          massMediaBlurb
+        }
+        whyAsset {
+          description
+          file {
+            url
           }
         }
       }

@@ -19,6 +19,7 @@ const Header = ({ siteTitle }) => (
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
+          state={{ prevPath: window.location.pathname}}
           style={{
             color: `white`,
             textDecoration: `none`,
