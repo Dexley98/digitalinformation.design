@@ -25,10 +25,10 @@ export default class About extends Component {
             whyAsset,
         } = this.props.data.allContentfulAboutPage.nodes[0]
 
-        const allGraduates = this.props.data.allContentfulGraduate.edges;
-        const allLearningOutcomes = this.props.data.allContentfulLearningOutcome.edges;
+        const allGraduates = this.props.data.allContentfulGraduate.edges
+        const allLearningOutcomes = this.props.data.allContentfulLearningOutcome.edges
 
-        const randomGradsList = getRandomGrads(allGraduates);
+        const randomGradsList = getRandomGrads(allGraduates)
 
         const {
           whyWinthrop1,
@@ -202,12 +202,12 @@ query aboutPageQuery {
         edges {
           node {
             concentration
-            picture {
+            gradPicture {
               fixed {
                 src
               }
             }
-            name
+            gradName
             jobTitle
             bio {
               bio

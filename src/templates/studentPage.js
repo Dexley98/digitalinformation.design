@@ -136,8 +136,8 @@ class studentPage extends Component {
                         {gradList.map((index) =>{
                           return(
                           <Grad
-                            imgSrc={index.node.picture.file.url}
-                            gradName={index.node.name}
+                            imgSrc={index.node.gradPicture.file.url}
+                            gradName={index.node.gradName}
                             jobTitle={index.node.jobTitle}
                             gradBio={index.node.bio.bio}
                           />)
@@ -288,12 +288,12 @@ query studentPageQuery($slug: String!){
       edges {
         node {
           concentration
-          picture {
+          gradPicture {
             file {
               url
             }
           }
-          name
+          gradName
           jobTitle
           bio {
             bio

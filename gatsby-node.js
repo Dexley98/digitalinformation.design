@@ -1,6 +1,5 @@
 const path = require('path');
 
-
 // Create pages for concentration pages
 exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions;
