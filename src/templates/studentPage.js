@@ -68,7 +68,12 @@ class studentPage extends Component {
 
 {/* Parent Nav */}
                 <nav className="hide">
-                  <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
+                  <p>Are you a parent? 
+                    <Link to={`${slug}/parents`}
+                          state={{ prevPath: window.location.pathname}}>
+                            Click here!
+                    </Link>
+                  </p>
                 </nav>
 
 {/* Splash Media Section */}
@@ -158,7 +163,7 @@ class studentPage extends Component {
                         <Outcome
                           iconSrc={index.node.icon.file.url}
                           description={index.node.description.description}
-                          />)
+                        />)
                       })}
                   </div>
                 </section>
@@ -191,7 +196,13 @@ class studentPage extends Component {
                   <p>{whyWinthrop1.whyWinthrop1}</p>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
-                  <p><Link to="/#tour" className="main-link">Learn More</Link></p>
+                  <p>
+                    <Link to="/#tour" 
+                          className="main-link"
+                          state={{ prevPath: window.location.pathname}}>
+                      Learn More
+                    </Link>
+                  </p>
                 </section>
 
                 <Apply />
@@ -206,7 +217,7 @@ class studentPage extends Component {
            courseObject.map((index) => {
              allCourseArray.push(index.node)
            })
-           return allCourseArray;
+           return allCourseArray
          }
      }
 /* END OF RENDER */

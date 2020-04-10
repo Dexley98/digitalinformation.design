@@ -23,7 +23,10 @@ export default class Track extends Component {
             <div className="track-blob">
                 <h3>{getTrackName(this.props.slug)}</h3>
                 <p>{this.props.overview}</p>
-                <Link to={this.props.slug}>Learn More</Link>
+                <Link to={this.props.slug}
+                      state={{ prevPath: window.location.pathname}}>
+                          Learn More
+                </Link>
             </div>
         )
     }
