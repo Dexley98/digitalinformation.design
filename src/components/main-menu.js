@@ -16,19 +16,38 @@ class Menu extends React.Component {
             <a href="#">Our Graduates</a>
           </div>
         </div>
-        <a href="#news">Student Work</a>
+        <Link to="/student-work"
+              state={{ prevPath: window.location.pathname}}>
+                Student Work
+        </Link>
         <div className="dropdown">
           <button className="dropbtn">DIFD Tracks
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <Link to="/commerce">Digital Commerce</Link>
-            <Link to="/massmedia">Digital Mass Media</Link>
-            <Link to="/interactivemedia">Interactive Media</Link>
-            <Link to="/webapps">Web Applications</Link>
+            <Link to="/commerce"
+                  state={{ prevPath: window.location.pathname}}>
+                    Digital Commerce
+            </Link>
+            <Link to="/massmedia"
+                  state={{ prevPath: window.location.pathname}}>
+                    Digital Mass Media
+            </Link>
+            <Link to="/interactivemedia"
+                  state={{ prevPath: window.location.pathname}}>
+                    Interactive Media
+            </Link>
+            <Link to="/webapps"
+                  state={{ prevPath: window.location.pathname}}>
+                    Web Applications
+            </Link>
           </div>
         </div>
-        <Link to="/about" className="active">About</Link>
+        <Link to="/" 
+              state={{ prevPath: window.location.pathname}}
+              className="active">
+                About
+        </Link>
     </div>
     );
   }

@@ -1,7 +1,8 @@
 import React, {Component} from "react"
 import PropTypes from 'prop-types';
-import { graphql, navigate, Link} from 'gatsby'
+import { graphql, Link} from 'gatsby'
 
+// Pull in Components
 import Menu from "../components/main-menu"
 import Footer from "../components/footer"
 import Job from '../components/job'
@@ -13,7 +14,7 @@ import CourseBlock from '../components/course'
 
 class studentPage extends Component {
      render(){
-// major content for page
+// Major content for page
         const {
           slug,
           concentrationTitle,
@@ -27,24 +28,22 @@ class studentPage extends Component {
           learningOutcomesSummary
         } = this.props.data.contentfulConcentrationPageHome
 
-// campus info and assets
+// Campus info and assets
         const {
           whyWinthrop1,
           whyWinthropAssets
         }  = this.props.data.contentfulWhyWinthrop
         const whyWinthropAsset1 = whyWinthropAssets[0];
 
-// student project 'meta' info
-        const allTrackProjects = this.props.data.allContentfulProject.edges
-
-// all course object declared then converted to array
+// All Courses converted to array
         const allCourseObject = this.props.data.allContentfulCourse.edges
         const allCourseArray = getAllCourseArray(allCourseObject)
 
-// job, grads, and learning outcomes to pull into indiviudal components
+// Jobs, grads, learning outcomes, and student project info to pull into indiviudal components
         const jobList = this.props.data.allContentfulJob.edges
         const gradList = this.props.data.allContentfulGraduate.edges
         const learningOutcomeList = this.props.data.allContentfulLearningOutcome.edges
+        const allTrackProjects = this.props.data.allContentfulProject.edges
 
 
 
@@ -62,8 +61,6 @@ class studentPage extends Component {
          console.log(this.props.data.allContentfulCourse)
 **********************************End Debugging Block *************************************************/
 
-
-
          return(
 
              <div className="body">
@@ -71,7 +68,12 @@ class studentPage extends Component {
 
 {/* Parent Nav */}
                 <nav className="hide">
-                  <p>Are you a parent? <Link to={`${slug}/parents`}>Click here!</Link></p>
+                  <p>Are you a parent?
+                    <Link to={`${slug}/parents`}
+                          state={{ prevPath: window.location.pathname}}>
+                            Click here!
+                    </Link>
+                  </p>
                 </nav>
 
 {/* Splash Media Section */}
@@ -124,25 +126,27 @@ class studentPage extends Component {
                 </section>
 
 {/* Graduate Section */}
-                <section className="graduate-block">
-                  <div className="top-curve"></div>
-                  <div className="middle-bg">
-                    <h2>HEAR FROM OUR GRADUATES</h2>
-                    <p>See where past members of our program are today.</p>
-                    <div className="grad-blob-container">
-                      {gradList.map((index) =>{
-                        return(
-                        <Grad
-                          imgSrc={index.node.picture.file.url}
-                          gradName={index.node.name}
-                          jobTitle={index.node.jobTitle}
-                          gradBio={index.node.bio.bio}
-                        />)
-                      })}
+              { gradList.length > 0 &&
+                  <section className="graduate-block">
+                    <div className="top-curve"></div>
+                    <div className="middle-bg">
+                      <h2>HEAR FROM OUR GRADUATES</h2>
+                      <p>See where past members of our program are today.</p>
+                      <div className="grad-blob-container">
+                        {gradList.map((index) =>{
+                          return(
+                          <Grad
+                            imgSrc={index.node.picture.file.url}
+                            gradName={index.node.name}
+                            jobTitle={index.node.jobTitle}
+                            gradBio={index.node.bio.bio}
+                          />)
+                        })}
+                      </div>
                     </div>
-                  </div>
-                  <div className="bottom-curve"></div>
-                </section>
+                    <div className="bottom-curve"></div>
+                  </section>
+              }
 
 {/* Learning Outcome Section */}
                 <section className="learningOutcomes-block">
@@ -159,23 +163,24 @@ class studentPage extends Component {
                         <Outcome
                           iconSrc={index.node.icon.file.url}
                           description={index.node.description.description}
-                          />)
+                        />)
                       })}
                   </div>
                 </section>
 
-{/* Student Work Section*/}
-                <section className="student-work-block">
-                  <h2>STUDENT WORK</h2>
-                  <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
-                  <div className="project-container">
+{/* Student Work Section (conditional on length of published student work from contentful */}
+                {allTrackProjects.length > 0 &&
+                  <section className="student-work-block">
+                    <h2>STUDENT WORK</h2>
+                    <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
                     {allTrackProjects.map((index) =>{
                       return(
                         <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
                         )
                     })}
-                  </div>
-                </section>
+                  </section>
+                }
+
 
 {/* Coursework Section */}
                 <section className="coursework-block">
@@ -193,13 +198,20 @@ class studentPage extends Component {
                   </div>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
-                  <p><Link to="/about#tour" className="main-link">Learn More</Link></p>
+                  <p>
+                    <Link to="/#tour"
+                          className="main-link"
+                          state={{ prevPath: window.location.pathname}}>
+                      Learn More
+                    </Link>
+                  </p>
                 </section>
 
                 <Apply />
                 <Footer />
              </div>
          )
+/* END OF RETURN */
 
 // put all courses into an array so that it can be pushed as a prop.
          function getAllCourseArray(courseObject){
@@ -207,10 +219,14 @@ class studentPage extends Component {
            courseObject.map((index) => {
              allCourseArray.push(index.node)
            })
-           return allCourseArray;
+           return allCourseArray
          }
      }
+/* END OF RENDER */
+
 }
+/* END OF STUDENT TEMPLATE CLASS */
+
 
 studentPage.propTypes = {
   data: PropTypes.object.isRequired
@@ -311,6 +327,7 @@ query studentPageQuery($slug: String!){
           title
           shortDescription
           projectMedia {
+            description
             file{
               contentType
               url
