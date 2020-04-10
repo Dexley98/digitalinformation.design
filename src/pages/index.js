@@ -29,6 +29,7 @@ export default class About extends Component {
         const allLearningOutcomes = this.props.data.allContentfulLearningOutcome.edges
 
         const randomGradsList = getRandomGrads(allGraduates)
+        console.log('random grad list ', randomGradsList)
 
         const {
           whyWinthrop1,
@@ -89,7 +90,7 @@ export default class About extends Component {
                     {randomGradsList.map((index) =>{
                         return(
                             <Grad
-                            imgSrc={index.node.picture.fixed.src}
+                            imgSrc={index.node.gradPicture.file.url}
                             gradName={index.node.name}
                             jobTitle={index.node.jobTitle}
                             gradBio={index.node.bio.bio}
@@ -209,8 +210,8 @@ query aboutPageQuery {
           node {
             concentration
             gradPicture {
-              fixed {
-                src
+              file {
+                url
               }
             }
             gradName
