@@ -70,13 +70,13 @@ export default class CourseBlock extends Component {
         function getTrackName(slug){
             switch(slug){
                 case 'interactivemedia':
-                    return "IM Core"
+                    return "IM Courses"
                 case 'webapps':
-                    return "WEB APPS Core"
+                    return "WA Courses"
                 case 'commerce':
-                    return "COMMERCE Core"
+                    return "DC Courses"
                 case 'massmedia':
-                    return "MASS MEDIA Core"
+                    return "DMM Courses"
                 default:
                     return "Not a track!"
             }
@@ -107,10 +107,9 @@ const CoreCourseList = ({array}) => {
         if(index.coreElective){
             return(
                 <div className="course-blob elective">
-                    <p className="designator">{trimDesignator(index.designator)}</p>
-                    <p className="name">{index.name}</p>
-                    <p className="hours">{index.hours}</p>
-                    <p>I'M AN ELECTIVE!</p>
+                    <p className="elective-designator">{trimDesignator(index.designator)}</p>
+                    <p className="elective-name">{index.name}</p>
+                    <p className="elective-hours">{index.hours}</p>
                 </div>
             )
         }else{

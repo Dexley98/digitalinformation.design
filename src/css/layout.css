@@ -38,6 +38,22 @@ h2{
     h2 {
       font-size: 35px;
       line-height: 40px;} }
+h3{
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 300;
+  color: #332531;
+  text-align: center;
+  font-style: italic;}
+  @media (min-width: 700px) {
+    h3 {
+      font-size: 22px;
+      line-height: 26px;} }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 25px;
+      line-height: 30px;} }
 h4{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-style: normal;
@@ -584,7 +600,10 @@ div.tagline-item{
     .grad-blob-container{
       } }
 .grad-blob{
-  margin: 60px 5% 0px 5%;}
+  margin: 60px 5% 0px 5%;
+  display: flex;
+justify-content: center;
+flex-wrap: wrap;}
   @media (min-width: 700px) {
     .grad-blob{
       margin: 0px 5%;
@@ -596,6 +615,12 @@ div.tagline-item{
   margin: 0 auto;
   width: 100%;
   border-radius: 30% 70% 39% 61% / 42% 36% 64% 58% ;}
+  @media (min-width: 700px) {
+    .grad-blob img{
+      margin: 0px 12%;} }
+  @media (min-width: 1024px) {
+    .grad-blob img{
+      margin: 0 auto;} }
 .grad-blob h4{
   font-size: 18px;
   line-height: 22px;
@@ -650,7 +675,7 @@ div.learningOutcomes-info{
       } }
 div.learningOutcomes-info h2{
   text-align: left;
-  padding: 10% 10% 0px 18%;}
+  padding: 10% 10% 0px 10%;}
   @media (min-width: 700px) {
     div.learningOutcomes-info h2{
       text-align: left;
@@ -658,10 +683,10 @@ div.learningOutcomes-info h2{
   @media (min-width: 1024px) {
     div.learningOutcomes-info h2{
       text-align: left;
-      padding: 10% 10% 0px 18%;} }
+      padding: 10% 10% 0px 10%;} }
 div.learningOutcomes-info p{
   text-align: left;
-  padding: 0px 10% 0px 18%;
+  padding: 0px 10% 0px 10%;
   line-height: 1.6;}
   @media (min-width: 700px) {
     div.learningOutcomes-info p{
@@ -670,10 +695,10 @@ div.learningOutcomes-info p{
   @media (min-width: 1024px) {
     div.learningOutcomes-info p{
       text-align: left;
-      padding: 10% 10% 0px 18%;} }
+      padding: 0% 10% 0px 10%;} }
 div.learningOutcomes-info img{
-  width: 40%;
-  margin: 50px 10px 0px 100px;
+  width: 90%;
+  margin: 20px auto;
   border-radius: 76% 24% 36% 64% / 43% 34% 66% 57% ;}
   @media (min-width: 700px) {
     div.learningOutcomes-info img{
@@ -721,7 +746,6 @@ div.learningOutcomes-info img{
     .coursework-block{
       } }
 .coursework-block p{
-
 }
   @media (min-width: 700px) {
     .coursework-block p{
@@ -729,18 +753,52 @@ div.learningOutcomes-info img{
   @media (min-width: 1024px) {
     .coursework-block p{
       } }
+.core-course-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid #D3C5AE;
+  padding: 5%;
+  background-color: #FFFFFB;}
+  @media (min-width: 700px) {
+    .core-course-list{
+      border: 4px solid #D3C5AE;
+      padding: 6%;} }
+  @media (min-width: 1024px) {
+    .core-course-list{
+      border: 4px solid #D3C5AE;
+      padding: 6%;} }
+.course-list-container{
+  margin: 0 6%;
+  }
+  @media (min-width: 700px) {
+    .course-list-container{
+      } }
+.course-legend{
+  margin-top: 20px;
+}
 .course-list-container button{
   background-color: #332531;
   color: #FDFCF3;
   border: none;
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   text-decoration: none;
-  padding: 16px 24px;
+  padding: 10px 24px;
   border-radius: 10px 10px 0px 0px;
-  transition: 0.5s ease;
-}
+  transition: 0.5s ease; }
+  @media (min-width: 700px) {
+    .course-list-container button{
+      font-size: 14px;
+      text-decoration: none;
+      padding: 16px 24px;} }
+  @media (min-width: 1024px) {
+    .course-list-container button{
+      font-size: 16px;
+      text-decoration: none;
+      padding: 16px 24px;} }
 .course-list-container button:focus{
   border-bottom: 2px solid #F6BC93;
   background-color: #423040;
@@ -748,8 +806,35 @@ div.learningOutcomes-info img{
 .course-blob {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
+  align-items: left;
+  width: 50%;
+margin: 0 20px;}
+  @media (min-width: 700px) {
+    .course-blob{
+      } }
+  @media (min-width: 1024px) {
+    .course-blob{
+    max-width: 420px;
+    } }
+p.elective-designator, p.designator, p.hours, p.elective-hours{
+  font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
+  color: #332531;
+  text-align: left;}
+  @media (min-width: 700px) {
+    p.elective-designator, p.designator, p.hours, p.elective-hours{
+      font-size: 14px;} }
+p.elective-name, p.name{
+  color: #664363;
+  text-align: left;
+  padding: 0 4%;}
+  @media (min-width: 700px) {
+    p.elective-name, p.name{
+      font-size: 14px;
+      padding: 0 4%;} }
+
+.outside-electives-blob{
+
 }
 /* WHY WINTHROP BLOCK */
 
@@ -842,3 +927,129 @@ h2.parent-splash{
 }
 
 /* EMPLOYMENT OUTLOOK */
+
+
+
+
+
+/* ABOUT PAGE */
+
+/* SPLASH IMAGE AREA */
+.about-bannerImg-block img{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+/* WHAT IS DIFD BLOCK */
+.what-is-difd-block{
+  margin: 100px 0;
+}
+.about-header{
+  font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
+  text-align: center;
+  color: #EC6A12;
+  font-size: 40px;
+  line-height: 50px;
+  text-shadow: none;}
+  @media (min-width: 700px) {
+    .about-header{
+      font-size: 60px;
+      line-height: 70px;} }
+  @media (min-width: 1024px) {
+    .about-header{
+      font-size: 80px;
+      line-height: 90px;
+      } }
+.purple-highlight{
+  color: #664363;
+}
+.what-is-difd-block p{
+  padding: 0 10%;
+  margin-top: 20px;}
+  @media (min-width: 700px) {
+    .what-is-difd-block p{
+      padding: 0 15%;
+      margin-top: 20px;} }
+  @media (min-width: 1024px) {
+    .what-is-difd-block p{
+      padding: 0 20%;
+      margin-top: 50px;} }
+
+/* TRACKS BLOCK */
+
+.tracks-block h1, .tracks-block p{
+  text-align: left;
+  padding: 0 10%;
+  width: 700px;}
+  @media (min-width: 700px) {
+    .tracks-block h1, .tracks-block p{
+      padding: 0 8%;
+      width: 500px;} }
+  @media (min-width: 1024px) {
+    .tracks-block h1, .tracks-block p{
+      padding: 0 10%;
+      width: 700px;} }
+.tracks-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 100px auto 0 auto;}
+  @media (min-width: 700px) {
+    .tracks-container{
+      } }
+  @media (min-width: 1024px) {
+    .tracks-container{
+      margin: 100px auto 0 auto;} }
+.track-blob{
+  max-width: 500px;
+  height: 300px;
+  }
+  @media (min-width: 700px) {
+    .track-blob{
+      max-width: 260px;
+      padding: 0 4%;
+      height: 300px;} }
+  @media (min-width: 1024px) {
+    .track-blob{
+      max-width: 300px;
+      padding: 0 8%;
+      height: 300px;
+      } }
+.track-blob h3{
+  font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
+  text-align: left;
+  color: #664363;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  text-shadow: none;
+  font-style: normal;
+  margin: 0;}
+  @media (min-width: 700px) {
+    .track-blob h3{
+      font-size: 22px;
+      line-height: 28px;} }
+  @media (min-width: 1024px) {
+    .track-blob h3{
+      font-size: 28px;
+      line-height: 30px;} }
+.track-blob p{
+  text-align: left;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 0;
+  padding: 0;
+  width: inherit;}
+  @media (min-width: 700px) {
+    .track-blob p{
+      font-size: 16px;
+      line-height: 20px;
+      padding: 30px 0 50px 0;
+      max-width: 80%;} }
+.track-blob a{
+  position: relative;
+  bottom: 0;
+  left: 0;
+
+}

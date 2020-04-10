@@ -179,7 +179,7 @@ class studentPage extends Component {
                 <section className="coursework-block">
                   <h2>COURSEWORK</h2>
                   <p>Here's a taste of the classes you may take while in DIFD.</p>
-                  <CourseBlock courseList={allCourseArray} slug={slug}/>
+                  <CourseBlock courseList={allCourseArray} slug={slug} className="course-selector"/>
                 </section>
 
 {/* Why Winthrop? Section */}
