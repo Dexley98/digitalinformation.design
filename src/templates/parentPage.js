@@ -43,17 +43,23 @@ export default class parentPage extends Component {
                     <p>{employmentOutlook.employmentOutlook}</p>
                 </section>
                 <section className="job-oppurtunities-block">
+                  <div className="job-opportunities-header">
                     <h2>Job Opportunities</h2>
-                    <img src={concentrationAsset.file.url} alt={concentrationAsset.description} />
                     <p>{jobOpportunities.jobOpportunities}</p>
-                    <div className="job-blob-container">
-                      {jobList.map((index) =>{
-                        return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
-                      })}
+                  </div>
+                    <img className="job-opportunities-header" src={concentrationAsset.file.url} alt={concentrationAsset.description} />
+                    <div>
+                      <div className="job-blob-container spacing">
+                        {jobList.map((index) =>{
+                          return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
+                        })}
+                      </div>
+                      <p className="spacing">Do you want to learn more about the careers that our program can prepare you for?</p>
+                      <p><a href="" className="main-link">Learn More</a></p>
                     </div>
-                    <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p>LINK WILL GO HERE.</p>
+
                 </section>
+                <div className="bottom-curve"></div>
                 <section className="median-salary-block">
                     <p>{medianSalary.medianSalary}</p>
                 </section>
@@ -67,7 +73,7 @@ export default class parentPage extends Component {
                     </div>
                 </section>
                 <section className="student-work-block">
-                    <h3>STUDENT WORK</h3>  
+                    <h3>STUDENT WORK</h3>
                     <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
                     <p>STUDENT WORK COMPONENTS WILL GO HERE.</p>
                 </section>

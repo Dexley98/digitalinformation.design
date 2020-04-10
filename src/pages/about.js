@@ -69,7 +69,7 @@ export default class About extends Component {
                     <h1 className="about-header">WHY CHOOSE DIFD?</h1>
                     <img src={whyAsset.file.url} alt={whyAsset.description} />
                 </section>
-                <section className="learningOutcome-block">
+                <section className="learningOutcome-block top-padding">
                     <h2>KEY LEARNING OUTCOMES</h2>
                     <div className="learningOutcome-blob-container">
                     {allLearningOutcomes.map((index) => {
@@ -83,7 +83,7 @@ export default class About extends Component {
                     })}
                     </div>
                 </section>
-                <section className="graduates-block">
+                <section className="graduates-block top-padding">
                     <h2>LET OUR GRADUATES TELL YOU WHY</h2>
                     <div className="grad-blob-container">
                     {randomGradsList.map((index) =>{
@@ -98,16 +98,21 @@ export default class About extends Component {
                     </div>
                 </section>
                 <section id="tour" className="why-winthrop-block">
-                  <h2>OUR CAMPUS</h2>
-                  {/*top content */}
-                  <p>{whatIsDifd.whatIsDifd}</p>
-                  <p>{whyWinthrop1.whyWinthrop1}</p>
+                  <div>
+                    <h2>OUR CAMPUS</h2>
+                    {/*top content */}
+                    <p>{whatIsDifd.whatIsDifd}</p>
+                    <p>{whyWinthrop1.whyWinthrop1}</p>
+                  </div>
                   <img src={whyWinthropAsset1.file.url} alt={whyWinthropAsset2.description} />
                   {/*bpttom content */}
-                  <p>{whyWinthrop2.whyWinthrop2}</p>
-                  <p>If you can’t make it out to see our campus we can bring it to you. View our virtual tour below to experience everything our campus has to offer from the comfort of your home.</p>
                   <img src={whyWinthropAsset2.file.url} alt={whyWinthropAsset2.description} />
-                  <a href="https://www.winthrop.edu/virtualtour/">Take the Tour</a>
+                  <div>
+                    <p>{whyWinthrop2.whyWinthrop2}</p>
+                    <p>If you can’t make it out to see our campus we can bring it to you. View our virtual tour below to experience everything our campus has to offer from the comfort of your home.</p>
+                    <a className="main-link" href="https://www.winthrop.edu/virtualtour/">Take the Tour</a>
+                  </div>
+
                 </section>
                 <Apply />
             <Footer />

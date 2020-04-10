@@ -148,7 +148,9 @@ a.main-link{
   padding: 0px 0px 40px 0px;
   margin-top: 0px;
 }
-
+.top-padding{
+  padding-top: 100px;
+}
 /* MAIN MENU CSS */
 
 .topnav {
@@ -697,6 +699,8 @@ div.learningOutcomes-info p{
       text-align: left;
       padding: 0% 10% 0px 10%;} }
 div.learningOutcomes-info img{
+  display: flex;
+  justify-content: center;
   width: 90%;
   margin: 20px auto;
   border-radius: 76% 24% 36% 64% / 43% 34% 66% 57% ;}
@@ -709,6 +713,12 @@ div.learningOutcomes-info img{
     div.learningOutcomes-info img{
       text-align: left;
       margin: 50px 10px 0px 100px;} }
+.learningOutcome-icon-wrapper{
+  border-radius: 53% 47% 51% 49% / 40% 62% 38% 60%;
+  animation: wobble 12s linear alternate infinite;
+    background-color: #FFF8F2;
+    padding: 15px;
+}
 .learningOutcome-blob-container{
   display: flex;
   flex-wrap: wrap;
@@ -722,17 +732,67 @@ div.learningOutcomes-info img{
 }
 
 /* STUDENT WORK BLOCK */
-
+.student-work-block{
+  background-image: url("../images/bg-shape2.png");
+  background-position: left;
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  z-index: -2;
+  position: relative;
+  margin: 100px 0;
+}
 .student-work-block p{
-
+  max-width: 700px;
+  margin: 0 auto;
 }
   @media (min-width: 700px) {
     .student-work-block p{
-      } }
+      max-width: 500px;
+      margin: 0 auto;} }
   @media (min-width: 1024px) {
     .student-work-block p{
       max-width: 700px;
       margin: 0 auto;} }
+.project-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.projectBrief-blob{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  margin: 50px;
+}
+@media (min-width: 700px) {
+  .projectBrief-blob{
+    max-width: 350px;
+    margin: 40px;} }
+@media (min-width: 1024px) {
+  .projectBrief-blob{
+    max-width: 420px;
+    margin: 50px;} }
+.projectBrief-blob img{
+  max-width: 100%;
+  position: relative;
+  z-index: -1;
+  box-shadow: 6px 6px 0px #F6BC93, 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.projectBrief-blob img:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.projectBrief-blob h3{
+  text-align: left !important;
+  font-size: 30px;
+  line-height: 22px;
+  color: #664363;
+  font-weight: 900;
+  font-style: none;
+}
+.projectBrief-blob p{
+  text-align: left;
+}
 
 /* COURSEWORK BLOCK*/
 
@@ -857,6 +917,10 @@ p.elective-name, p.name{
 .apply-now-block p{
   margin-bottom: 50px;
 }
+
+
+
+
 /*PARENTS PAGE*/
 
 /* SPLASH IMAGE */
@@ -915,23 +979,59 @@ h2.parent-splash{
 .whatDoesItMean-block-parents h2{
   text-transform: uppercase;
   text-align: right;
-  max-width: 400px;
   align-self: flex-start;
   padding: 20px;
-
 }
 .whatDoesItMean-block-parents p{
   text-align: left;
+  align-self: flex-start;
   max-width: 500px;
   padding: 40px;
 }
 
 /* EMPLOYMENT OUTLOOK */
 
+.employment-outlook-block p, .median-salary-block p{
+  font-family: 'AvenirLTStd', Arial, sans-serif;
+  font-size: 26px;
+  line-height: 30px;
+  padding: 100px 4%;
+  background-image: url("../images/bg-shape2.png");
+  background-position: contain;
+  background-size: cover;
+  background-repeat: no-repeat;}
+  @media (min-width: 700px) {
+    .employment-outlook-block p, .median-salary-block p{
+      font-size: 30px;
+      line-height: 38px;
+      padding: 150px 8%;} }
+  @media (min-width: 1024px) {
+    .employment-outlook-block p, .median-salary-block p{
+      font-size: 40px;
+      line-height: 50px;
+      padding: 200px 10%;
+      } }
 
+/* JOB OPPORTUNITIES */
 
-
-
+.job-oppurtunities-block{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #FFF8F2;
+  margin-top: -40px;
+  padding: 100px 0;
+}
+.job-opportunities-header{
+  width: 40%;
+  padding: 0 2%;
+}
+.job-opportunities-header h2, .job-opportunities-header p{
+  text-align: right;
+}
+.spacing{
+  margin: 100px 0 50px 0;
+}
 /* ABOUT PAGE */
 
 /* SPLASH IMAGE AREA */
@@ -980,8 +1080,8 @@ h2.parent-splash{
 
 .tracks-block h1, .tracks-block p{
   text-align: left;
-  padding: 0 10%;
-  width: 700px;}
+  padding: 0 8%;
+  width: 80%;}
   @media (min-width: 700px) {
     .tracks-block h1, .tracks-block p{
       padding: 0 8%;
@@ -1002,9 +1102,9 @@ h2.parent-splash{
     .tracks-container{
       margin: 100px auto 0 auto;} }
 .track-blob{
-  max-width: 500px;
+  max-width: 100%;
   height: 300px;
-  }
+  padding: 0 8%;}
   @media (min-width: 700px) {
     .track-blob{
       max-width: 260px;
@@ -1039,7 +1139,7 @@ h2.parent-splash{
   font-size: 20px;
   line-height: 25px;
   margin: 0;
-  padding: 0;
+    padding: 20px 0 40px 0;
   width: inherit;}
   @media (min-width: 700px) {
     .track-blob p{
@@ -1051,5 +1151,70 @@ h2.parent-splash{
   position: relative;
   bottom: 0;
   left: 0;
+}
 
+/* WHY CHOOSE DIFD */
+.why-difd-block{
+  display: flex;
+  margin: 100px 0px;
+}
+.why-difd-block h1{
+  text-align: left;
+  margin: 100px -10% 0 10%;
+}
+.why-difd-block img{
+  width: 50%;
+  position: relative;
+  right: 0;
+  z-index: -1;
+}
+
+/* WHY WINTHROP */
+
+.why-winthrop-block{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 100px;
+  background-image: url("../images/bg-shape1.png");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 160px 20px;
+}
+@media (min-width: 700px) {
+  .why-winthrop-block{
+    flex-wrap: wrap;} }
+@media (min-width: 1024px) {
+  .why-winthrop-block{
+    } }
+.why-winthrop-block div, .why-winthrop-block img {
+  width: 40%;
+  height: 100%;
+  border-radius: 39% 61% 47% 53% / 48% 66% 34% 52%;
+  margin: 10% 0 0 4%;
+}
+  @media (min-width: 700px) {
+    .why-winthrop-block div,.why-winthrop-block img {
+      } }
+  @media (min-width: 1024px) {
+    .why-winthrop-block div,.why-winthrop-block img {
+      } }
+.why-winthrop-block img {
+  box-shadow: -10px 14px 0px #332531;
+  margin-top: 100px;
+}
+.why-winthrop-block h2, .why-winthrop-block p{
+  text-align: left;}
+  @media (min-width: 700px) {
+    .why-winthrop-block h2, .why-winthrop-block p {
+      } }
+  @media (min-width: 1024px) {
+    .why-winthrop-block h2, .why-winthrop-block p{
+      } }
+
+/* OUR PEOPLE */
+.Professor{
+  max-width: 300px;
+  text-align: center;
 }

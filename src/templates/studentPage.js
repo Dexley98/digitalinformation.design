@@ -168,11 +168,13 @@ class studentPage extends Component {
                 <section className="student-work-block">
                   <h2>STUDENT WORK</h2>
                   <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
-                  {allTrackProjects.map((index) =>{
-                    return(
-                      <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
-                      )
-                  })}
+                  <div className="project-container">
+                    {allTrackProjects.map((index) =>{
+                      return(
+                        <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
+                        )
+                    })}
+                  </div>
                 </section>
 
 {/* Coursework Section */}
@@ -184,9 +186,11 @@ class studentPage extends Component {
 
 {/* Why Winthrop? Section */}
                 <section className="why-winthrop-block">
-                  <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
-                  <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
-                  <p>{whyWinthrop1.whyWinthrop1}</p>
+                  <div>
+                    <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
+                    <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
+                    <p>{whyWinthrop1.whyWinthrop1}</p>
+                  </div>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
                   <p><Link to="/about#tour" className="main-link">Learn More</Link></p>

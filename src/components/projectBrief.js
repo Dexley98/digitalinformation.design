@@ -5,9 +5,11 @@ export default class ProjectBrief extends Component {
         console.log(this.props.projectMedia[0])
         return (
             <div className="projectBrief-blob">
-                <h3>{this.props.title}</h3>
-                <p>{this.props.shortDesc}</p>
                 <DisplayMedia mediaInfo= {this.props.projectMedia[0]} />
+                <div className="overlay">
+                  <h3>{this.props.title}</h3>
+                  <p>{this.props.shortDesc}</p>
+                </div>
             </div>
         )
     }
