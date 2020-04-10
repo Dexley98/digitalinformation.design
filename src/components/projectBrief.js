@@ -5,7 +5,7 @@ export default class ProjectBrief extends Component {
     render() {
         console.log(this.props.projectMedia[0])
         return (
-            <Link 
+            <Link
                 to="/student-work/"
                 state={{ prevPath: window.location.pathname}}>
             {/* going to need to programtically direct to individual student project */}

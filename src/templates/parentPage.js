@@ -26,7 +26,7 @@ export default class parentPage extends Component {
 
 // trim the concentration title to get rid of parents suffix
          const trimedConcentrationTitle = trimConcentrationName(concentrationTitle)
-        
+
 // Jobs, grads, and projects to pull into indiviudal components
          const jobList = this.props.data.allContentfulJob.edges
          const gradList = this.props.data.allContentfulGraduate.edges
@@ -56,22 +56,26 @@ export default class parentPage extends Component {
                 <section className="employment-outlook-block">
                     <p>{employmentOutlook.employmentOutlook}</p>
                 </section>
-            
+
 {/* Job Oppurtunities Section */}
                 <section className="job-oppurtunities-block">
+                  <div className="job-opportunities-header">
                     <h2>Job Opportunities</h2>
-                    <img src={concentrationAsset.file.url} alt={concentrationAsset.description} />
                     <p>{jobOpportunities.jobOpportunities}</p>
-                    <div className="job-blob-container">
-                      {jobList.map((index) =>{
-                        return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
-                      })}
+                  </div>
+                    <img className="job-opportunities-header" src={concentrationAsset.file.url} alt={concentrationAsset.description} />
+                    <div>
+                      <div className="job-blob-container spacing">
+                        {jobList.map((index) =>{
+                          return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
+                        })}
+                      </div>
+                      <p className="spacing">Do you want to learn more about the careers that our program can prepare you for?</p>
+                      <p><a href="" className="main-link">Learn More</a></p>
                     </div>
-                    <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p>LINK WILL GO HERE.</p>
-                </section>
 
-{/* Median Salary Section */}
+                </section>
+                <div className="bottom-curve"></div>
                 <section className="median-salary-block">
                     <p>{medianSalary.medianSalary}</p>
                 </section>
@@ -100,7 +104,7 @@ export default class parentPage extends Component {
               }
 
 {/* Student Work Section*/}
-                {allTrackProjects.length > 0 && 
+                {allTrackProjects.length > 0 &&
                   <section className="student-work-block">
                     <h2>STUDENT WORK</h2>
                     <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
@@ -129,8 +133,8 @@ export default class parentPage extends Component {
             else if( i < (trimedNameArray.length - 2) ){
               // this is everything except for the second to last index. We want to add a space inbetween the words.
               trimedName += trimedNameArray[i] + " "
-            } 
-            
+            }
+
             else {
               // this is the second to last index. We don't want to add a space.
               trimedName += trimedNameArray[i]
@@ -141,7 +145,7 @@ export default class parentPage extends Component {
 
         }
   }
-/* END OF RENDER */ 
+/* END OF RENDER */
 
 }
 /* END OF PARENT TEMPLATE CLASS */

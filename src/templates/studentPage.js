@@ -68,7 +68,7 @@ class studentPage extends Component {
 
 {/* Parent Nav */}
                 <nav className="hide">
-                  <p>Are you a parent? 
+                  <p>Are you a parent?
                     <Link to={`${slug}/parents`}
                           state={{ prevPath: window.location.pathname}}>
                             Click here!
@@ -169,7 +169,7 @@ class studentPage extends Component {
                 </section>
 
 {/* Student Work Section (conditional on length of published student work from contentful */}
-                {allTrackProjects.length > 0 && 
+                {allTrackProjects.length > 0 &&
                   <section className="student-work-block">
                     <h2>STUDENT WORK</h2>
                     <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
@@ -180,7 +180,7 @@ class studentPage extends Component {
                     })}
                   </section>
                 }
-                
+
 
 {/* Coursework Section */}
                 <section className="coursework-block">
@@ -191,13 +191,15 @@ class studentPage extends Component {
 
 {/* Why Winthrop? Section */}
                 <section className="why-winthrop-block">
-                  <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
-                  <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
-                  <p>{whyWinthrop1.whyWinthrop1}</p>
+                  <div>
+                    <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
+                    <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
+                    <p>{whyWinthrop1.whyWinthrop1}</p>
+                  </div>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
                   <p>
-                    <Link to="/#tour" 
+                    <Link to="/#tour"
                           className="main-link"
                           state={{ prevPath: window.location.pathname}}>
                       Learn More
