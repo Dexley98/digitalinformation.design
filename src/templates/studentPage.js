@@ -31,6 +31,7 @@ class studentPage extends Component {
 // Campus info and assets
         const {
           whyWinthrop1,
+          whyWinthrop2,
           whyWinthropAssets
         }  = this.props.data.contentfulWhyWinthrop
         const whyWinthropAsset1 = whyWinthropAssets[0];
@@ -193,8 +194,8 @@ class studentPage extends Component {
                 <section className="why-winthrop-block">
                   <div>
                     <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
-                    <p>{learningOutcomesSummary.learningOutcomesSummary}</p>
                     <p>{whyWinthrop1.whyWinthrop1}</p>
+                    <p>{whyWinthrop2.whyWinthrop2}</p>
                   </div>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
@@ -352,6 +353,9 @@ query studentPageQuery($slug: String!){
     contentfulWhyWinthrop {
       whyWinthrop1{
         whyWinthrop1
+      }
+      whyWinthrop2{
+        whyWinthrop2
       }
       whyWinthropAssets {
         description

@@ -34,6 +34,8 @@ export default class About extends Component {
         const {
           whyWinthrop1,
           whyWinthrop2,
+          whyWinthrop3,
+          whyWinthrop4,
           whyWinthropAssets
         }  = this.props.data.contentfulWhyWinthrop
 
@@ -102,15 +104,15 @@ export default class About extends Component {
                   <div>
                     <h2>OUR CAMPUS</h2>
                     {/*top content */}
-                    <p>{whatIsDifd.whatIsDifd}</p>
                     <p>{whyWinthrop1.whyWinthrop1}</p>
+                    <p>{whyWinthrop2.whyWinthrop2}</p>
                   </div>
                   <img src={whyWinthropAsset1.file.url} alt={whyWinthropAsset2.description} />
                   {/*bpttom content */}
                   <img src={whyWinthropAsset2.file.url} alt={whyWinthropAsset2.description} />
                   <div>
-                    <p>{whyWinthrop2.whyWinthrop2}</p>
-                    <p>If you can’t make it out to see our campus we can bring it to you. View our virtual tour below to experience everything our campus has to offer from the comfort of your home.</p>
+                    <p>{whyWinthrop3.whyWinthrop3}</p>
+                    <p>{whyWinthrop4.whyWinthrop4}</p>
                     <a className="main-link" href="https://www.winthrop.edu/virtualtour/">Take the Tour</a>
                   </div>
 
@@ -245,6 +247,12 @@ query aboutPageQuery {
         }
         whyWinthrop2{
           whyWinthrop2
+        }
+        whyWinthrop3{
+          whyWinthrop3
+        }
+        whyWinthrop4{
+          whyWinthrop4
         }
         whyWinthropAssets {
           description

@@ -5,17 +5,17 @@ export default class ProjectBrief extends Component {
     render() {
         console.log(this.props.projectMedia[0])
         return (
-            <Link
-                to="/student-work/"
-                state={{ prevPath: window.location.pathname}}>
-            {/* going to need to programtically direct to individual student project */}
-                <div className="projectBrief-blob">
+            <div className="projectBrief-blob">
+                <Link
+                    to="/student-work"
+                    state={{ prevPath: window.location.pathname}}
+                >
                     <h3>{this.props.title}</h3>
                     <p>{this.props.shortDesc}</p>
                     <DisplayMedia mediaInfo= {this.props.projectMedia[0]} />
                     {/* Link to the project here or needs to wrap arond entire div. */}
-                </div>
-            </Link>
+                </Link>
+            </div>
         )
     }
 }
