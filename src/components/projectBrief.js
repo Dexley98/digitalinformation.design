@@ -3,8 +3,7 @@ import { Link, navigate } from 'gatsby'
 
 export default class ProjectBrief extends Component {
     render() {
-        console.log(this.props.projectMedia[0])
-
+        
         function handleNavigation(){
             console.log('div clicked!')
             navigate("/student-work/")

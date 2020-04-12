@@ -51,6 +51,7 @@ export default class OurPeople extends Component {
                     {gradList.map( (index) =>{
                         return(
                             <LongGrad 
+                                jobTitle={index.node.jobTitle}
                                 gradPicture={index.node.gradPicture} 
                                 gradName={index.node.gradName} 
                                 gradDate={index.node.gradDate} 
@@ -114,6 +115,7 @@ export const pageQuery = graphql`
         allContentfulGraduate {
             edges {
               node {
+                jobTitle
                 gradPicture {
                   description
                   file {
