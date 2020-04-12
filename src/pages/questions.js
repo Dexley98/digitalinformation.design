@@ -7,9 +7,12 @@ export default class Questions extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        fullName: "John Smith",
-        email: "example@mail.com",
-        question: "Enter your question here!",
+        fullName: undefined,
+        email: undefined,
+        question: undefined,
+        nameMssg: undefined,
+        emailMssg: undefined,
+        questionMssg: undefined
       };
   
       this.handleInputChange = this.handleInputChange.bind(this)
@@ -29,32 +32,75 @@ export default class Questions extends Component {
 
     resetForm(){
         this.setState({
-            fullName: "Chewy",
-            email: "example@mail.com",
-            question: "Enter yodfadfaur question here!",
+            fullName: undefined,
+            email: undefined,
+            question: undefined,
         })
     }
 
     handleSubmit(event){
         event.preventDefault()
-        console.log(this.state)
-        let stateArray = [this.state]
-        console.log(stateArray)
+        
+        console.log('entire state ', this.state)
+        let vaildName = this.validateName(this.state.fullName)
+        let vaildEmail = this.validateEmail(this.state.email)
+        let vaildQuestion = this.validateQuestion(this.state.question)
+        console.log('question ', this.state.question)
+        console.log(vaildQuestion)
 
-        axios({
-            method: "POST",
-            url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
-            data: JSON.stringify(this.state)
-        }).then( (response) => {
-            if (response.data.status === 'success'){
-                console.log('message sent')
-                this.resetForm()
-            }else if(response.data.status === 'fail'){
-                console.log("message failed to send.")
+        if(vaildName){
+            this.setState({
+                nameMssg: undefined
+            })
+        }
+
+        if(vaildEmail){
+            this.setState({
+                emailMssg: undefined
+            })
+        }
+
+        if(vaildQuestion){
+            this.setState({
+                questionMssg: undefined
+            })
+        }
+
+        if(vaildName && vaildEmail && vaildQuestion){
+            axios({
+                method: "POST",
+                url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
+                data: JSON.stringify(this.state)
+            }).then( (response) => {
+                if (response.data.status === 'success'){
+                    console.log('message sent')
+                    this.resetForm()
+                }else if(response.data.status === 'fail'){
+                    console.log("message failed to send.")
+                }
+            })
+            this.resetForm()
+            navigate("/question-submitted")
+        }
+        else{
+            if(!vaildName){
+                this.setState({
+                    nameMssg: "That name doesn't look right. Please try again."
+                })
             }
-        })
+            if(!vaildEmail){
+                this.setState({
+                    emailMssg: "That doesn't look like a vaild email. Please try again."
+                })
+            }
+            if(!vaildQuestion){
+                this.setState({
+                    questionMssg: "You have to ask a question!"
+                })
+            }
+        }
 
-        navigate("/question-submitted")
+        
     }
   
     render() {
@@ -71,27 +117,45 @@ export default class Questions extends Component {
                     <input
                       name="fullName"            
                       type="text"
+                      placeholder="What's your name?"
                       value={this.state.fullName}
                       onChange={this.handleInputChange} />
                   </label>
+                  {this.state.nameMssg && 
+                    <section className="invaild-name-block">
+                        <p>{this.state.nameMssg}</p>
+                    </section>
+                  }
                   <br />
                   <label>
                     Email
                     <input
                       name="email"            
                       type="email"
+                      placeholder="example@gmail.com"
                       value={this.state.email}
                       onChange={this.handleInputChange} />
                   </label>
+                  {this.state.emailMssg && 
+                    <section className="invaild-email-block">
+                        <p>{this.state.emailMssg}</p>
+                    </section>
+                  }
                   <br />
                   <label>
                     Question
                     <input
                       name="question"            
                       type="text"
+                      placeholder="What is your question?"
                       value={this.state.question}
                       onChange={this.handleInputChange} />
                   </label>
+                  {this.state.questionMssg && 
+                    <section className="invaild-question-block">
+                        <p>{this.state.questionMssg}</p>
+                    </section>
+                  }
                   <br />
                   <input type="submit" value="Submit" />
                 </form>
@@ -104,20 +168,37 @@ export default class Questions extends Component {
         
         let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-        if (regex.test(mailValue)){
-            return true
+        if(mailValue !== undefined || mailValue !== null){
+            if (regex.test(mailValue)){
+                return true
+            }
+            return false
         }
         return false
+        
     }
 
     validateName(nameValue)
     {
-        var regex = /^[a-zA-Z ]{2,30}$/
+        let regex = /^[a-zA-Z ]{2,30}$/
 
-        if (regex.test(nameValue)) {
-            return true
+        if(nameValue == undefined || nameValue == null){
+            return false
+        }else{
+            if (regex.test(nameValue)) {
+                return true
+            }
+            return false
         }
-        return false
+
+        
+    }
+
+    validateQuestion(questionValue){
+        if(questionValue === undefined){
+            return false
+        }
+        return true
     }
 
 
