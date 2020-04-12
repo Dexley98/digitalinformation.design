@@ -92,7 +92,7 @@ export default class About extends Component {
                         return(
                             <Grad
                             imgSrc={index.node.gradPicture.file.url}
-                            gradName={index.node.name}
+                            gradName={index.node.gradName}
                             jobTitle={index.node.jobTitle}
                             gradBio={index.node.bio.bio}
                         />)

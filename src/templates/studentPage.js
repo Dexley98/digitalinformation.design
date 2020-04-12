@@ -124,7 +124,12 @@ class studentPage extends Component {
                       })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p><a href="" className="main-link">View Careers</a></p>
+                    <p><Link to="/our-people" 
+                             className="main-link"
+                             state={{ prevPath: window.location.pathname}}>
+                               View Careers
+                        </Link>
+                    </p>
                     <div></div>
                 </section>
 

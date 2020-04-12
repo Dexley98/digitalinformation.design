@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {graphql} from 'gatsby'
+import {graphql, Link} from 'gatsby'
 
 // Pull in Components
 import Menu from '../components/main-menu'
@@ -72,8 +72,13 @@ export default class parentPage extends Component {
                           return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
                         })}
                       </div>
-                      <p className="spacing">Do you want to learn more about the careers that our program can prepare you for?</p>
-                      <p><a href="" className="main-link">Learn More</a></p>
+                      <p className="spacing">Do you want to learn more about the careers that our program can prepare your child for?</p>
+                      <p><Link to="/our-people" 
+                             className="main-link"
+                             state={{ prevPath: window.location.pathname}}>
+                               View Careers
+                        </Link>
+                      </p>
                     </div>
 
                 </section>
