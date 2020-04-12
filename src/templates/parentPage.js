@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {graphql} from 'gatsby'
+import {graphql, Link} from 'gatsby'
 
 // Pull in Components
 import Menu from '../components/main-menu'
 import Footer from '../components/footer'
+import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'
 import Grad from '../components/grad'
 import Apply from '../components/apply'
@@ -45,6 +46,7 @@ export default class parentPage extends Component {
                       <h2 className="parent-splash">{mainActivity}</h2>
                     </div>
                 </section>
+                <QuestionsLink />
 
 {/* What Does it Mean Parent Section */}
                 <section className="whatDoesItMean-block-parents">
@@ -70,8 +72,13 @@ export default class parentPage extends Component {
                           return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
                         })}
                       </div>
-                      <p className="spacing">Do you want to learn more about the careers that our program can prepare you for?</p>
-                      <p><a href="" className="main-link">Learn More</a></p>
+                      <p className="spacing">Do you want to learn more about the careers that our program can prepare your child for?</p>
+                      <p><Link to="/our-people" 
+                             className="main-link"
+                             state={{ prevPath: window.location.pathname}}>
+                               View Careers
+                        </Link>
+                      </p>
                     </div>
 
                 </section>

@@ -5,6 +5,7 @@ import { graphql, Link} from 'gatsby'
 // Pull in Components
 import Menu from "../components/main-menu"
 import Footer from "../components/footer"
+import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'
 import Grad from '../components/grad'
 import Outcome from '../components/outcome'
@@ -86,6 +87,7 @@ class studentPage extends Component {
                         })}
                     </div>
                 </section>
+                <QuestionsLink />
 
 {/* Concentration Summary Section */}
                 <section className="concentrationSummary-block">
@@ -122,7 +124,12 @@ class studentPage extends Component {
                       })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p><a href="" className="main-link">View Careers</a></p>
+                    <p><Link to="/our-people" 
+                             className="main-link"
+                             state={{ prevPath: window.location.pathname}}>
+                               View Careers
+                        </Link>
+                    </p>
                     <div></div>
                 </section>
 

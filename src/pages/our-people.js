@@ -32,7 +32,7 @@ export default class OurPeople extends Component {
                     <h1>OUR PEOPLE</h1>
                     <p>{ourPeopleOverview.ourPeopleOverview}</p>
                 </section>
-                <section className="ourPeople-professors-block">
+                <section id="professors" className="ourPeople-professors-block">
                     <h2>MEET THE PROFESSORS</h2>
                     <p>{professorsOverview.professorsOverview}</p>
                     {profList.map( (index) => {
@@ -45,12 +45,13 @@ export default class OurPeople extends Component {
                         )
                     })}
                 </section>
-                <section className="ourPeople-graduates-block">
+                <section id="graduates" className="ourPeople-graduates-block">
                     <h2>MEET THE GRADUATES</h2>
                     <p>{graduatesOverview.graduatesOverview}</p>
                     {gradList.map( (index) =>{
                         return(
                             <LongGrad 
+                                jobTitle={index.node.jobTitle}
                                 gradPicture={index.node.gradPicture} 
                                 gradName={index.node.gradName} 
                                 gradDate={index.node.gradDate} 
@@ -114,6 +115,7 @@ export const pageQuery = graphql`
         allContentfulGraduate {
             edges {
               node {
+                jobTitle
                 gradPicture {
                   description
                   file {

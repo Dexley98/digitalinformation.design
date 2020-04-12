@@ -28,8 +28,6 @@ export default class CourseBlock extends Component {
 
 
     render() {
-//debugging
-        //console.log('state inside render ', this.state.coreArray)
         return (
             <div className="course-list-container">
                 <button
