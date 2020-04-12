@@ -5,6 +5,7 @@ import {graphql} from 'gatsby'
 // Pull in Components
 import Menu from '../components/main-menu'
 import Footer from '../components/footer'
+import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'
 import Grad from '../components/grad'
 import Apply from '../components/apply'
@@ -45,6 +46,7 @@ export default class parentPage extends Component {
                       <h2 className="parent-splash">{mainActivity}</h2>
                     </div>
                 </section>
+                <QuestionsLink />
 
 {/* What Does it Mean Parent Section */}
                 <section className="whatDoesItMean-block-parents">
