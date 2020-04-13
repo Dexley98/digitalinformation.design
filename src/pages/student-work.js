@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
-// bring in component files. 
+// bring in component files.
 import Menu from '../components/main-menu'
 import Footer from '../components/footer'
 import Apply from '../components/apply'
@@ -38,7 +38,7 @@ export default class StudentWork extends Component {
                     <img src={studentWorkBannerImage.file.url} alt={studentWorkBannerImage.description}/>
                 </section>
                 <section className="studentWork-overview-block">
-                    <h1>STUDENT WORK</h1>
+                    <h1 className="student-work-header">STUDENT WORK</h1>
                     <p>{studentWorkOverview.studentWorkOverview}</p>
                 </section>
                 <section className="projects-block">

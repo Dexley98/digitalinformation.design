@@ -29,33 +29,43 @@ export default class OurPeople extends Component {
                     <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
                 <section className="ourPeople-overview-block">
-                    <h1>OUR PEOPLE</h1>
-                    <p>{ourPeopleOverview.ourPeopleOverview}</p>
+                    <h1 className="ourPeople-header">OUR PEOPLE</h1>
+                    <p className="ourPeople-header">{ourPeopleOverview.ourPeopleOverview}</p>
                 </section>
                 <section className="ourPeople-professors-block">
-                    <h2>MEET THE PROFESSORS</h2>
-                    <p>{professorsOverview.professorsOverview}</p>
+                  <div className="top-curve"></div>
+                  <div className="middle-bg">
+                    <div className="professors-title">
+                      <h2>MEET THE PROFESSORS</h2>
+                      <p>{professorsOverview.professorsOverview}</p>
+                    </div>
+                    <div className="prof-blob-container">
                     {profList.map( (index) => {
                         return(
-                            <Professor 
-                                profPicture={index.node.profPicture} 
-                                profName={index.node.profName} 
-                                bio={index.node.bio} 
+                            <Professor
+                                profPicture={index.node.profPicture}
+                                profName={index.node.profName}
+                                bio={index.node.bio}
                             />
                         )
                     })}
+                    </div>
+                    </div>
+                    <div className="bottom-curve"></div>
                 </section>
                 <section className="ourPeople-graduates-block">
+                  <div className="graduates-title">
                     <h2>MEET THE GRADUATES</h2>
                     <p>{graduatesOverview.graduatesOverview}</p>
+                  </div>
                     {gradList.map( (index) =>{
                         return(
-                            <LongGrad 
-                                gradPicture={index.node.gradPicture} 
-                                gradName={index.node.gradName} 
-                                gradDate={index.node.gradDate} 
-                                whereAreTheyNow={index.node.whereAreTheyNow} 
-                                DifdPrep={index.node.DifdPrep} 
+                            <LongGrad
+                                gradPicture={index.node.gradPicture}
+                                gradName={index.node.gradName}
+                                gradDate={index.node.gradDate}
+                                whereAreTheyNow={index.node.whereAreTheyNow}
+                                DifdPrep={index.node.DifdPrep}
                             />
                         )
                     })}

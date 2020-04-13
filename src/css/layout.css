@@ -1009,7 +1009,7 @@ h2.parent-splash{
     .employment-outlook-block p, .median-salary-block p{
       font-size: 40px;
       line-height: 50px;
-      padding: 200px 10%;
+      padding: 100px 10% 200px 10%;
       } }
 
 /* JOB OPPORTUNITIES */
@@ -1032,20 +1032,22 @@ h2.parent-splash{
 .spacing{
   margin: 100px 0 50px 0;
 }
-/* ABOUT PAGE */
+
+
+
+/* GENERAL MULTI PAGE CSS */
 
 /* SPLASH IMAGE AREA */
-.about-bannerImg-block img{
+
+.about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img{
   width: 100%;
   height: 380px;
   object-fit: cover;
 }
 
-/* WHAT IS DIFD BLOCK */
-.what-is-difd-block{
-  margin: 100px 0;
-}
-.about-header{
+/* HEADER TEXT AREAS */
+
+h1.about-header, h1.student-work-header, h1.ourPeople-header{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: center;
   color: #EC6A12;
@@ -1053,17 +1055,39 @@ h2.parent-splash{
   line-height: 50px;
   text-shadow: none;}
   @media (min-width: 700px) {
-    .about-header{
+    h1.about-header, h1.student-work-header, h1.ourPeople-header{
       font-size: 60px;
       line-height: 70px;} }
   @media (min-width: 1024px) {
-    .about-header{
+    h1.about-header, h1.student-work-header, h1.ourPeople-header{
       font-size: 80px;
       line-height: 90px;
       } }
 .purple-highlight{
-  color: #664363;
+  color: #664363;}
+h1.ourPeople-header, p.ourPeople-header, .tracks-block h1, .tracks-block p{
+  text-align: left;
+  padding: 0 8%;
+  width: 80%;}
+  @media (min-width: 700px) {
+    .tracks-block h1, .tracks-block p, h1.ourPeople-header, p.ourPeople-header{
+      padding: 0 8%;
+      width: 500px;} }
+  @media (min-width: 1024px) {
+    .tracks-block h1, .tracks-block p, h1.ourPeople-header, p.ourPeople-header{
+      padding: 0 10%;
+      width: 700px;} }
+h1.ourPeople-header, p.ourPeople-header{
+  text-align: center;
+  margin: 50px auto;
 }
+/* ABOUT PAGE */
+
+/* WHAT IS DIFD BLOCK */
+.what-is-difd-block{
+  margin: 100px 0;
+}
+
 .what-is-difd-block p{
   padding: 0 10%;
   margin-top: 20px;}
@@ -1078,18 +1102,6 @@ h2.parent-splash{
 
 /* TRACKS BLOCK */
 
-.tracks-block h1, .tracks-block p{
-  text-align: left;
-  padding: 0 8%;
-  width: 80%;}
-  @media (min-width: 700px) {
-    .tracks-block h1, .tracks-block p{
-      padding: 0 8%;
-      width: 500px;} }
-  @media (min-width: 1024px) {
-    .tracks-block h1, .tracks-block p{
-      padding: 0 10%;
-      width: 700px;} }
 .tracks-container{
   display: flex;
   flex-wrap: wrap;
@@ -1213,8 +1225,195 @@ h2.parent-splash{
     .why-winthrop-block h2, .why-winthrop-block p{
       } }
 
+
+/* STUDENT  WORK */
+
+.studentWork-overview-block{
+  padding: 80px 0 80px 4%;
+  width: 80%;}
+  @media (min-width: 700px) {
+    .studentWork-overview-block{
+      padding: 100px 0 100px 8%;
+      max-width: 700px;} }
+  @media (min-width: 1024px) {
+    .studentWork-overview-block{
+      padding: 100px 0 100px 10%;
+      max-width: 700px;} }
+.studentWork-overview-block p, .studentWork-overview-block h1{
+  text-align: left;
+  }
+.projects-block{
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-blob img{
+  max-width: 500px;
+}
+.project-blob{
+  max-width: 500px;
+}
+
 /* OUR PEOPLE */
-.Professor{
-  max-width: 300px;
+
+.ourPeople-overview-block{
+  margin: 100px 0px;
+}
+.ourPeople-professors-block h2, .ourPeople-professors-block p{
+  text-align: left;
+}
+.professors-title{
+  margin: 0 0 100px 8%;
+  width: 80%;}
+  @media (min-width: 700px) {
+    .professors-title{
+      margin: 0 0 100px 6%;
+      width: 700px;} }
+  @media (min-width: 1024px) {
+    .professors-title{
+      margin: 0 0 100px 10%;
+      width: 700px;} }
+.prof-blob-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 6%;}
+.prof-blob{
+  width: 100%;
+  margin-bottom: 100px;}
+@media (min-width: 700px) {
+  .prof-blob{
+    max-width: 200px;} }
+@media (min-width: 1024px) {
+  .prof-blob{
+    max-width: 200px;} }
+.prof-blob img{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.prof-img-container{
+  margin: 0 auto;
+  width: 70%;
+  overflow: hidden;
+  border-radius: 51% 49% 52% 48% / 36% 54% 46% 64% ;
+  animation: wobble2 12s linear alternate infinite;
+  box-shadow: -10px -10px #F6BC93;}
+  @media (min-width: 700px) {
+    .prof-img-container{
+      width: 300px;
+      height: 300px;} }
+  @media (min-width: 1024px) {
+    .prof-img-container{
+      width: 100%;
+      height: 240px;} }
+
+.prof-blob h3{
+  font-size: 20px;
+  line-height: 26px;
   text-align: center;
+  color: #332531;
+  font-style: normal;
+  font-weight: 900;}
+  @media (min-width: 700px) {
+    .prof-blob h3{
+      font-size: 22px;
+      line-height: 38px;} }
+  @media (min-width: 1024px) {
+    .prof-blob h3{
+      font-size: 22px;
+      line-height: 30px;} }
+.prof-blob p{
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #332531;
+  font-style: normal;
+  font-weight: 300;
+  width: 100%;}
+  @media (min-width: 700px) {
+    .prof-blob p{
+      font-size: 16px;
+      line-height: 38px;} }
+  @media (min-width: 1024px) {
+    .prof-blob p{
+      font-size: 14px;
+      line-height: 16px;} }
+
+.ourPeople-graduates-block{
+  background-image: url("../images/bg-shape1.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.graduates-title{
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 4%;}
+  @media (min-width: 700px) {
+    .graduates-title{
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 100px;} }
+  @media (min-width: 1024px) {
+    .graduates-title{
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 100px;} }
+
+
+.ourPeople-grad-blob{
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 6%;
+
+}
+.ourPeople-grad-blob img{
+  border-radius: 56% 44% 58% 42% / 35% 55% 45% 65% ;
+  animation: wobble4 12s linear alternate infinite;
+  box-shadow: -20px -20px #F6BC93;
+}
+.grad-blob-overview h3{
+  text-align: left;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 34px;
+  text-transform: uppercase;
+  color: #664363;
+  font-style: normal;
+}
+.grad-blob-overview p{
+  text-align: left;
+}
+.ourPeople-grad-blob > div > div > h4{
+  text-align: left;
+  font-size: 16px;
+  line-height: 22px;
+  color: #332531;
+  font-style: normal;
+}
+.grad-info-block{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+.grad-blob-difd-prep, .grad-blob-where-are-they-now{
+  max-width: 40%;
+  padding: 0 6% 0 0;
+}
+.grad-blob-difd-prep p, .grad-blob-where-are-they-now p{
+  text-align: left;
+  font-size: 14px;
+  line-height: 18px;
+}
+.grad-blob-picture img{
+  max-width: 360px;
+  padding: 10px 50px;
+}
+.ourPeople-grad-blob:nth-child(3),
+.ourPeople-grad-blob:nth-child(5),
+.ourPeople-grad-blob:nth-child(7),
+.ourPeople-grad-blob:nth-child(9),
+.ourPeople-grad-blob:nth-child(11),
+.ourPeople-grad-blob:nth-child(13){
+  flex-direction: row-reverse;
 }
