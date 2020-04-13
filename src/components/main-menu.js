@@ -12,8 +12,14 @@ class Menu extends React.Component {
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <a href="#">Professors</a>
-            <a href="#">Our Graduates</a>
+            <Link to="/our-people#professors"
+                  state={{prevPath: window.location.pathname}}>
+                    Professors
+            </Link>
+            <Link to="/our-people#graduates"
+                  state={{prevPath: window.location.pathname}}>
+                    Our Graduates
+            </Link>
           </div>
         </div>
         <Link to="/student-work"

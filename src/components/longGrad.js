@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 
 export default class LongGrad extends Component {
     render() {
-        console.log('props inside longGrad', this.props.gradDate)
+
+        const uniqueId = this.makeUniqueGradId(this.props.gradName, this.props.jobTitle)
+        console.log(uniqueId)
         return (
-            <div className="ourPeople-grad-blob">
+            <div id={uniqueId} className="ourPeople-grad-blob">
                 <div className="grad-blob-picture">
                     <img src={this.props.gradPicture.file.url} alt={`${this.props.gradName}, a Winthrop Graduate`} />
                 </div>
@@ -24,5 +26,26 @@ export default class LongGrad extends Component {
                 </div>
             </div>
         )
+    }
+
+    makeUniqueGradId(gradName, gradJobTitle){
+        let gradNameSplitList = gradName.split(" ")
+        let gradJobTitleSplitList = gradJobTitle.split(" ")
+
+        let uniqueIdString = ""
+
+        gradNameSplitList.map((index) =>{
+            uniqueIdString += index + "-"
+        })
+
+        for(let i=0; i<gradJobTitleSplitList.length; i++){
+            if(i<gradJobTitleSplitList.length-1){
+                uniqueIdString += gradJobTitleSplitList[i] + "-"
+            }else{
+                uniqueIdString += gradJobTitleSplitList[i]
+            }
+        }
+
+        return uniqueIdString
     }
 }

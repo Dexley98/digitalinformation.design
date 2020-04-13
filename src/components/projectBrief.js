@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 
 export default class ProjectBrief extends Component {
     render() {
-        console.log(this.props.projectMedia[0])
+        
+        function handleNavigation(){
+            console.log('div clicked!')
+            navigate("/student-work/")
+        }
         return (
-            <div className="projectBrief-blob">
-                <Link
-                    to="/student-work"
-                    state={{ prevPath: window.location.pathname}}
-                >
+            <div className="projectBrief-blob" onClick={handleNavigation}>
                     <h3>{this.props.title}</h3>
                     <p>{this.props.shortDesc}</p>
                     <DisplayMedia mediaInfo= {this.props.projectMedia[0]} />
                     {/* Link to the project here or needs to wrap arond entire div. */}
-                </Link>
             </div>
         )
     }
