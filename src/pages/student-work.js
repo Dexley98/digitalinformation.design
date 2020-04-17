@@ -4,14 +4,33 @@ import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
 // bring in component files.
-import Menu from '../components/main-menu'
+import MainMenu from '../components/new-menu'
+import SideDrawer from '../components/side-drawer'
+import BackDrop from '../components/back-drop'
 import Footer from '../components/footer'
 import Apply from '../components/apply'
 import Track from '../components/track'
 import ProjectsBlock from '../components/project'
 
 export default class StudentWork extends Component {
+    state = {
+      sideDrawerOpen: false
+    };
+    drawerToggleClickHandler = () =>{
+      this.setState((prevState) => {
+        return {sideDrawerOpen: !prevState.sideDrawerOpen};
+      });
+    };
+    backdropClickHandler = () => {
+      this.setState({sideDrawerOpen: false});
+    }
     render() {
+      let sideDrawer = null;
+      let backDrop = null;
+      if (this.state.sideDrawerOpen) {
+        sideDrawer = <SideDrawer />;
+        backDrop = <BackDrop click={this.backdropClickHandler}/>
+      }
         const {
             studentWorkBannerImage,
             studentWorkOverview,
@@ -31,9 +50,13 @@ export default class StudentWork extends Component {
         console.log(allProjectArray)
         const previousPageSlug = trimPrevPath(this.props.location.state.prevPath)
 
+
         return (
             <div>
-                <Menu />
+              <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
+              {sideDrawer}
+              {backDrop}
+      
                 <section className="bannerImage-block">
                     <img src={studentWorkBannerImage.file.url} alt={studentWorkBannerImage.description}/>
                 </section>
@@ -43,19 +66,6 @@ export default class StudentWork extends Component {
                 </section>
                 <section className="projects-block">
                     <ProjectsBlock allProjectArray={allProjectArray} previousPageSlug={previousPageSlug}/>
-                </section>
-                <section className="capstone-block">
-                    <h1>CAPSTONE</h1>
-                    <div className="capstone-block-image">
-                        <img src={capstoneImage.file.url} alt={capstoneImage.description} />
-                    </div>
-                    <p>{capstoneSummary.capstoneSummary}</p>
-                </section>
-                <section className="tracks-block">
-                    <Track slug="/interactivemedia" overview={imBlurb.imBlurb} />
-                    <Track slug="/webapps" overview={webAppsBlurb.webAppsBlurb} />
-                    <Track slug="/commerce" overview={commerceBlurb.commerceBlurb} />
-                    <Track slug="/massmedia" overview={massMediaBlurb.massMediaBlurb} />
                 </section>
                 <Apply />
                 <Footer />

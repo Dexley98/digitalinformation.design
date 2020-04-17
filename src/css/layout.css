@@ -1,3 +1,5 @@
+
+
 @font-face {
   font-family: 'AvenirLTStd';
   src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Book.otf) format('opentype');
@@ -17,7 +19,8 @@ html, body{
   max-width: 1440px;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;}
+  overflow-x: hidden !important;
+height: 100%;}
 h1{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-size: 35px;
@@ -28,10 +31,12 @@ h2{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: center;
   color: #EC6A12;
-  font-size: 20px;
-  line-height: 25px;}
+  font-size: 30px;
+  line-height: 32px;
+  padding: 0 6%;}
   @media (min-width: 700px) {
     h2 {
+      padding: 0;
       font-size: 26px;
       line-height: 30px;} }
   @media (min-width: 1024px) {
@@ -58,9 +63,9 @@ h4{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 14px;
+  font-size: 18px;
   color: #FFF8F2;
-  line-height: 18px;
+  line-height: 22px;
   text-align: center;}
   @media (min-width: 700px) {
     h4 {
@@ -73,11 +78,11 @@ h4{
     font-family: 'AvenirLTStd', Arial, sans-serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 2px;
+    font-size: 16px;
     color: #664363;
-    line-height: 14px;
+    line-height: 20px;
     text-align: center;
-    padding: 0;  }
+    display: block;  }
     @media (min-width: 700px) {
       h5 {
         font-size: 14px;
@@ -87,23 +92,23 @@ h4{
         font-size: 16px;
         line-height: 14px;
         } }
-p{
+p, label{
   font-family: Avenir, sans-serif;
   font-style: normal;
   font-weight: normal;
   color: #332531;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 20px;
   text-align: center;}
   @media (min-width: 700px) {
-    p {
+    p, label {
       font-size: 14px;
       line-height: 20px;} }
   @media (min-width: 1024px) {
-    p {
+    p, label {
       font-size: 18px;
       line-height: 24px;} }
-a.main-link{
+a.main-link, input[type=submit]{
     font-family: 'AvenirLTStd', Arial, sans-serif;
     font-weight: 500;
     font-size: 10px;
@@ -117,7 +122,7 @@ a.main-link{
     width: 100%;
     padding: 6px 10px;
     transition: all 0.5s; }
-    a.main-link:hover{
+    a.main-link:hover, input[type=submit]{
       color: #fff;
       background-color: #644E53;}
     @media (min-width: 700px) {
@@ -126,9 +131,6 @@ a.main-link{
         line-height: 16px;
         padding: 10px 16px;
         margin-top: 200px;} }
-    @media (min-width: 1024px) {
-      a.main-link{
-        } }
 
 /* CURVED SECTION BACKGROUNDS */
 
@@ -152,11 +154,52 @@ a.main-link{
   padding-top: 100px;
 }
 /* MAIN MENU CSS */
-
-.topnav {
+nav.main-menu{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   background-color: #332531;
-  overflow: hidden;}
-.topnav a {
+}
+button.drop-down-button{
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 16px;
+  font-size: 20px;}
+  @media (min-width: 700px) {
+    button.drop-down-button{
+      display: none;} }
+button.drop-down-button:focus{
+  outline: none;
+}
+nav.side-drawer, div.side-drawer{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+nav.side-drawer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  max-width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  z-index: 200;
+}
+.back-drop{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 100;
+}
+.topnav, .side-topnav {
+  background-color: #332531;
+  overflow: hidden;
+  height: 55px;}
+.topnav a, .side-topnav a {
   float: right;
   display: block;
   font-family: 'AvenirLTStd', Arial, sans-serif;
@@ -170,6 +213,8 @@ a.main-link{
 .active {
   background-color:  #423040;}
 .topnav .icon {
+  display: none;}
+.side-topnav .icon {
   display: none;}
 .dropdown {
   float: right;
@@ -199,37 +244,53 @@ a.main-link{
   text-decoration: none;
   display: block;
   text-align: left;}
-.topnav a:hover, .dropdown:hover .dropbtn {
+.topnav a:hover, .side-topnav a:hover, .dropdown:hover .dropbtn {
   text-decoration: underline;
   background-color: #423040;}
 .dropdown-content a:hover {
   text-decoration: underline;}
 .dropdown:hover .dropdown-content {
   display: block;}
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
-    display: none;}
-  .topnav a.icon {
-    float: left;
-    display: block; } }
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;}
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;}
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
-    width: 100%;
-    text-align: left;} }
+  @media (max-width: 700px) {
+    .topnav {
+      display: none;} }
 
-
+.parent-link{
+  background-color: #664363;
+  margin: 0 20px;
+  width: 120px;
+  padding: 6px;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+  z-index: 50;}
+  @media (min-width: 700px) {
+    .parent-link{
+      width: 260px;
+      padding: 10px;} }
+.parent-link p{
+  font-family: Avenir, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #FFF8F2;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;}
+  @media (min-width: 700px) {
+    .parent-link p {
+      font-size: 16px;
+      line-height: 20px;} }
+.parent-link a{
+  font-family: Avenir, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #FFF8F2;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;}
+  @media (min-width: 700px) {
+    .parent-link a {
+      font-size: 16px;
+      line-height: 20px;} }
 /* FOOTER CSS */
 
 
@@ -270,7 +331,13 @@ div.footer a{
     div.footer a{
       font-weight: 500;
       font-size: 12px;} }
-
+.bad-link{
+  margin: 0 14px;
+}
+@media (min-width: 700px) {
+.bad-link{
+  margin: 0;
+}}
 /* STUDENT TEMPLATED PAGES */
 
 /* SPLASH IMAGE */
@@ -278,6 +345,12 @@ div.footer a{
 .splashMedia-block{
   background-color: #332531;
   margin-bottom: 0px;
+  margin-top: -70px;
+}
+.splashMedia-block.parents{
+  background-color: #332531;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 .hero-image{
   width: 100%;
@@ -285,8 +358,7 @@ div.footer a{
   opacity: .5;
 }
 div.tagline-item{
-  margin-top: -120px;
-  padding-bottom: 40px;
+  padding: 40px 4% 20px 4%;
   position: relative;
   }
   @media (min-width: 700px) {
@@ -299,7 +371,9 @@ div.tagline-item{
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      margin: 0 auto;} }
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;} }
     @media (min-width: 1024px) {
       div.tagline-item{
         width: 100% !important;
@@ -307,17 +381,14 @@ div.tagline-item{
         margin-top: 0px;
         padding-bottom: 0px;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         margin: 0 auto;} }
 .tagline-item h1{
   font-family: 'Raleway-ExtraBold', sans-serif;
-  font-size: 25px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 0px;
-  margin-top: -10px;}
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0px;
+    margin-top: -5px;}
   @media (min-width: 700px) {
     .tagline-item h1 {
       position: absolute;
@@ -326,7 +397,7 @@ div.tagline-item{
       color: #FDFCF3;
       padding: 0px 10px;
       text-align: center !important;
-      margin: -100px auto 0px auto !important;
+      margin: -120px auto 0px auto !important;
       text-shadow: 2px 2px 8px #332531;
       overflow: hidden;
       animation: animate 15s ease-in infinite;
@@ -479,7 +550,7 @@ div.tagline-item{
   @media (min-width: 1024px) {
     .whatDoesItMean-block h2{
       margin-top: 80px;
-      padding: 0 2%;} }
+      padding: 0 0 0 8%;} }
 .whatDoesItMean-block p{
   text-align: left;
   padding: 0 8%;}
@@ -488,7 +559,7 @@ div.tagline-item{
       padding: 0 4%;} }
   @media (min-width: 1024px) {
     .whatDoesItMean-block p{
-      padding: 0 2%;} }
+      padding: 0 0 0 8%;} }
 
 /* CAREER BLOCKS */
 
@@ -603,7 +674,6 @@ div.tagline-item{
       } }
 .grad-blob{
   margin: 60px 5% 0px 5%;
-  display: flex;
 justify-content: center;
 flex-wrap: wrap;}
   @media (min-width: 700px) {
@@ -659,58 +729,57 @@ flex-wrap: wrap;}
   margin-top: 0px;
   padding-top: 0px;
 }
-div.learningOutcomes-info{
+div.learningOutcomes-info, div.job-opportunities-header{
   display: flex;
   flex-wrap: wrap;
   width: 100%;}
   @media (min-width: 700px) {
-    div.learningOutcomes-info{
+    div.learningOutcomes-info, div.job-opportunities-header{
       flex-wrap: nowrap;
       background-image: url("../images/blob-shape2-dark.svg");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: right top;} }
   @media (min-width: 1024px) {
-    div.learningOutcomes-info{
+    div.learningOutcomes-info, div.job-opportunities-header{
       padding-top: 100px;
-
       } }
-div.learningOutcomes-info h2{
+div.learningOutcomes-info h2, div.job-opportunities-header h2{
   text-align: left;
   padding: 10% 10% 0px 10%;}
   @media (min-width: 700px) {
-    div.learningOutcomes-info h2{
+    div.learningOutcomes-info h2, div.job-opportunities-header h2{
       text-align: left;
       padding: 10% 10% 0px 15%;} }
   @media (min-width: 1024px) {
-    div.learningOutcomes-info h2{
+    div.learningOutcomes-info h2, div.job-opportunities-header h2{
       text-align: left;
       padding: 10% 10% 0px 10%;} }
-div.learningOutcomes-info p{
+div.learningOutcomes-info p, div.job-opportunities-header p{
   text-align: left;
   padding: 0px 10% 0px 10%;
   line-height: 1.6;}
   @media (min-width: 700px) {
-    div.learningOutcomes-info p{
+    div.learningOutcomes-info p, div.job-opportunities-header p{
       text-align: left;
       padding: 4% 4% 0px 15%;} }
   @media (min-width: 1024px) {
-    div.learningOutcomes-info p{
+    div.learningOutcomes-info p, div.job-opportunities-header p{
       text-align: left;
       padding: 0% 10% 0px 10%;} }
-div.learningOutcomes-info img{
+div.learningOutcomes-info img, div.job-opportunities-header img{
   display: flex;
   justify-content: center;
   width: 90%;
   margin: 20px auto;
   border-radius: 76% 24% 36% 64% / 43% 34% 66% 57% ;}
   @media (min-width: 700px) {
-    div.learningOutcomes-info img{
+    div.learningOutcomes-info img, div.job-opportunities-header img{
       text-align: left;
       width: 40%;
       margin: 50px 4% 0px 100px;} }
   @media (min-width: 1024px) {
-    div.learningOutcomes-info img{
+    div.learningOutcomes-info img, div.job-opportunities-header img{
       text-align: left;
       margin: 50px 10px 0px 100px;} }
 .learningOutcome-icon-wrapper{
@@ -732,6 +801,9 @@ div.learningOutcomes-info img{
 }
 
 /* STUDENT WORK BLOCK */
+.course-list-container{
+  margin: 50px auto;
+}
 .student-work-block{
   background-image: url("../images/bg-shape2.png");
   background-position: left;
@@ -753,66 +825,59 @@ div.learningOutcomes-info img{
     .student-work-block p{
       max-width: 700px;
       margin: 0 auto;} }
-.project-container{
+.project-container, .projectBrief-container, .projects-list{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.projectBrief-blob{
+.projectBrief-blob, .project-blob{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   max-width: 100%;
-  margin: 50px;
-}
-@media (min-width: 700px) {
-  .projectBrief-blob{
-    max-width: 350px;
-    margin: 40px;} }
-@media (min-width: 1024px) {
-  .projectBrief-blob{
-    max-width: 420px;
-    margin: 50px;} }
-.projectBrief-blob img{
+  margin: 50px;}
+  @media (min-width: 700px) {
+    .projectBrief-blob, .project-blob{
+      max-width: 350px;
+      margin: 40px;} }
+  @media (min-width: 1024px) {
+    .projectBrief-blob, .project-blob{
+      max-width: 420px;
+      margin: 50px;} }
+.projectBrief-blob img, .project-blob img{
   max-width: 100%;
   position: relative;
   z-index: -1;
   box-shadow: 6px 6px 0px #F6BC93, 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.projectBrief-blob img:hover{
-  background-color: rgba(0,0,0,0.5);
-}
-.projectBrief-blob h3{
+.projectBrief-blob h3, .project-blob h3{
+  font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: left !important;
-  font-size: 30px;
-  line-height: 22px;
+  font-size: 26px;
+  line-height: 30px;
   color: #664363;
-  font-weight: 900;
-  font-style: none;
-}
-.projectBrief-blob p{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;}
+.projectBrief-blob p, .project-blob p{
   text-align: left;
+  margin: -10px 0 20px 0;
+  font-size: 16px;
+  line-height: 20px;
+
 }
 
 /* COURSEWORK BLOCK*/
 
-.coursework-block{
-
+.coursework-block-title{
+  padding: 0 6%;
+  margin-bottom: 50px;
 }
   @media (min-width: 700px) {
-    .coursework-block{
-      } }
+    .coursework-block-title{
+      padding: 0 8%;} }
   @media (min-width: 1024px) {
-    .coursework-block{
-      } }
-.coursework-block p{
-}
-  @media (min-width: 700px) {
-    .coursework-block p{
-      } }
-  @media (min-width: 1024px) {
-    .coursework-block p{
-      } }
+    .coursework-block-title{
+      padding: 0 10%;} }
 .core-course-list{
   display: flex;
   flex-wrap: wrap;
@@ -824,17 +889,17 @@ div.learningOutcomes-info img{
   @media (min-width: 700px) {
     .core-course-list{
       border: 4px solid #D3C5AE;
-      padding: 6%;} }
+      padding: 6% 2%;} }
   @media (min-width: 1024px) {
     .core-course-list{
       border: 4px solid #D3C5AE;
-      padding: 6%;} }
+      padding: 6% 4%;} }
 .course-list-container{
-  margin: 0 6%;
+  margin: 0 4%;
   }
   @media (min-width: 700px) {
     .course-list-container{
-      } }
+      margin: 0 4%;} }
 .course-legend{
   margin-top: 20px;
 }
@@ -862,39 +927,47 @@ div.learningOutcomes-info img{
 .course-list-container button:focus{
   border-bottom: 2px solid #F6BC93;
   background-color: #423040;
+  outline: none;
 }
 .course-blob {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: left;
-  width: 50%;
-margin: 0 20px;}
+  width: 100%;
+  margin: 2%;
+  padding: 0;}
   @media (min-width: 700px) {
     .course-blob{
-      } }
+      max-width: 46%;
+    margin: 0 6%;} }
   @media (min-width: 1024px) {
     .course-blob{
-    max-width: 420px;
-    } }
+    margin: 2px 20px;} }
 p.elective-designator, p.designator, p.hours, p.elective-hours{
+  font-size: 10px;
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   color: #332531;
-  text-align: left;}
+  text-align: left;
+  margin: 0;}
   @media (min-width: 700px) {
     p.elective-designator, p.designator, p.hours, p.elective-hours{
-      font-size: 14px;} }
+      font-size: 12px;} }
 p.elective-name, p.name{
+  font-size: 10px;
   color: #664363;
   text-align: left;
-  padding: 0 4%;}
+  padding: 0 4%;
+  margin: 0;}
   @media (min-width: 700px) {
     p.elective-name, p.name{
-      font-size: 14px;
-      padding: 0 4%;} }
-
-.outside-electives-blob{
-
+      font-size: 12px;
+      padding: 0;} }
+/*p.elective-designator, p.elective-hours{
+  color: #EC6A12;
+}*/
+.outside-electives-blob a{
+  color: #664363;
 }
 /* WHY WINTHROP BLOCK */
 
@@ -907,11 +980,15 @@ p.elective-name, p.name{
 .apply-now-block{
   margin-bottom: 0;
 }
+@media (min-width: 700px) {
+  p.elective-name, p.name{
+    font-size: 12px;
+    padding: 0;} }
 
 .apply-now-block div:last-child{
   text-align: center;
   margin: 0px;
-  padding: 20px 0px 100px 0px;
+  padding: 20px 4% 100px 4%;
   background-color: #FFF8F2;
 }
 .apply-now-block p{
@@ -975,6 +1052,9 @@ h2.parent-splash{
   justify-content: center;
   align-items: flex-start;
   padding: 100px 0px;
+  background-image: url("../images/bg-shape2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .whatDoesItMean-block-parents h2{
   text-transform: uppercase;
@@ -995,10 +1075,9 @@ h2.parent-splash{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-size: 26px;
   line-height: 30px;
-  padding: 100px 4%;
+  padding: 0px 4% 100px 4%;
   background-image: url("../images/bg-shape2.png");
-  background-position: contain;
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;}
   @media (min-width: 700px) {
     .employment-outlook-block p, .median-salary-block p{
@@ -1009,9 +1088,13 @@ h2.parent-splash{
     .employment-outlook-block p, .median-salary-block p{
       font-size: 40px;
       line-height: 50px;
-      padding: 100px 10% 200px 10%;
+      padding: 0px 10% 200px 10%;
+      max-width: 700px;
+      margin: 0 auto;
       } }
-
+.median-salary-block{
+  margin-top: 100px;
+}
 /* JOB OPPORTUNITIES */
 
 .job-oppurtunities-block{
@@ -1020,7 +1103,7 @@ h2.parent-splash{
   justify-content: center;
   background-color: #FFF8F2;
   margin-top: -40px;
-  padding: 100px 0;
+  padding: 20px 0;
 }
 .job-opportunities-header{
   width: 40%;
@@ -1028,6 +1111,9 @@ h2.parent-splash{
 }
 .job-opportunities-header h2, .job-opportunities-header p{
   text-align: right;
+}
+.job-opportunities-header h2{
+  text-transform: uppercase;
 }
 .spacing{
   margin: 100px 0 50px 0;
@@ -1039,7 +1125,7 @@ h2.parent-splash{
 
 /* SPLASH IMAGE AREA */
 
-.about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img{
+.about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img, .random-image-block img{
   width: 100%;
   height: 380px;
   object-fit: cover;
@@ -1047,7 +1133,7 @@ h2.parent-splash{
 
 /* HEADER TEXT AREAS */
 
-h1.about-header, h1.student-work-header, h1.ourPeople-header{
+h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: center;
   color: #EC6A12;
@@ -1055,14 +1141,13 @@ h1.about-header, h1.student-work-header, h1.ourPeople-header{
   line-height: 50px;
   text-shadow: none;}
   @media (min-width: 700px) {
-    h1.about-header, h1.student-work-header, h1.ourPeople-header{
+    h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1{
       font-size: 60px;
       line-height: 70px;} }
   @media (min-width: 1024px) {
-    h1.about-header, h1.student-work-header, h1.ourPeople-header{
+    h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1{
       font-size: 80px;
-      line-height: 90px;
-      } }
+      line-height: 90px;} }
 .purple-highlight{
   color: #664363;}
 h1.ourPeople-header, p.ourPeople-header, .tracks-block h1, .tracks-block p{
@@ -1175,11 +1260,13 @@ h1.ourPeople-header, p.ourPeople-header{
   margin: 100px -10% 0 10%;
 }
 .why-difd-block img{
-  width: 50%;
+  width: 80%;
   position: relative;
   right: 0;
-  z-index: -1;
-}
+  z-index: -1;}
+  @media (min-width: 700px) {
+    .why-difd-block img{
+      width: 50%;} }
 
 /* WHY WINTHROP */
 
@@ -1192,23 +1279,23 @@ h1.ourPeople-header, p.ourPeople-header{
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 160px 20px;
+  padding: 20px 20px 40px 20px;
 }
 @media (min-width: 700px) {
   .why-winthrop-block{
-    flex-wrap: wrap;} }
+    padding: 160px 20px;} }
 @media (min-width: 1024px) {
   .why-winthrop-block{
     } }
 .why-winthrop-block div, .why-winthrop-block img {
-  width: 40%;
+  width: 100%;
   height: 100%;
   border-radius: 39% 61% 47% 53% / 48% 66% 34% 52%;
   margin: 10% 0 0 4%;
 }
   @media (min-width: 700px) {
     .why-winthrop-block div,.why-winthrop-block img {
-      } }
+      width: 40%;} }
   @media (min-width: 1024px) {
     .why-winthrop-block div,.why-winthrop-block img {
       } }
@@ -1216,20 +1303,47 @@ h1.ourPeople-header, p.ourPeople-header{
   box-shadow: -10px 14px 0px #332531;
   margin-top: 100px;
 }
-.why-winthrop-block h2, .why-winthrop-block p{
-  text-align: left;}
+.why-winthrop-block h2, .why-winthrop-block p, .why-button{
+  text-align: left;
+  padding-left: 0;}
   @media (min-width: 700px) {
     .why-winthrop-block h2, .why-winthrop-block p {
       } }
   @media (min-width: 1024px) {
     .why-winthrop-block h2, .why-winthrop-block p{
       } }
-
+.why-button{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
 /* STUDENT  WORK */
+.projects-button{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 10px !important;
+  width: 200px;
+}
+.projects-button:active{
+  border-bottom: none;
+}
 
+@media (min-width: 700px) {
+  .projects-button{
+    border-radius: 10px 10px 0px 0px;
+    display: block;
+    width: 200px;} }
+@media (min-width: 1024px) {
+  .projects-button{
+    } }
+.projects-list{
+  display: flex;
+  margin-bottom: 50px;
+}
 .studentWork-overview-block{
-  padding: 80px 0 80px 4%;
+  padding: 80px 0 80px 6%;
   width: 80%;}
   @media (min-width: 700px) {
     .studentWork-overview-block{
@@ -1245,13 +1359,16 @@ h1.ourPeople-header, p.ourPeople-header{
 .projects-block{
   display: flex;
   flex-wrap: wrap;
-}
-.project-blob img{
-  max-width: 500px;
+  justify-content: flex-start;
 }
 .project-blob{
-  max-width: 500px;
-}
+  width: 100%;;}
+  @media (min-width: 700px) {
+    .project-blob{
+      max-width: 500px;} }
+  @media (min-width: 1024px) {
+    .project-blob{
+      max-width: 500px;} }
 
 /* OUR PEOPLE */
 
@@ -1416,4 +1533,114 @@ h1.ourPeople-header, p.ourPeople-header{
 .ourPeople-grad-blob:nth-child(11),
 .ourPeople-grad-blob:nth-child(13){
   flex-direction: row-reverse;
+}
+
+/* FORM PAGE */
+
+.questions-form-block{
+  width: 80%;
+  padding: 0 10%;
+  margin: 0 auto 100px auto;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #D3C5AE;
+  padding: 5%;
+  background-color: #FFFFFB;}
+  @media (min-width: 700px) {
+    .questions-form-block{
+      width: 80%;
+      margin: 0 auto 100px auto;
+      justify-content: center;
+      border-radius: 10px;
+      border: 2px solid #D3C5AE;
+      padding: 5%;} }
+  @media (min-width: 1024px) {
+    .questions-form-block{
+      width: 80%;
+      margin: 100px auto;
+      justify-content: center;
+      border-radius: 10px;
+      border: 2px solid #D3C5AE;
+      padding: 5%;} }
+.questions-form-overview{
+  width: 80%;
+  padding: 50px 6%;
+  margin: 0 auto;}
+  @media (min-width: 700px) {
+    .questions-form-overview{
+      width: 80%;
+      padding: 30px 10% 0 10%;} }
+  @media (min-width: 1024px) {
+    .questions-form-overview{
+      width: 80%;
+      padding: 0 10%;} }
+input[type=email], input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background: #FFF8F2;
+  border: .5px solid #F6BC93;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: all 0.5s;}
+input[type=submit]{
+  transition: all 0.5s;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;}
+input[type=email]:focus, input[type=text]:focus, select:focus{
+  outline: none;}
+.invaild-email-block p, .invaild-name-block p, .invaild-question-block p{
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  color: red;
+  text-align: left;
+  font-style: italic;}
+input[type=email]:hover, input[type=text]:hover, select:hover {
+  border: .5px solid #D3C5AE;}
+
+/* QUESTION SUBMITTED */
+.question-received-block h1{
+  margin-top: 30px;}
+  @media (min-width: 700px) {
+    .question-received-block h1{
+      margin-top: 100px;} }
+.question-received-block a{
+  display: flex;
+  justify-content: center;
+  margin: 40px auto 100px;
+  width: 80px;
+}
+.question-received-block{
+  padding: 0 6%;
+}
+
+/* QUESTIONS BUBBLE */
+.questions-bubble{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-decoration: none;
+  background-color: #664363;
+  padding: 8px 16px;
+  margin-bottom: 60px;
+  margin-right: 40px;
+  width: 100px;
+  border-radius: 56% 44% 58% 42% / 35% 55% 45% 65% ;
+  animation: wobble4 12s linear alternate infinite;
+  box-shadow: 2px 6px 8px #332531;
+  z-index: 80;
+}
+.questions-bubble p{
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #FFF8F2;
+  font-family: 'AvenirLTStd', Arial, sans-serif;
 }

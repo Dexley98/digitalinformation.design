@@ -53,33 +53,19 @@ export default class OurPeople extends Component {
                     </div>
                     <div className="bottom-curve"></div>
                 </section>
-<<<<<<< HEAD
                 <section className="ourPeople-graduates-block">
                   <div className="graduates-title">
-=======
-                <section id="graduates" className="ourPeople-graduates-block">
->>>>>>> c7424dfd7d8015a0aef839e47ee03f49d6b000c5
                     <h2>MEET THE GRADUATES</h2>
                     <p>{graduatesOverview.graduatesOverview}</p>
-                  </div>
+                </div>
                     {gradList.map( (index) =>{
                         return(
-<<<<<<< HEAD
                             <LongGrad
                                 gradPicture={index.node.gradPicture}
                                 gradName={index.node.gradName}
                                 gradDate={index.node.gradDate}
                                 whereAreTheyNow={index.node.whereAreTheyNow}
                                 DifdPrep={index.node.DifdPrep}
-=======
-                            <LongGrad
-                                jobTitle={index.node.jobTitle}
-                                gradPicture={index.node.gradPicture}
-                                gradName={index.node.gradName}
-                                gradDate={index.node.gradDate}
-                                whereAreTheyNow={index.node.whereAreTheyNow}
-                                DifdPrep={index.node.DifdPrep}
->>>>>>> c7424dfd7d8015a0aef839e47ee03f49d6b000c5
                             />
                         )
                     })}
@@ -138,7 +124,6 @@ export const pageQuery = graphql`
         allContentfulGraduate {
             edges {
               node {
-                jobTitle
                 gradPicture {
                   description
                   file {

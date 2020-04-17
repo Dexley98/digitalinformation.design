@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {navigate} from 'gatsby'
 
+import Menu from '../components/main-menu'
+import Footer from '../components/footer'
 
 export default class Questions extends Component {
     constructor(props) {
@@ -14,11 +16,11 @@ export default class Questions extends Component {
         emailMssg: undefined,
         questionMssg: undefined
       };
-  
+
       this.handleInputChange = this.handleInputChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
     }
-  
+
     handleInputChange(event) {
         const target = event.target
         console.log(target)
@@ -40,7 +42,7 @@ export default class Questions extends Component {
 
     handleSubmit(event){
         event.preventDefault()
-        
+
         console.log('entire state ', this.state)
         let vaildName = this.validateName(this.state.fullName)
         let vaildEmail = this.validateEmail(this.state.email)
@@ -100,28 +102,29 @@ export default class Questions extends Component {
             }
         }
 
-        
+
     }
-  
+
     render() {
       return (
         <div>
+        <Menu />
             <section className="questions-form-overview">
                 <h1>QUESTIONS?</h1>
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>
-            </section> 
+            </section>
             <section className="questions-form-block">
                 <form action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
                   <label>
                     Full Name
                     <input
-                      name="fullName"            
+                      name="fullName"
                       type="text"
                       placeholder="What's your name?"
                       value={this.state.fullName}
                       onChange={this.handleInputChange} />
                   </label>
-                  {this.state.nameMssg && 
+                  {this.state.nameMssg &&
                     <section className="invaild-name-block">
                         <p>{this.state.nameMssg}</p>
                     </section>
@@ -130,13 +133,13 @@ export default class Questions extends Component {
                   <label>
                     Email
                     <input
-                      name="email"            
+                      name="email"
                       type="email"
                       placeholder="example@gmail.com"
                       value={this.state.email}
                       onChange={this.handleInputChange} />
                   </label>
-                  {this.state.emailMssg && 
+                  {this.state.emailMssg &&
                     <section className="invaild-email-block">
                         <p>{this.state.emailMssg}</p>
                     </section>
@@ -145,13 +148,13 @@ export default class Questions extends Component {
                   <label>
                     Question
                     <input
-                      name="question"            
+                      name="question"
                       type="text"
                       placeholder="What is your question?"
                       value={this.state.question}
                       onChange={this.handleInputChange} />
                   </label>
-                  {this.state.questionMssg && 
+                  {this.state.questionMssg &&
                     <section className="invaild-question-block">
                         <p>{this.state.questionMssg}</p>
                     </section>
@@ -160,12 +163,13 @@ export default class Questions extends Component {
                   <input type="submit" value="Submit" />
                 </form>
             </section>
+            <Footer />
         </div>
       )
     }
 
     validateEmail(mailValue){
-        
+
         let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
         if(mailValue !== undefined || mailValue !== null){
@@ -175,7 +179,7 @@ export default class Questions extends Component {
             return false
         }
         return false
-        
+
     }
 
     validateName(nameValue)
@@ -191,7 +195,7 @@ export default class Questions extends Component {
             return false
         }
 
-        
+
     }
 
     validateQuestion(questionValue){
@@ -234,7 +238,7 @@ function dummyThicc(){
     if(inputName === "question"){
         valid = true
         this.setState({
-            [inputName]: inputValue    
+            [inputName]: inputValue
         });
     }
 }*/

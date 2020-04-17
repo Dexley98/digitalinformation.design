@@ -69,7 +69,7 @@ class studentPage extends Component {
              <Menu />
 
 {/* Parent Nav */}
-                <nav className="hide">
+                <nav className="parent-link">
                   <p>Are you a parent?
                     <Link to={`${slug}/parents`}
                           state={{ prevPath: window.location.pathname}}>
@@ -124,7 +124,7 @@ class studentPage extends Component {
                       })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p><Link to="/our-people" 
+                    <p><Link to="/our-people"
                              className="main-link"
                              state={{ prevPath: window.location.pathname}}>
                                View Careers
@@ -181,19 +181,23 @@ class studentPage extends Component {
                   <section className="student-work-block">
                     <h2>STUDENT WORK</h2>
                     <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
+                    <div className="projectBrief-container">
                     {allTrackProjects.map((index) =>{
                       return(
                         <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
                         )
                     })}
+                    </div>
                   </section>
                 }
 
 
 {/* Coursework Section */}
                 <section className="coursework-block">
-                  <h2>COURSEWORK</h2>
-                  <p>Here's a taste of the classes you may take while in DIFD.</p>
+                  <div className="coursework-block-title">
+                    <h2>COURSEWORK</h2>
+                    <p>Here's a taste of the classes you may take while in DIFD.</p>
+                  </div>
                   <CourseBlock courseList={allCourseArray} slug={slug} className="course-selector"/>
                 </section>
 
@@ -204,15 +208,16 @@ class studentPage extends Component {
                     <p>{whyWinthrop1.whyWinthrop1}</p>
                     <p>{whyWinthrop2.whyWinthrop2}</p>
                   </div>
-                  <img src={whyWinthropAsset1.file.url} />
-                  {/*Should this link go to about or to winthrop? */}
-                  <p>
+                  <p className="why-button">
                     <Link to="/#tour"
                           className="main-link"
                           state={{ prevPath: window.location.pathname}}>
                       Learn More
                     </Link>
                   </p>
+                  <img src={whyWinthropAsset1.file.url} />
+                  {/*Should this link go to about or to winthrop? */}
+
                 </section>
 
                 <Apply />

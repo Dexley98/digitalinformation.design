@@ -49,7 +49,7 @@ class Menu extends React.Component {
             </Link>
           </div>
         </div>
-        <Link to="/" 
+        <Link to="/"
               state={{ prevPath: window.location.pathname}}
               className="active">
                 About
