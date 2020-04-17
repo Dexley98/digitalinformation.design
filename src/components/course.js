@@ -34,6 +34,7 @@ export default class CourseBlock extends Component {
                     id="difd-core-button"
                     className="course-button"
                     name="difd"
+                    autoFocus={true}
                     onClick={this.handleCoreClick}>
                         DIFD Core
                 </button>

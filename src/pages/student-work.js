@@ -81,7 +81,7 @@ export default class StudentWork extends Component {
                 <section className="bannerImage-block">
                     <img src={studentWorkBannerImage.file.url} alt={studentWorkBannerImage.description}/>
                 </section>
-                <section className="studentWork-overview-block">
+                <section className="studentWork-overview-block" id="projects">
                     <h1 className="student-work-header">STUDENT WORK</h1>
                     <p>{studentWorkOverview.studentWorkOverview}</p>
                 </section>

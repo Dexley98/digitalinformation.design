@@ -10,7 +10,8 @@ const MainMenu = props => (
     <div className="topnav new-menu" id="myTopnav">
       <a href="https://apply.winthrop.edu/apply/" className="apply-now">Apply Now</a>
       <div className="dropdown">
-        <button className="dropbtn">Our People
+        <button className="dropbtn">
+          Our People
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">

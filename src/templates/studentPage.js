@@ -219,7 +219,7 @@ class studentPage extends Component {
                     <div className="projectBrief-container">
                     {allTrackProjects.map((index) =>{
                       return(
-                        <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
+                          <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
                         )
                     })}
                     </div>
