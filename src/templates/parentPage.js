@@ -11,6 +11,8 @@ import Grad from '../components/grad'
 import Apply from '../components/apply'
 import ProjectBrief from '../components/projectBrief'
 
+import "../css/layout.css"
+
 export default class parentPage extends Component {
     render() {
 // Major Content for Page

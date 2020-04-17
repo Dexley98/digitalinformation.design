@@ -9,6 +9,8 @@ import Apply from '../components/apply'
 import Professor from '../components/professor'
 import LongGrad from '../components/longGrad'
 
+import "../css/layout.css"
+
 export default class OurPeople extends Component {
     render() {
         const {

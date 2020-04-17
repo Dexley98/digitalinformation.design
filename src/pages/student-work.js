@@ -12,6 +12,8 @@ import Apply from '../components/apply'
 import Track from '../components/track'
 import ProjectsBlock from '../components/project'
 
+import "../css/layout.css"
+
 export default class StudentWork extends Component {
   constructor(props){
     super(props)

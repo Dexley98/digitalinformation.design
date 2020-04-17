@@ -5,6 +5,8 @@ import {navigate} from 'gatsby'
 import Menu from '../components/main-menu'
 import Footer from '../components/footer'
 
+import "../css/layout.css"
+
 export default class Questions extends Component {
     constructor(props) {
       super(props);

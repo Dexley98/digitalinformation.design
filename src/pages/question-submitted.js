@@ -5,6 +5,8 @@ import { Link, graphql} from 'gatsby'
 import Menu from '../components/main-menu'
 import Footer from '../components/footer'
 
+import "../css/layout.css"
+
 export default class QuestionSubmitted extends Component {
     render() {
         let randomImageIndex = Math.floor(Math.random() * Math.floor(4));

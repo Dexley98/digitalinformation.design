@@ -13,6 +13,8 @@ import Apply from '../components/apply'
 import ProjectBrief from '../components/projectBrief'
 import CourseBlock from '../components/course'
 
+import "../css/layout.css"
+
 class studentPage extends Component {
      render(){
 // Major content for page
