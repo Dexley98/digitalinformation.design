@@ -252,7 +252,7 @@ nav.side-drawer{
 .dropdown:hover .dropdown-content {
   display: block;}
   @media (max-width: 700px) {
-    .topnav {
+    .topnav.new-menu {
       display: none;} }
 
 .parent-link{
@@ -1077,7 +1077,7 @@ h2.parent-splash{
   line-height: 30px;
   padding: 0px 4% 100px 4%;
   background-image: url("../images/bg-shape2.png");
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;}
   @media (min-width: 700px) {
     .employment-outlook-block p, .median-salary-block p{
@@ -1201,7 +1201,8 @@ h1.ourPeople-header, p.ourPeople-header{
 .track-blob{
   max-width: 100%;
   height: 300px;
-  padding: 0 8%;}
+  padding: 0 8%;
+  }
   @media (min-width: 700px) {
     .track-blob{
       max-width: 260px;
@@ -1213,6 +1214,29 @@ h1.ourPeople-header, p.ourPeople-header{
       padding: 0 8%;
       height: 300px;
       } }
+div.track-blob:first-child{
+  background-image: url("../images/top-left-blob.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+div.track-blob:nth-child(2){
+  background-image: url("../images/top-right-blob.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+div.track-blob:nth-child(3){
+  background-image: url("../images/bottom-left-blob.png");
+  background-position:center top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}div.track-blob:nth-child(4){
+  background-image: url("../images/bottom-right-blob.png");
+  background-position:center left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .track-blob h3{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: left;
@@ -1318,8 +1342,9 @@ h1.ourPeople-header, p.ourPeople-header{
 }
 
 /* STUDENT  WORK */
+@media (max-width: 700px){
 .projects-button{
-  display: flex;
+
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
@@ -1328,16 +1353,8 @@ h1.ourPeople-header, p.ourPeople-header{
 }
 .projects-button:active{
   border-bottom: none;
-}
+}}
 
-@media (min-width: 700px) {
-  .projects-button{
-    border-radius: 10px 10px 0px 0px;
-    display: block;
-    width: 200px;} }
-@media (min-width: 1024px) {
-  .projects-button{
-    } }
 .projects-list{
   display: flex;
   margin-bottom: 50px;
