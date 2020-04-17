@@ -81,7 +81,7 @@ class studentPage extends Component {
         const allTrackProjects = this.props.data.allContentfulProject.edges
 
 
-
+        console.log(allTrackProjects)
 /*******************************Start Debugging Block***************************************************
          for(var i = 0; i<taglineList.length; i++){
              console.log('tagline list number '+ i + ' ' + taglineList[i])
