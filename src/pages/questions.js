@@ -2,8 +2,13 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {navigate} from 'gatsby'
 
-import Menu from '../components/main-menu'
+import MainMenu from '../components/new-menu'
 import Footer from '../components/footer'
+
+// stuff for responsive drop down
+import SideDrawer from '../components/side-drawer'
+import BackDrop from '../components/back-drop'
+
 
 import "../css/layout.css"
 
@@ -11,6 +16,7 @@ export default class Questions extends Component {
     constructor(props) {
       super(props);
       this.state = {
+        siteDrawerOpen: false,
         fullName: undefined,
         email: undefined,
         question: undefined,
@@ -21,6 +27,16 @@ export default class Questions extends Component {
 
       this.handleInputChange = this.handleInputChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    drawerToggleClickHandler = () =>{
+        this.setState((prevState) => {
+          return {sideDrawerOpen: !prevState.sideDrawerOpen}
+        })
+      }
+  
+    backdropClickHandler = () => {
+        this.setState({sideDrawerOpen: false})
     }
 
     handleInputChange(event) {
@@ -108,9 +124,18 @@ export default class Questions extends Component {
     }
 
     render() {
+      let sideDrawer = null;
+      let backDrop = null;
+      if (this.state.sideDrawerOpen) {
+        sideDrawer = <SideDrawer />
+        backDrop = <BackDrop click={this.backdropClickHandler}/>
+      }
+    
       return (
         <div>
-        <Menu />
+        <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
+        {sideDrawer}
+        {backDrop}
             <section className="questions-form-overview">
                 <h1>QUESTIONS?</h1>
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>

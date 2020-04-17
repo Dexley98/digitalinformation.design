@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {graphql, Link} from 'gatsby'
 
 // Pull in Components
-import Menu from '../components/main-menu'
+import MainMenu from '../components/new-menu'
 import Footer from '../components/footer'
 import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'
@@ -11,10 +11,38 @@ import Grad from '../components/grad'
 import Apply from '../components/apply'
 import ProjectBrief from '../components/projectBrief'
 
+// stuff for responsive drop down
+import SideDrawer from '../components/side-drawer'
+import BackDrop from '../components/back-drop'
+
 import "../css/layout.css"
 
 export default class parentPage extends Component {
+
+    constructor(props){
+      super(props)
+      this.state = {
+        sideDrawerOpen: false      
+      }
+    }
+
+    drawerToggleClickHandler = () =>{
+      this.setState((prevState) => {
+        return {sideDrawerOpen: !prevState.sideDrawerOpen}
+      })
+    }
+
+    backdropClickHandler = () => {
+        this.setState({sideDrawerOpen: false})
+    }
+
     render() {
+        let sideDrawer = null;
+        let backDrop = null;
+        if (this.state.sideDrawerOpen) {
+            sideDrawer = <SideDrawer />
+            backDrop = <BackDrop click={this.backdropClickHandler}/>
+        }
 // Major Content for Page
         const {
             concentrationTitle,
@@ -38,7 +66,9 @@ export default class parentPage extends Component {
 
         return (
             <div>
-                <Menu />
+                <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
+                {sideDrawer}
+                {backDrop}
 
 {/* Splash Media Section */}
                 <section className="splashMedia-block parents">

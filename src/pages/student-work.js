@@ -25,12 +25,12 @@ export default class StudentWork extends Component {
 
     drawerToggleClickHandler = () =>{
       this.setState((prevState) => {
-        return {sideDrawerOpen: !prevState.sideDrawerOpen};
-      });
-    };
+        return {sideDrawerOpen: !prevState.sideDrawerOpen}
+      })
+    }
 
     backdropClickHandler = () => {
-      this.setState({sideDrawerOpen: false});
+      this.setState({sideDrawerOpen: false})
     }
 
     trimPrevPath(prevPath){
@@ -45,19 +45,11 @@ export default class StudentWork extends Component {
       return concentrationSlug
   }
 
-    /* componentDidMount(){
-      this.setState({
-        previousPageSlug: this.props.location.state.prevPath
-      })
-    } */
-
-
-
     render() {
       let sideDrawer = null;
       let backDrop = null;
       if (this.state.sideDrawerOpen) {
-        sideDrawer = <SideDrawer />;
+        sideDrawer = <SideDrawer />
         backDrop = <BackDrop click={this.backdropClickHandler}/>
       }
 

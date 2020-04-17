@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link} from 'gatsby'
 
 // Pull in Components
-import Menu from "../components/main-menu"
+import MainMenu from "../components/new-menu"
 import Footer from "../components/footer"
 import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'
@@ -13,10 +13,41 @@ import Apply from '../components/apply'
 import ProjectBrief from '../components/projectBrief'
 import CourseBlock from '../components/course'
 
+// stuff for responsive drop down
+import SideDrawer from '../components/side-drawer'
+import BackDrop from '../components/back-drop'
+
 import "../css/layout.css"
 
 class studentPage extends Component {
+
+      constructor(props){
+        super(props)
+        this.state = {
+          sideDrawerOpen: false      
+        }
+     }
+
+      drawerToggleClickHandler = () =>{
+        this.setState((prevState) => {
+          return {sideDrawerOpen: !prevState.sideDrawerOpen}
+        })
+      }
+
+      backdropClickHandler = () => {
+          this.setState({sideDrawerOpen: false})
+      }
+
+
      render(){
+        
+        let sideDrawer = null;
+        let backDrop = null;
+        if (this.state.sideDrawerOpen) {
+            sideDrawer = <SideDrawer />
+            backDrop = <BackDrop click={this.backdropClickHandler}/>
+        }
+
 // Major content for page
         const {
           slug,
@@ -68,7 +99,9 @@ class studentPage extends Component {
          return(
 
              <div className="body">
-             <Menu />
+             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
+             {sideDrawer}
+             {backDrop}
 
 {/* Parent Nav */}
                 <nav className="parent-link">

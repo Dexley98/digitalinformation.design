@@ -4,17 +4,46 @@ import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
 // bring in component files.
-import Menu from '../components/main-menu'
+import MainMenu from '../components/new-menu'
 import Footer from '../components/footer'
 import Grad from '../components/grad'
 import Track from '../components/track'
 import Outcome from '../components/outcome'
 import Apply from '../components/apply'
 
+// stuff for responsive drop down
+import SideDrawer from '../components/side-drawer'
+import BackDrop from '../components/back-drop'
+
 import "../css/layout.css"
 
 export default class About extends Component {
+
+    constructor(props){
+      super(props)
+      this.state = {
+        sideDrawerOpen: false      
+      }
+    }
+
+    drawerToggleClickHandler = () =>{
+      this.setState((prevState) => {
+        return {sideDrawerOpen: !prevState.sideDrawerOpen}
+      })
+    }
+
+    backdropClickHandler = () => {
+        this.setState({sideDrawerOpen: false})
+    }
+
     render() {
+        let sideDrawer = null;
+        let backDrop = null;
+        if (this.state.sideDrawerOpen) {
+            sideDrawer = <SideDrawer />
+            backDrop = <BackDrop click={this.backdropClickHandler}/>
+        }
+      
         // should only be one, that why the assignment at the bottom of this const statement
         const {
             bannerImage,
@@ -47,7 +76,9 @@ export default class About extends Component {
 
         return(
             <div>
-            <Menu />
+            <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
+            {sideDrawer}
+            {backDrop}
                 <section className="about-bannerImg-block">
                     <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
