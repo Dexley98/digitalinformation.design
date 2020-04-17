@@ -24,7 +24,7 @@ export default class Track extends Component {
                 <h3>{getTrackName(this.props.slug)}</h3>
                 <p>{this.props.overview}</p>
                 <Link to={this.props.slug}
-                      state={{ prevPath: window.location.pathname}}
+                      state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
                       className="main-link">
                           Learn More
                 </Link>

@@ -72,7 +72,7 @@ class studentPage extends Component {
                 <nav className="parent-link">
                   <p>Are you a parent?
                     <Link to={`${slug}/parents`}
-                          state={{ prevPath: window.location.pathname}}>
+                          state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
                             Click here!
                     </Link>
                   </p>
@@ -126,7 +126,7 @@ class studentPage extends Component {
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
                     <p><Link to="/our-people"
                              className="main-link"
-                             state={{ prevPath: window.location.pathname}}>
+                             state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
                                View Careers
                         </Link>
                     </p>
@@ -211,7 +211,7 @@ class studentPage extends Component {
                   <p className="why-button">
                     <Link to="/#tour"
                           className="main-link"
-                          state={{ prevPath: window.location.pathname}}>
+                          state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
                       Learn More
                     </Link>
                   </p>

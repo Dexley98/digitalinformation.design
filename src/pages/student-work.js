@@ -13,17 +13,44 @@ import Track from '../components/track'
 import ProjectsBlock from '../components/project'
 
 export default class StudentWork extends Component {
-    state = {
-      sideDrawerOpen: false
-    };
+  constructor(props){
+    super(props)
+    this.state = {
+      sideDrawerOpen: false, 
+      previousPageSlug: props.location.state !== undefined ? props.location.state.prevPath : '/commerce'
+    }
+  }  
+
     drawerToggleClickHandler = () =>{
       this.setState((prevState) => {
         return {sideDrawerOpen: !prevState.sideDrawerOpen};
       });
     };
+
     backdropClickHandler = () => {
       this.setState({sideDrawerOpen: false});
     }
+
+    trimPrevPath(prevPath){
+      const concentrationList = ["massmedia", "commerce", "interactivemedia", "webapps"]
+      let prevPathArray = prevPath.split("/")
+      let concentrationSlug = undefined
+      if(concentrationList.includes(prevPathArray[1])){
+          concentrationSlug = prevPathArray[1]
+      }else{
+          return concentrationSlug
+      }
+      return concentrationSlug
+  }
+
+    /* componentDidMount(){
+      this.setState({
+        previousPageSlug: this.props.location.state.prevPath
+      })
+    } */
+
+
+
     render() {
       let sideDrawer = null;
       let backDrop = null;
@@ -31,6 +58,8 @@ export default class StudentWork extends Component {
         sideDrawer = <SideDrawer />;
         backDrop = <BackDrop click={this.backdropClickHandler}/>
       }
+
+      console.log(this.state.previousPageSlug)
         const {
             studentWorkBannerImage,
             studentWorkOverview,
@@ -47,9 +76,7 @@ export default class StudentWork extends Component {
 
         const allProjectObject = this.props.data.allContentfulProject.edges
         const allProjectArray = getAllProjectArray(allProjectObject)
-        console.log(allProjectArray)
-        const previousPageSlug = trimPrevPath(this.props.location.state.prevPath)
-
+        console.log(allProjectArray)      
 
         return (
             <div>
@@ -65,25 +92,15 @@ export default class StudentWork extends Component {
                     <p>{studentWorkOverview.studentWorkOverview}</p>
                 </section>
                 <section className="projects-block">
-                    <ProjectsBlock allProjectArray={allProjectArray} previousPageSlug={previousPageSlug}/>
+                    {this.state.previousPageSlug !== undefined && 
+                      <ProjectsBlock allProjectArray={allProjectArray} previousPageSlug={this.trimPrevPath(this.state.previousPageSlug)}/>
+                    }
                 </section>
                 <Apply />
                 <Footer />
             </div>
         )
 /* END OF RETURN */
-
-        function trimPrevPath(prevPath){
-            const concentrationList = ["massmedia", "commerce", "interactivemedia", "webapps"]
-            let prevPathArray = prevPath.split("/")
-            let concentrationSlug = undefined
-            if(concentrationList.includes(prevPathArray[1])){
-                concentrationSlug = prevPathArray[1]
-            }else{
-                return concentrationSlug
-            }
-            return concentrationSlug
-        }
 
 // put all projects into an array so that it can be pushed as a prop
         function getAllProjectArray(projectObject){

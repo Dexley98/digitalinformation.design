@@ -21,7 +21,7 @@ export default class QuestionSubmitted extends Component {
                     <h1>THANK YOU!</h1>
                     <p>Someone on our team will get back to you ASAP!</p>
                     <Link to="/"
-                          state={{ prevPath: window.location.pathname}}
+                          state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
                           className="main-link">
                               Home
                     </Link>
