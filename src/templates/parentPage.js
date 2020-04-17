@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {graphql, Link} from 'gatsby'
 
 // Pull in Components
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import Footer from '../components/footer'
 import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'

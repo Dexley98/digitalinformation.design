@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql} from 'gatsby'
 
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import Footer from '../components/footer'
 
 // stuff for responsive drop down

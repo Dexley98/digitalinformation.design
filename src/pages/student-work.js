@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
 // bring in component files.
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 import Footer from '../components/footer'

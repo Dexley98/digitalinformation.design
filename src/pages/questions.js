@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {navigate} from 'gatsby'
 
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import Footer from '../components/footer'
 
 // stuff for responsive drop down
