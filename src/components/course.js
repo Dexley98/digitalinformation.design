@@ -53,12 +53,12 @@ export default class CourseBlock extends Component {
 {/*give functional componet CoreCourseList the coreArray for rendering */}
                 <div className="core-course-list">
                     <CoreCourseList array={this.state.coreArray}/>
-                    <div className="course-legend">
+                    {/*<div className="course-legend">
                         <div id="elective-color-key"></div>
                         <p id="elective-color-key-message">Electives within the Core (color goes in the div above )</p>
                         <div id="required-color-key"></div>
                         <p id="required-color-key-message">Required within the Core (color goes in the div above)</p>
-                    </div>
+                    </div>*/}
                 </div>
 
             </div>
@@ -97,7 +97,7 @@ const CoreCourseList = ({array}) => {
         return(
             <div className="outside-electives-blob">
                 <p>For an approved list of general electives
-                    <a href="https://www.winthrop.edu/uploadedFiles/recandreg/CourseSchedule/General-Ed-program.pdf">Click Here</a></p>
+                    <a href="https://www.winthrop.edu/uploadedFiles/recandreg/CourseSchedule/General-Ed-program.pdf"> Click Here</a></p>
             </div>
         )
     }

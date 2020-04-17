@@ -39,8 +39,8 @@ export default class parentPage extends Component {
                 <Menu />
 
 {/* Splash Media Section */}
-                <section className="splashMedia-block">
-                    <img className="hero-image" src={splashMedia[0].file.url} alt={splashMedia[0].description} />
+                <section className="splashMedia-block parents">
+                    <img className="hero-image parents" src={splashMedia[0].file.url} alt={splashMedia[0].description} />
                     <div className="parent-splash">
                       <h1 className="parent-splash">{trimedConcentrationTitle}</h1>
                       <h2 className="parent-splash">{mainActivity}</h2>
@@ -61,19 +61,23 @@ export default class parentPage extends Component {
 
 {/* Job Oppurtunities Section */}
                 <section className="job-oppurtunities-block">
+                <div className=""></div>
                   <div className="job-opportunities-header">
-                    <h2>Job Opportunities</h2>
-                    <p>{jobOpportunities.jobOpportunities}</p>
-                  </div>
-                    <img className="job-opportunities-header" src={concentrationAsset.file.url} alt={concentrationAsset.description} />
                     <div>
+                      <h2>Job Opportunities</h2>
+                      <p>{jobOpportunities.jobOpportunities}</p>
+                    </div>
+                      <img className="job-opportunities-header" src={concentrationAsset.file.url} alt={concentrationAsset.description} />
+                    </div>
+                    <div>
+
                       <div className="job-blob-container spacing">
                         {jobList.map((index) =>{
                           return(<Job jobTitle={index.node.title} jobDesc={index.node.description.description}/>)
                         })}
                       </div>
                       <p className="spacing">Do you want to learn more about the careers that our program can prepare your child for?</p>
-                      <p><Link to="/our-people" 
+                      <p><Link to="/our-people"
                              className="main-link"
                              state={{ prevPath: window.location.pathname}}>
                                View Careers

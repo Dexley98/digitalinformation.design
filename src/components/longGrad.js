@@ -28,7 +28,7 @@ export default class LongGrad extends Component {
         )
     }
 
-    makeUniqueGradId(gradName, gradJobTitle){
+   makeUniqueGradId(gradName, gradJobTitle){
         let gradNameSplitList = gradName.split(" ")
         let gradJobTitleSplitList = gradJobTitle.split(" ")
 

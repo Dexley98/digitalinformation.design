@@ -10,9 +10,9 @@ export default class QuestionSubmitted extends Component {
         let randomImageIndex = Math.floor(Math.random() * Math.floor(4));
         const randomImage = this.props.data.allContentfulConcentrationPageHome.edges[randomImageIndex].node.concentrationAsset
         console.log(randomImage)
-        
+
         return (
-            <div>
+            <div class="main-container">
             <Menu />
                 <section className="random-image-block">
                     <img src={randomImage.file.url} alt={randomImage.description} />

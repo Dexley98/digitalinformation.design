@@ -34,11 +34,11 @@ class Footer extends React.Component {
           </Link>
         </div>
         <div>
-          <Link to="/student-work"
+          <Link to="/student-work" className="bad-link"
                 state={{ prevPath: window.location.pathname}}>
                   Student Work
           </Link>
-          <Link to="/our-people#graduates"
+          <Link to="/our-people#graduates" className="bad-link"
                 state={{ prevPath: window.location.pathname}}>
                   Our Grads
           </Link>
