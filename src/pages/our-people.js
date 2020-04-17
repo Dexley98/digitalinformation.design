@@ -131,6 +131,7 @@ export const pageQuery = graphql`
                     url
                   }
                 }
+                jobTitle
                 gradName
                 gradDate {
                   gradDate
