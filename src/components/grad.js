@@ -14,7 +14,7 @@ export default class Grad extends Component {
                 <h5>{this.props.jobTitle}</h5>
                 <p>{this.props.gradBio}</p>
                 <p><Link to={`/our-people#${uniqueId}`} 
-                         state={{ prevPath: window.location.pathname}}
+                         state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
                          className="main-link">
                              Learn More
                     </Link>

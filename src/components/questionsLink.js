@@ -6,7 +6,7 @@ export default class QuestionsLink extends Component {
         return (
             <Link
                 to="/questions/"
-                state={{prevPath: window.location.pathname}}>
+                state={{prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
                 <div className="questions-bubble">
                     <p>Any Questions?</p>
                 </div>

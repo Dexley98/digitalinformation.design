@@ -79,7 +79,7 @@ export default class parentPage extends Component {
                       <p className="spacing">Do you want to learn more about the careers that our program can prepare your child for?</p>
                       <p><Link to="/our-people"
                              className="main-link"
-                             state={{ prevPath: window.location.pathname}}>
+                             state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
                                View Careers
                         </Link>
                       </p>
