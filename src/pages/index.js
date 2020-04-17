@@ -11,6 +11,8 @@ import Track from '../components/track'
 import Outcome from '../components/outcome'
 import Apply from '../components/apply'
 
+import "../css/layout.css"
+
 export default class About extends Component {
     render() {
         // should only be one, that why the assignment at the bottom of this const statement
