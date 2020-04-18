@@ -136,7 +136,7 @@ export default class Questions extends Component {
         <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
         {sideDrawer}
         {backDrop}
-            <section className="questions-form-overview">
+            <section className="questions-form-overview" id="top">
                 <h1>QUESTIONS?</h1>
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>
             </section>

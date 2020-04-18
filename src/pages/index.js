@@ -79,7 +79,7 @@ export default class About extends Component {
             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
             {sideDrawer}
             {backDrop}
-                <section className="about-bannerImg-block">
+                <section className="about-bannerImg-block" id="top">
                     <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
                 <section className="what-is-difd-block">

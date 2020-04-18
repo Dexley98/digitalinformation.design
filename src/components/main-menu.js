@@ -25,7 +25,7 @@ const MainMenu = props => (
           </Link>
         </div>
       </div>
-      <Link to="/student-work"
+      <Link to="/student-work#top"
             state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
               Student Work
       </Link>
@@ -34,25 +34,25 @@ const MainMenu = props => (
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link to="/commerce"
+          <Link to="/commerce#top"
                 state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
                   Digital Commerce
           </Link>
-          <Link to="/massmedia"
+          <Link to="/massmedia#top"
                 state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
                   Digital Mass Media
           </Link>
-          <Link to="/interactivemedia"
+          <Link to="/interactivemedia#top"
                 state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
                   Interactive Media
           </Link>
-          <Link to="/webapps"
+          <Link to="/webapps#top"
                 state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
                   Web Applications
           </Link>
         </div>
       </div>
-      <Link to="/"
+      <Link to="/#top"
             state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
             className="active">
               About

@@ -809,7 +809,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   background-position: left;
   background-size: 60% 100%;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: -1;
   position: relative;
   margin: 100px 0;
 }
@@ -846,7 +846,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
 .projectBrief-blob img, .project-blob img{
   max-width: 100%;
   position: relative;
-  z-index: 0;
+  z-index: -1;
   box-shadow: 6px 6px 0px #F6BC93, 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .projectBrief-blob h3, .project-blob h3{

@@ -58,7 +58,7 @@ export default class OurPeople extends Component {
             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
             {sideDrawer}
             {backDrop}
-                <section className="ourPeople-bannerImg-block">
+                <section className="ourPeople-bannerImg-block" id="top">
                     <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
                 <section className="ourPeople-overview-block">

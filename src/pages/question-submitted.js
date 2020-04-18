@@ -48,7 +48,7 @@ export default class QuestionSubmitted extends Component {
             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
             {sideDrawer}
             {backDrop}
-                <section className="random-image-block">
+                <section className="random-image-block" id="top">
                     <img src={randomImage.file.url} alt={randomImage.description} />
                 </section>
                 <section className="question-received-block">

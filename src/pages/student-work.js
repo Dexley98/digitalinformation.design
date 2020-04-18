@@ -73,12 +73,12 @@ export default class StudentWork extends Component {
         console.log(allProjectArray)      
 
         return (
-            <div>
+            <div id="top">
               <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
               {sideDrawer}
               {backDrop}
       
-                <section className="bannerImage-block">
+                <section className="bannerImage-block" >
                     <img src={studentWorkBannerImage.file.url} alt={studentWorkBannerImage.description}/>
                 </section>
                 <section className="studentWork-overview-block" id="projects">

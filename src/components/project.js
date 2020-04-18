@@ -4,7 +4,7 @@ export default class ProjectsBlock extends Component {
 // initial render should recieve the DIFD core as state value.
     constructor(props){
         super(props)
-        let concentration = props.previousPageSlug === undefined ? "commerce" : props.previousPageSlug
+        let concentration = props.previousPageSlug === undefined || props.previousPageSlug === null ? "commerce" : props.previousPageSlug
         this.state = {
             concentrationProjects: getConcentrationProjects(props.allProjectArray, concentration),
             active: concentration
