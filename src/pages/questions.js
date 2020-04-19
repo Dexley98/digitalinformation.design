@@ -10,8 +10,8 @@ import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 
 import {Helmet} from 'react-helmet'
-import Recaptcha from 'react-recaptcha'
 
+import Recaptcha from 'react-recaptcha'
 
 import "../css/layout.css"
 
@@ -212,7 +212,8 @@ export default class Questions extends Component {
                   }
                   <center>
                       <Recaptcha
-                        sitekey = {process.env.SITE_RECAPTCHA_KEY}
+                        sitekey = "6Ld0aesUAAAAAGab0eDe5J03IT5Mw6zYMeHbLCr5"
+                        onloadCallback = {this.onloadCallback}
                         verifyCallback = {this.verifyCallback}
                         theme="dark"
                       />
