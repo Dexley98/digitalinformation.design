@@ -9,6 +9,9 @@ import Footer from '../components/footer'
 import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 
+import {Helmet} from 'react-helmet'
+import Recaptcha from 'react-recaptcha'
+
 
 import "../css/layout.css"
 
@@ -22,11 +25,13 @@ export default class Questions extends Component {
         question: undefined,
         nameMssg: undefined,
         emailMssg: undefined,
-        questionMssg: undefined
+        questionMssg: undefined,
+        notABot: false
       };
 
       this.handleInputChange = this.handleInputChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
+      this.verifyCallback = this.verifyCallback.bind(this)
     }
 
     drawerToggleClickHandler = () =>{
@@ -41,7 +46,6 @@ export default class Questions extends Component {
 
     handleInputChange(event) {
         const target = event.target
-        console.log(target)
         const inputName = target.name
         const inputValue = target.value
         this.setState({
@@ -55,8 +59,20 @@ export default class Questions extends Component {
             fullName: undefined,
             email: undefined,
             question: undefined,
+            notABot: false
         })
     }
+
+    verifyCallback(response){
+        console.log(response)
+        if(response){
+            console.log('Button Clicked!')
+            this.setState({
+                notABot: true
+            })
+        }
+    }
+
 
     handleSubmit(event){
         event.preventDefault()
@@ -65,8 +81,7 @@ export default class Questions extends Component {
         let vaildName = this.validateName(this.state.fullName)
         let vaildEmail = this.validateEmail(this.state.email)
         let vaildQuestion = this.validateQuestion(this.state.question)
-        console.log('question ', this.state.question)
-        console.log(vaildQuestion)
+        let notABot = this.state.notABot
 
         if(vaildName){
             this.setState({
@@ -86,23 +101,25 @@ export default class Questions extends Component {
             })
         }
 
-        if(vaildName && vaildEmail && vaildQuestion){
+        if(vaildName && vaildEmail && vaildQuestion && notABot){
             axios({
                 method: "POST",
                 url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
                 data: JSON.stringify(this.state)
             }).then( (response) => {
                 if (response.data.status === 'success'){
-                    console.log('message sent')
                     this.resetForm()
                 }else if(response.data.status === 'fail'){
-                    console.log("message failed to send.")
+                    alert("We were unable to send your question. Please try again.")
                 }
             })
             this.resetForm()
             navigate("/question-submitted")
         }
         else{
+            if(!notABot){
+                alert("please verify that you are a human!")
+            }
             if(!vaildName){
                 this.setState({
                     nameMssg: "That name doesn't look right. Please try again."
@@ -133,6 +150,10 @@ export default class Questions extends Component {
     
       return (
         <div>
+        <Helmet>
+            <script src={`https://www.google.com/recaptcha/api.js`} async defer></script>
+        </Helmet>
+
         <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
         {sideDrawer}
         {backDrop}
@@ -142,6 +163,7 @@ export default class Questions extends Component {
             </section>
             <section className="questions-form-block">
                 <form action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
+                  <input type="hidden" name="form-name" value="contact" />
                   <label>
                     Full Name
                     <input
@@ -186,13 +208,19 @@ export default class Questions extends Component {
                         <p>{this.state.questionMssg}</p>
                     </section>
                   }
-                  <br />
+                  <center>
+                      <Recaptcha
+                        sitekey = {process.env.SITE_RECAPTCHA_KEY}
+                        verifyCallback = {this.verifyCallback}
+                      />
+                  </center>
                   <input type="submit" value="Submit" />
                 </form>
             </section>
             <Footer />
         </div>
       )
+      
     }
 
     validateEmail(mailValue){
@@ -236,36 +264,24 @@ export default class Questions extends Component {
 
 }
 /*
-function dummyThicc(){
-    let valid = false
-    if(inputName === "fullName"){
-        valid = this.validateName(inputValue)
-        if(valid){
-            this.setState({
-                [inputName]: inputValue,
-                nameMssg: undefined
+    if(vaildName && vaildEmail && vaildQuestion){
+            axios({
+                method: "POST",
+                url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
+                data: JSON.stringify(this.state)
+            }).then( (response) => {
+                if (response.data.status === 'success'){
+                    console.log('message sent')
+                    this.resetForm()
+                }else if(response.data.status === 'fail'){
+                    console.log("message failed to send.")
+                }
             })
+            this.resetForm()
+            navigate("/question-submitted")
         }
-        this.setState({
-            nameMssg: "Something doesn't look right. Please try typing your name again."
-        })
-    }
-    if(inputName === "email"){
-        valid = this.validateEmail(inputValue)
-        if(valid){
-            this.setState({
-                [inputName]: inputValue,
-                emailMssg: undefined
-            })
-        }
-        this.setState({
-            emailMssg: "That doesn't look like a valid email. Please try again."
-        })
-    }
-    if(inputName === "question"){
-        valid = true
-        this.setState({
-            [inputName]: inputValue
-        });
-    }
+
+    // form stuff from deltona
+
+    action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit}
 }*/
