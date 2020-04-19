@@ -213,7 +213,6 @@ export default class Questions extends Component {
                   <center>
                       <Recaptcha
                         sitekey = {process.env.SITE_RECAPTCHA_KEY}
-                        render="explcit"
                         onloadCallback = {this.onloadCallback}
                         verifyCallback = {this.verifyCallback}
                       />
