@@ -53,9 +53,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-recaptcha`,
       options: {
-        async: true,
-        defer: true,
-        args: `?onload=onloadCallback&render=${process.env.SITE_RECAPTCHA_KEY}`
+        async: false,
+        defer: false,
+        args: `?onloadCallback&render=explicit`
       }
     },
     `gatsby-plugin-react-helmet`
