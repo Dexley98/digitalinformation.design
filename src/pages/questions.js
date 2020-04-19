@@ -75,7 +75,7 @@ export default class Questions extends Component {
     }
 
     onloadCallback(){
-        console.log('recaptcha loaded.')
+        console.log("recaptcha ready")
     }
 
     handleSubmit(event){
@@ -156,9 +156,6 @@ export default class Questions extends Component {
     
       return (
         <div>
-        <Helmet>
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requrests"></meta>
-        </Helmet>
         <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
         {sideDrawer}
         {backDrop}
@@ -215,7 +212,7 @@ export default class Questions extends Component {
                   }
                   <center>
                       <Recaptcha
-                        sitekey = {process.env.SITE_RECAPTCHA_KEY}
+                        sitekey = "6Ld0aesUAAAAAGab0eDe5J03IT5Mw6zYMeHbLCr5"
                         onloadCallback = {this.onloadCallback}
                         verifyCallback = {this.verifyCallback}
                       />
