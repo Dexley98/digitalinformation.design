@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link} from 'gatsby'
 
 // Pull in Components
-import MainMenu from "../components/new-menu"
+import MainMenu from "../components/main-menu"
 import Footer from "../components/footer"
 import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'
@@ -98,7 +98,7 @@ class studentPage extends Component {
 
          return(
 
-             <div className="body">
+             <div className="body" id="top">
              <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
              {sideDrawer}
              {backDrop}
@@ -106,7 +106,7 @@ class studentPage extends Component {
 {/* Parent Nav */}
                 <nav className="parent-link">
                   <p>Are you a parent?
-                    <Link to={`${slug}/parents`}
+                    <Link to={`${slug}/parents/#top`}
                           state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
                             Click here!
                     </Link>
@@ -159,7 +159,7 @@ class studentPage extends Component {
                       })}
                     </div>
                     <p>Do you want to learn more about the careers that our program can prepare you for?</p>
-                    <p><Link to="/our-people"
+                    <p><Link to="/our-people/#top"
                              className="main-link"
                              state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
                                View Careers
@@ -219,7 +219,7 @@ class studentPage extends Component {
                     <div className="projectBrief-container">
                     {allTrackProjects.map((index) =>{
                       return(
-                        <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
+                          <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
                         )
                     })}
                     </div>

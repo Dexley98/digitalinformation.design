@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {graphql, Link} from 'gatsby'
 
 // Pull in Components
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import Footer from '../components/footer'
 import QuestionsLink from '../components/questionsLink'
 import Job from '../components/job'
@@ -71,7 +71,7 @@ export default class parentPage extends Component {
                 {backDrop}
 
 {/* Splash Media Section */}
-                <section className="splashMedia-block parents">
+                <section className="splashMedia-block parents" id="top">
                     <img className="hero-image parents" src={splashMedia[0].file.url} alt={splashMedia[0].description} />
                     <div className="parent-splash">
                       <h1 className="parent-splash">{trimedConcentrationTitle}</h1>

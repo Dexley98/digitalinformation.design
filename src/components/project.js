@@ -4,7 +4,7 @@ export default class ProjectsBlock extends Component {
 // initial render should recieve the DIFD core as state value.
     constructor(props){
         super(props)
-        let concentration = props.previousPageSlug === undefined ? "commerce" : props.previousPageSlug
+        let concentration = props.previousPageSlug === undefined || props.previousPageSlug === null ? "commerce" : props.previousPageSlug
         this.state = {
             concentrationProjects: getConcentrationProjects(props.allProjectArray, concentration),
             active: concentration
@@ -21,7 +21,6 @@ export default class ProjectsBlock extends Component {
         })
     }
 
-
     render() {
 //debugging
         //console.log('state inside render ', this.state.coreArray)
@@ -29,29 +28,34 @@ export default class ProjectsBlock extends Component {
             <div className="course-list-container">
                 <button
                     id="commerce-projects-button"
-                    className={`projects-button ${this.state.active === 'commerce' ? 'active' : ''}`}
+                    className={'projects-button'}
                     name="commerce"
-                    onClick={this.handleConcentrationClick}>
+                    autoFocus={this.state.active === 'commerce' ? true : false}
+                    onClick={this.handleConcentrationClick}
+                    >
                         Digital Commerce
                 </button>
                 <button
                     id="massmedia-projects-button"
-                    className={`projects-button ${this.state.active === 'massmedia' ? 'active' : ''}`}
+                    className={'projects-button'}
                     name="massmedia"
+                    autoFocus={this.state.active === 'massmedia' ? true : false}
                     onClick={this.handleConcentrationClick}>
                         Digital Mass Media
                 </button>
                 <button
                     id="interactivemedia-projects-button"
-                    className={`projects-button ${this.state.active === 'interactivemedia' ? 'active' : ''}`}
+                    className={'projects-button'}
                     name="interactivemedia"
+                    autoFocus={this.state.active === 'interactivemedia' ? true : false}
                     onClick={this.handleConcentrationClick}>
                         Interactive Media
                 </button>
                 <button
                     id="webapps-projects-button"
-                    className={`projects-button ${this.state.active === 'webapps' ? 'active' : ''}`} 
+                    className={'projects-button'} 
                     name="webapps"
+                    autoFocus={this.state.active === 'webapps' ? true : false}
                     onClick={this.handleConcentrationClick}>
                         Web Applications
                 </button>

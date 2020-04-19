@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {navigate} from 'gatsby'
 
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import Footer from '../components/footer'
 
 // stuff for responsive drop down
@@ -11,6 +11,12 @@ import BackDrop from '../components/back-drop'
 
 
 import "../css/layout.css"
+
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+}
 
 export default class Questions extends Component {
     constructor(props) {
@@ -87,18 +93,14 @@ export default class Questions extends Component {
         }
 
         if(vaildName && vaildEmail && vaildQuestion){
-            axios({
+            fetch("/", {
                 method: "POST",
-                url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
-                data: JSON.stringify(this.state)
-            }).then( (response) => {
-                if (response.data.status === 'success'){
-                    console.log('message sent')
-                    this.resetForm()
-                }else if(response.data.status === 'fail'){
-                    console.log("message failed to send.")
-                }
-            })
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", ...this.state })
+              })
+                .then(() => alert("Success!"))
+                .catch(error => alert(error))
+
             this.resetForm()
             navigate("/question-submitted")
         }
@@ -136,12 +138,13 @@ export default class Questions extends Component {
         <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
         {sideDrawer}
         {backDrop}
-            <section className="questions-form-overview">
+            <section className="questions-form-overview" id="top">
                 <h1>QUESTIONS?</h1>
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>
             </section>
             <section className="questions-form-block">
-                <form action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
+                <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit} >
+                  <input type="hidden" name="form-name" value="contact" />
                   <label>
                     Full Name
                     <input
@@ -268,4 +271,9 @@ function dummyThicc(){
             [inputName]: inputValue
         });
     }
+
+
+    // form stuff from deltona
+
+    action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit}
 }*/

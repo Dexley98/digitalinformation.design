@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
 // bring in component files.
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import Footer from '../components/footer'
 import Grad from '../components/grad'
 import Track from '../components/track'
@@ -79,7 +79,7 @@ export default class About extends Component {
             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
             {sideDrawer}
             {backDrop}
-                <section className="about-bannerImg-block">
+                <section className="about-bannerImg-block" id="top">
                     <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
                 <section className="what-is-difd-block">

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 
 // bring in component files.
-import MainMenu from '../components/new-menu'
+import MainMenu from '../components/main-menu'
 import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 import Footer from '../components/footer'
@@ -73,15 +73,15 @@ export default class StudentWork extends Component {
         console.log(allProjectArray)      
 
         return (
-            <div>
+            <div id="top">
               <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
               {sideDrawer}
               {backDrop}
       
-                <section className="bannerImage-block">
+                <section className="bannerImage-block" >
                     <img src={studentWorkBannerImage.file.url} alt={studentWorkBannerImage.description}/>
                 </section>
-                <section className="studentWork-overview-block">
+                <section className="studentWork-overview-block" id="projects">
                     <h1 className="student-work-header">STUDENT WORK</h1>
                     <p>{studentWorkOverview.studentWorkOverview}</p>
                 </section>
