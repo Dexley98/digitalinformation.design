@@ -214,6 +214,7 @@ export default class Questions extends Component {
                       <Recaptcha
                         sitekey = {process.env.SITE_RECAPTCHA_KEY}
                         verifyCallback = {this.verifyCallback}
+                        theme="dark"
                       />
                       {this.state.botMssg &&
                         <section className="invaild-bot-block">
