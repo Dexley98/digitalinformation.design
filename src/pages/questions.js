@@ -108,7 +108,7 @@ export default class Questions extends Component {
         if(vaildName && vaildEmail && vaildQuestion && notABot){
             axios({
                 method: "POST",
-                url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
+                url: "https://deltona.birdnest.org/~acc.exleyd2/451mail.php",
                 data: this.state
             }).then( (response) => {
                 if (response.data.status === 'success'){
