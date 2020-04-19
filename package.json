@@ -13,6 +13,7 @@
     "gatsby-plugin-manifest": "^2.3.2",
     "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-react-helmet": "^3.2.4",
+    "gatsby-plugin-recaptcha": "^1.0.5",
     "gatsby-remark-images-contentful": "^2.2.2",
     "gatsby-source-contentful": "^2.2.3",
     "gatsby-source-filesystem": "^2.1.48",

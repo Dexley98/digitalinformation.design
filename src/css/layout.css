@@ -1617,6 +1617,13 @@ input[type=email]:focus, input[type=text]:focus, select:focus{
   color: red;
   text-align: left;
   font-style: italic;}
+
+.invaild-bot-block p{
+  font-size: 12px;
+  color: red;
+  font-style: italic;
+}
+
 input[type=email]:hover, input[type=text]:hover, select:hover {
   border: .5px solid #D3C5AE;}
 

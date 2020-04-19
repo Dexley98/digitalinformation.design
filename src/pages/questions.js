@@ -26,7 +26,8 @@ export default class Questions extends Component {
         nameMssg: undefined,
         emailMssg: undefined,
         questionMssg: undefined,
-        notABot: false
+        notABot: false,
+        botMssg: undefined
       };
 
       this.handleInputChange = this.handleInputChange.bind(this)
@@ -64,7 +65,6 @@ export default class Questions extends Component {
     }
 
     verifyCallback(response){
-        console.log(response)
         if(response){
             console.log('Button Clicked!')
             this.setState({
@@ -105,7 +105,7 @@ export default class Questions extends Component {
             axios({
                 method: "POST",
                 url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
-                data: JSON.stringify(this.state)
+                data: this.state
             }).then( (response) => {
                 if (response.data.status === 'success'){
                     this.resetForm()
@@ -118,7 +118,9 @@ export default class Questions extends Component {
         }
         else{
             if(!notABot){
-                alert("please verify that you are a human!")
+                this.setState({
+                    botMssg: "Please verify that you are a human!"
+                })
             }
             if(!vaildName){
                 this.setState({
@@ -150,10 +152,6 @@ export default class Questions extends Component {
     
       return (
         <div>
-        <Helmet>
-            <script src={`https://www.google.com/recaptcha/api.js?render=${process.env.SITE_RECAPTCHA_KEY}`} async defer></script>
-        </Helmet>
-
         <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
         {sideDrawer}
         {backDrop}
@@ -213,6 +211,11 @@ export default class Questions extends Component {
                         sitekey = {process.env.SITE_RECAPTCHA_KEY}
                         verifyCallback = {this.verifyCallback}
                       />
+                      {this.state.botMssg &&
+                        <section className="invaild-bot-block">
+                            <p>{this.state.botMssg}</p>
+                        </section>
+                      }
                   </center>
                   <input type="submit" value="Submit" />
                 </form>
