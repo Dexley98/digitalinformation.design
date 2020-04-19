@@ -151,7 +151,7 @@ export default class Questions extends Component {
       return (
         <div>
         <Helmet>
-            <script src={`https://www.google.com/recaptcha/api.js`} async defer></script>
+            <script src={`https://www.google.com/recaptcha/api.js?render=${process.env.SITE_RECAPTCHA_KEY}`} async defer></script>
         </Helmet>
 
         <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
