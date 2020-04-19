@@ -156,6 +156,9 @@ export default class Questions extends Component {
     
       return (
         <div>
+        <Helmet>
+            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requrests"></meta>
+        </Helmet>
         <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
         {sideDrawer}
         {backDrop}
