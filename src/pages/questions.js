@@ -75,7 +75,7 @@ export default class Questions extends Component {
     }
 
     onloadCallback(){
-        alert("recaptcha ready")
+        console.log('recaptcha loaded.')
     }
 
     handleSubmit(event){
@@ -215,10 +215,9 @@ export default class Questions extends Component {
                   }
                   <center>
                       <Recaptcha
-                        sitekey = "6Ld0aesUAAAAAGab0eDe5J03IT5Mw6zYMeHbLCr5"
+                        sitekey = {process.env.SITE_RECAPTCHA_KEY}
                         onloadCallback = {this.onloadCallback}
                         verifyCallback = {this.verifyCallback}
-                        theme="dark"
                       />
                       {this.state.botMssg &&
                         <section className="invaild-bot-block">
