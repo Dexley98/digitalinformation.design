@@ -53,8 +53,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-recaptcha`,
       options: {
-        async: false,
-        defer: false,
+        async: true,
+        defer: true,
         args: `?onload=onloadCallback&render=explicit`
       }
     },
