@@ -212,9 +212,7 @@ export default class Questions extends Component {
                   }
                   <center>
                       <Recaptcha
-                        className="g-recaptcha"
                         sitekey = {process.env.SITE_RECAPTCHA_KEY}
-                        onloadCallback = {this.onloadCallback}
                         verifyCallback = {this.verifyCallback}
                       />
                       {this.state.botMssg &&
