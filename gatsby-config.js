@@ -55,7 +55,7 @@ module.exports = {
       options: {
         async: false,
         defer: false,
-        args: `?onloadCallback&render=explicit&render=${process.env.SITE_RECAPTCHA_KEY}`
+        args: `?onloadCallback&render=${process.env.SITE_RECAPTCHA_KEY}&render=explicit`
       }
     },
     `gatsby-plugin-react-helmet`
