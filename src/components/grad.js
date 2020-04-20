@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
+/**
+ * This Class returns a graduate. 
+ * First it creates a unique grad id.
+ * Then it populates a component with the basics of a grads info from contentful. 
+ */
+
 export default class Grad extends Component {
 
     render() {
@@ -20,6 +26,15 @@ export default class Grad extends Component {
             </div>
         )
     }
+
+/**
+ * function makeUniqueGradID 
+ * @param {string} gradName 
+ * @param {string} gradJobTitle
+ * 
+ * This function takes in the grad's name and job title from contentful.
+ * It then creates an Id that can be redirected to upon a link click.  
+ */
 
     makeUniqueGradId(gradName, gradJobTitle){
         let gradNameSplitList = gradName.split(" ")

@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 
+/**
+ * This is one of the more 'complex' components.
+ * It uses some another component to help it out. (ConcentrationProjectList)
+ * Basically, it sees what url you came from and displays all the projects 
+ * from within that concentration if you were on a concentration page.
+ * 
+ * If you didn't come from a specific concentration page it just defaults to commerce concetration projects.
+ */
+
 export default class ProjectsBlock extends Component {
 // initial render should recieve the DIFD core as state value.
     constructor(props){

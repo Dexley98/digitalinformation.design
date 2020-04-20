@@ -1,6 +1,10 @@
 import { Link } from "gatsby"
 import React from "react"
 
+/* 
+This Component Renders all of the links and info located in the footer of the page. 
+*/
+
 class Footer extends React.Component {
   render() {
     return (

@@ -13,6 +13,13 @@ import Recaptcha from 'react-recaptcha'
 
 import "../css/layout.css"
 
+/**
+ * This Componet has the most diverse functionality. 
+ * It is the question form for potential students to ask questions. 
+ * It utilizes Google's Recaptcha to check for spam.
+ * Validations are the same on server side. 
+ */
+
 export default class Questions extends Component {
     constructor(props) {
       super(props);
@@ -75,6 +82,18 @@ export default class Questions extends Component {
         console.log("Recaptcha loaded.")
     }
 
+/**
+ * handleSubmit(event)
+ * @param {event} event
+ * 
+ * This function is where the magic happens.
+ * It checks and validates inputs from state. 
+ * If the input is not valid messages are set, and output to the form.
+ * If checks pass, then we make a post request to Deltona. 
+ * There is check for errors (you'd have to check the .php file for that.) in the response
+ * If everything checks out we navigate to the confirmation page. 
+ * If something isn't right we pop up an alert. (I sincerly doubt this will happen with the average user.)
+ */
     handleSubmit(event){
         event.preventDefault()
 
@@ -229,18 +248,30 @@ export default class Questions extends Component {
       
     }
 
+/**
+ * All validate Functions
+ * @param {string} arbitaryInputValue
+ * 
+ * These are all teh same in nature. 
+ * The only true difference is the regex that is tested for validation. 
+ * The first check makes sure that the input isn't empty. 
+ * The second test's the regex against the input value. 
+ * If everything checks out the input is valid. 
+ *  
+ */
     validateEmail(mailValue){
 
         let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/
 
-        if(mailValue !== undefined || mailValue !== null){
+        if(mailValue === undefined || mailValue === null){
+            return false
+        }
+        else{
             if (regex.test(mailValue)){
                 return true
             }
             return false
         }
-        return false
-
     }
 
     validateName(nameValue)
