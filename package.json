@@ -7,7 +7,6 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "axios": "^0.19.2",
-    "babel-eslint": "^10.1.0",
     "gatsby": "^2.20.18",
     "gatsby-cli": "^2.10.9",
     "gatsby-image": "^2.2.42",
@@ -44,7 +43,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "setup": "node ./bin/setup.js"
   },
   "repository": {
     "type": "git",
