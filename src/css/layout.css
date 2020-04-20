@@ -809,7 +809,11 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   background-position: left;
   background-size: 60% 100%;
   background-repeat: no-repeat;
+<<<<<<< HEAD
   z-index: -0;
+=======
+  z-index: 0;
+>>>>>>> backend
   position: relative;
   margin: 100px 0;
 }
@@ -1617,6 +1621,13 @@ input[type=email]:focus, input[type=text]:focus, select:focus{
   color: red;
   text-align: left;
   font-style: italic;}
+
+.invaild-bot-block p{
+  font-size: 12px;
+  color: red;
+  font-style: italic;
+}
+
 input[type=email]:hover, input[type=text]:hover, select:hover {
   border: .5px solid #D3C5AE;}
 

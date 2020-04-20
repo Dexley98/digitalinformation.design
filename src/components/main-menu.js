@@ -1,12 +1,16 @@
 import { Link } from "gatsby"
 import React from "react"
 
+/**
+ * This is just a giant component of links for the site menu.
+ */
+
 import DrawerButton from  '../components/drawer-button'
 const MainMenu = props => (
   <header>
   <nav className="main-menu">
     <DrawerButton click={props.drawerClickHandler}/>
-    <div><a href="/"><img src="../images/difd-menu-logo.png" /></a></div>
+    <div><a href="/"><img src="../images/difd-menu-logo.png" alt="the logo for DIFD"/></a></div>
     <div className="topnav new-menu" id="myTopnav">
       <a href="https://apply.winthrop.edu/apply/" className="apply-now">Apply Now</a>
       <div className="dropdown">

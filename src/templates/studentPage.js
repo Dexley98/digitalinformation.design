@@ -80,22 +80,6 @@ class studentPage extends Component {
         const learningOutcomeList = this.props.data.allContentfulLearningOutcome.edges
         const allTrackProjects = this.props.data.allContentfulProject.edges
 
-
-        console.log(allTrackProjects)
-/*******************************Start Debugging Block***************************************************
-         for(var i = 0; i<taglineList.length; i++){
-             console.log('tagline list number '+ i + ' ' + taglineList[i])
-         }
-
-         console.log('Job list', jobList)
-         console.log('Grad List', gradList)
-         console.log('Learning Outcome List ', learningOutcomeList)
-         console.log('whyWinthropAssets', whyWinthropAsset1)
-         console.log('splashMedia', splashMedia)
-         console.log(this.props.data.allContentfulProject)
-         console.log(this.props.data.allContentfulCourse)
-**********************************End Debugging Block *************************************************/
-
          return(
 
              <div className="body" id="top">
@@ -250,7 +234,7 @@ class studentPage extends Component {
                       Learn More
                     </Link>
                   </p>
-                  <img src={whyWinthropAsset1.file.url} />
+                  <img src={whyWinthropAsset1.file.url} alt={whyWinthropAsset1.description} />
                   {/*Should this link go to about or to winthrop? */}
 
                 </section>
@@ -259,9 +243,13 @@ class studentPage extends Component {
                 <Footer />
              </div>
          )
-/* END OF RETURN */
 
-// put all courses into an array so that it can be pushed as a prop.
+/**
+ * function GetAllCourseArray(projectObject)
+ * @param {object} courseObject
+ * 
+ * put all courses from contentful into an array so that they can be used as a prop in the course block component.
+ */
          function getAllCourseArray(courseObject){
            let allCourseArray = []
            courseObject.map((index) => {
@@ -270,11 +258,7 @@ class studentPage extends Component {
            return allCourseArray
          }
      }
-/* END OF RENDER */
-
 }
-/* END OF STUDENT TEMPLATE CLASS */
-
 
 studentPage.propTypes = {
   data: PropTypes.object.isRequired

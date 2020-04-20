@@ -11,6 +11,9 @@ import BackDrop from '../components/back-drop'
 
 import "../css/layout.css"
 
+/**
+ * This Component is the response page after a form is submitted.
+ */
 export default class QuestionSubmitted extends Component {
 
     constructor(props){
@@ -41,10 +44,9 @@ export default class QuestionSubmitted extends Component {
 
         let randomImageIndex = Math.floor(Math.random() * Math.floor(4));
         const randomImage = this.props.data.allContentfulConcentrationPageHome.edges[randomImageIndex].node.concentrationAsset
-        console.log(randomImage)
 
         return (
-            <div class="main-container">
+            <div className="main-container">
             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
             {sideDrawer}
             {backDrop}

@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'gatsby'
 
+/**
+ * This component is just a blurb that links to the questions form.
+ */
+
 export default class QuestionsLink extends Component {
     render() {
         return (

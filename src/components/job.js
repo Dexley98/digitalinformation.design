@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
-export default class job extends Component {
+/*
+This component is super simple. 
+It just creates a blob with a job title and description.
+*/
+
+export default class Job extends Component {
     render() {
         return (
             <div className="job-blob">

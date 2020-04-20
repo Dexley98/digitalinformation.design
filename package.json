@@ -12,6 +12,7 @@
     "gatsby-image": "^2.2.42",
     "gatsby-plugin-manifest": "^2.3.2",
     "gatsby-plugin-offline": "^3.0.35",
+    "gatsby-plugin-recaptcha": "^1.0.5",
     "gatsby-remark-images-contentful": "^2.2.2",
     "gatsby-source-contentful": "^2.2.3",
     "gatsby-source-filesystem": "^2.1.48",
@@ -20,7 +21,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-helmet": "^5.2.1"
+    "react-recaptcha": "^2.3.10"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

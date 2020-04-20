@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 
+/**
+ * Another simple component.
+ * This just takes professor info from contentful.
+ */
+
 export default class Professor extends Component {
     render() {
         return (

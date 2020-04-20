@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+// This is just a component that drives to applications on Winthrop's website.
+
 export default class Apply extends Component {
     render() {
         return (
@@ -8,7 +10,6 @@ export default class Apply extends Component {
               <div>
                 <h2>APPLY NOW</h2>
                 <p>Interested? Put your future on the right track today!</p>
-                {/*External links must still use the a tag accoding to gatsby link docs. */}
                 <a href="https://apply.winthrop.edu/apply/" className="main-link">Apply Now!</a>
               </div>
             </section>

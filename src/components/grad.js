@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
+/**
+ * This Class returns a graduate. 
+ * First it creates a unique grad id.
+ * Then it populates a component with the basics of a grads info from contentful. 
+ */
+
 export default class Grad extends Component {
 
     render() {
-        console.log(this.props)
         const uniqueId = this.makeUniqueGradId(this.props.gradName, this.props.jobTitle)
-        console.log(uniqueId)
         return (
             <div className="grad-blob">
                 <img src={this.props.imgSrc} alt={`${this.props.gradName}, a Winthrop Graduate`} />
@@ -22,6 +26,15 @@ export default class Grad extends Component {
             </div>
         )
     }
+
+/**
+ * function makeUniqueGradID 
+ * @param {string} gradName 
+ * @param {string} gradJobTitle
+ * 
+ * This function takes in the grad's name and job title from contentful.
+ * It then creates an Id that can be redirected to upon a link click.  
+ */
 
     makeUniqueGradId(gradName, gradJobTitle){
         let gradNameSplitList = gradName.split(" ")

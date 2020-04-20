@@ -9,7 +9,6 @@ import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 import Footer from '../components/footer'
 import Apply from '../components/apply'
-import Track from '../components/track'
 import ProjectsBlock from '../components/project'
 
 import "../css/layout.css"
@@ -33,6 +32,14 @@ export default class StudentWork extends Component {
       this.setState({sideDrawerOpen: false})
     }
 
+/**
+ * function trimPrevPath(prevPath)
+ * @param {string} prevPath 
+ * 
+ * This function is what controls the projects shown in the project block. 
+ * It uses the last path to show the relevant projects for that concentration.
+ */
+
     trimPrevPath(prevPath){
       const concentrationList = ["massmedia", "commerce", "interactivemedia", "webapps"]
       let prevPathArray = prevPath.split("/")
@@ -53,24 +60,13 @@ export default class StudentWork extends Component {
         backDrop = <BackDrop click={this.backdropClickHandler}/>
       }
 
-      console.log(this.state.previousPageSlug)
         const {
             studentWorkBannerImage,
-            studentWorkOverview,
-            capstoneImage,
-            capstoneSummary
+            studentWorkOverview
         } = this.props.data.allContentfulStudentWorkPage.nodes[0]
-
-        const {
-            imBlurb,
-            webAppsBlurb,
-            commerceBlurb,
-            massMediaBlurb
-        } = this.props.data.allContentfulAboutPage.nodes[0]
 
         const allProjectObject = this.props.data.allContentfulProject.edges
         const allProjectArray = getAllProjectArray(allProjectObject)
-        console.log(allProjectArray)      
 
         return (
             <div id="top">
@@ -94,9 +90,13 @@ export default class StudentWork extends Component {
                 <Footer />
             </div>
         )
-/* END OF RETURN */
 
-// put all projects into an array so that it can be pushed as a prop
+/**
+ * function GetAllProjectArray(projectObject)
+ * @param {object} projectObject 
+ * 
+ * put all projects from contentful into an array so that they can be used as a prop in the projects block component.
+ */
         function getAllProjectArray(projectObject){
             let allProjectArray = []
             projectObject.map((index) => {
@@ -105,10 +105,7 @@ export default class StudentWork extends Component {
             return allProjectArray
         }
     }
-/* END OF RENDER */
-
 }
-/* END OF STUDENT WORK CLASS */
 
 StudentWork.propTypes = {
     data: PropTypes.object.isRequired
