@@ -169,7 +169,7 @@ export default class parentPage extends Component {
           let trimedName = ""
 
           for(let i = 0; i<trimedNameArray.length; i++){
-            if( i == (trimedNameArray.length - 1) ){
+            if( i === (trimedNameArray.length - 1) ){
               // this is the last item in the trimed array. Should be 'Parents'. We won't add this to trimed name.
             }
 

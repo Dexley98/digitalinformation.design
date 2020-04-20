@@ -9,8 +9,6 @@ import Footer from '../components/footer'
 import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 
-import {Helmet} from 'react-helmet'
-
 import Recaptcha from 'react-recaptcha'
 
 import "../css/layout.css"
@@ -67,7 +65,6 @@ export default class Questions extends Component {
 
     verifyCallback(response){
         if(response){
-            console.log('Button Clicked!')
             this.setState({
                 notABot: true
             })
@@ -75,13 +72,12 @@ export default class Questions extends Component {
     }
 
     onloadCallback(){
-        console.log("recaptcha ready")
+        console.log("Recaptcha loaded.")
     }
 
     handleSubmit(event){
         event.preventDefault()
 
-        console.log('entire state ', this.state)
         let vaildName = this.validateName(this.state.fullName)
         let vaildEmail = this.validateEmail(this.state.email)
         let vaildQuestion = this.validateQuestion(this.state.question)
@@ -110,15 +106,17 @@ export default class Questions extends Component {
                 method: "POST",
                 url: "https://deltona.birdnest.org/~acc.exleyd2/451mail.php",
                 data: this.state
-            }).then( (response) => {
-                if (response.data.status === 'success'){
-                    this.resetForm()
-                }else if(response.data.status === 'fail'){
-                    alert("We were unable to send your question. Please try again.")
-                }
+            }).then( () => {
+                this.resetForm()
+                navigate("/question-submitted")
             })
-            this.resetForm()
-            navigate("/question-submitted")
+            .catch( (error) =>{
+                alert("Submission not successful.\n" 
+                    + "Error Code: " + error.response.status 
+                    + "\nError Message: " + error.response.statusText
+                    + "\n Please submit again. " );
+            })
+            
         }
         else{
             if(!notABot){
@@ -138,7 +136,7 @@ export default class Questions extends Component {
             }
             if(!vaildQuestion){
                 this.setState({
-                    questionMssg: "You have to ask a question!"
+                    questionMssg: "Your question has some invalid characters. Please try again."
                 })
             }
         }
@@ -164,7 +162,7 @@ export default class Questions extends Component {
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>
             </section>
             <section className="questions-form-block">
-                <form onSubmit={this.handleSubmit} >
+                <form action="httpS://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
                   <input type="hidden" name="form-name" value="contact" />
                   <label>
                     Full Name
@@ -233,7 +231,7 @@ export default class Questions extends Component {
 
     validateEmail(mailValue){
 
-        let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/
 
         if(mailValue !== undefined || mailValue !== null){
             if (regex.test(mailValue)){
@@ -249,7 +247,7 @@ export default class Questions extends Component {
     {
         let regex = /^[a-zA-Z ]{2,30}$/
 
-        if(nameValue == undefined || nameValue == null){
+        if(nameValue === undefined || nameValue === null){
             return false
         }else{
             if (regex.test(nameValue)) {
@@ -262,34 +260,15 @@ export default class Questions extends Component {
     }
 
     validateQuestion(questionValue){
-        if(questionValue === undefined){
+        let regex = /^[a-zA-Z0-9?,.' ]*$/
+        if(questionValue === undefined || questionValue === null){
+            return false
+        }else{
+            if (regex.test(questionValue)){
+                return true
+            }
             return false
         }
-        return true
     }
 
-
-
 }
-/*
-    if(vaildName && vaildEmail && vaildQuestion){
-            axios({
-                method: "POST",
-                url: "http://deltona.birdnest.org/~acc.exleyd2/451mail.php",
-                data: JSON.stringify(this.state)
-            }).then( (response) => {
-                if (response.data.status === 'success'){
-                    console.log('message sent')
-                    this.resetForm()
-                }else if(response.data.status === 'fail'){
-                    console.log("message failed to send.")
-                }
-            })
-            this.resetForm()
-            navigate("/question-submitted")
-        }
-
-    // form stuff from deltona
-
-    action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit}
-}*/

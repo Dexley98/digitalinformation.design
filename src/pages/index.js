@@ -60,7 +60,6 @@ export default class About extends Component {
         const allLearningOutcomes = this.props.data.allContentfulLearningOutcome.edges
 
         const randomGradsList = getRandomGrads(allGraduates)
-        console.log('random grad list ', randomGradsList)
 
         const {
           whyWinthrop1,
@@ -109,7 +108,7 @@ export default class About extends Component {
                     <h2>KEY LEARNING OUTCOMES</h2>
                     <div className="learningOutcome-blob-container">
                     {allLearningOutcomes.map((index) => {
-                        if(index.node.concentration.length == 4){
+                        if(index.node.concentration.length === 4){
                             return(
                                 <Outcome
                                   iconSrc={index.node.icon.file.url}
@@ -164,10 +163,8 @@ function getRandomGrads(gradList) {
     for(let i=0; i<gradList.length; i++){
         sequentialArray.push(i)
     }
-    console.log('array one', sequentialArray)
     shuffle(sequentialArray)
-    console.log('array two', sequentialArray)
-
+    
     let gradObject = []
 
     for(let a=0; a<3; a++){

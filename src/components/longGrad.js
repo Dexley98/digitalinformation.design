@@ -4,7 +4,6 @@ export default class LongGrad extends Component {
     render() {
 
         const uniqueId = this.makeUniqueGradId(this.props.gradName, this.props.jobTitle)
-        console.log(uniqueId)
         return (
             <div id={uniqueId} className="ourPeople-grad-blob">
                 <div className="grad-blob-picture">

@@ -51,7 +51,6 @@ export default class OurPeople extends Component {
 
         const profList = this.props.data.allContentfulProfessor.edges
         const gradList = this.props.data.allContentfulGraduate.edges
-        console.log(gradList)
 
         return (
             <div>

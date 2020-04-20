@@ -57,19 +57,6 @@ module.exports = {
         defer: true,
         args: `?onload=onloadCallback&render=explicit`
       }
-    },
-    `gatsby-plugin-react-helmet`
+    }
   ],
 }
-
-/* 
-{
-      resolve: `gatsby-plugin-recaptcha`,
-      options: {
-        async: true,
-        defer: true,
-        args: `?sitekey=${process.env.SITE_RECAPTCHA_KEY}`
-      }
-},
-
-*/
