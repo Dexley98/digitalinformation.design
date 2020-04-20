@@ -809,11 +809,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   background-position: left;
   background-size: 60% 100%;
   background-repeat: no-repeat;
-<<<<<<< HEAD
   z-index: -0;
-=======
-  z-index: 0;
->>>>>>> backend
   position: relative;
   margin: 100px 0;
 }
