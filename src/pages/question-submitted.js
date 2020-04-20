@@ -11,9 +11,6 @@ import BackDrop from '../components/back-drop'
 
 import "../css/layout.css"
 
-/**
- * This Component is the response page after a form is submitted.
- */
 export default class QuestionSubmitted extends Component {
 
     constructor(props){

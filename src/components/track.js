@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
-/**
- * This component just displays an overview of a track that links to the individual page.
- */
 export default class Track extends Component {
     render() {
 

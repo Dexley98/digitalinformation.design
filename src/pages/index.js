@@ -157,12 +157,6 @@ export default class About extends Component {
 }
 
 
-/**
- * function getRandomGrads(gradList)
- * @param {array} gradList 
- * 
- * Take the array of all the grads and shuffle it up to display in return of render.
- */
 function getRandomGrads(gradList) {
     // populate an array full of numbers and then shuffle it to get random grads.
     let sequentialArray = []
@@ -181,13 +175,6 @@ function getRandomGrads(gradList) {
 
 }
 
-
-/**
- * function shuffle(array)
- * @param {array} array 
- * 
- * This is fairly well commented in the function so I'll let it speak for itself.
- */
 function shuffle(array){
     let currentIndex = array.length
     let tempVal, randIndex
@@ -203,6 +190,7 @@ function shuffle(array){
         array[currentIndex] = array[randIndex]
         array[randIndex] = tempVal
     }
+
     return array
 }
 

@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
 
-/**
- * Another Simple Component. 
- * This one just outputs all of the learning outcome info from contentful.
- */
-
 export default class Outcome extends Component {
     render() {
         return (

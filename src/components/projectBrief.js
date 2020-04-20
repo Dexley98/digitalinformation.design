@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
-/**
- * This component is a watered down version of the bigger one in project.js
- * It just creates a brief of a project, on a given concentration page. 
- * The images are link to the student-work page. 
- * The history is used to create views on the student-work page.
- * Also only displays the first image of the project.
- */
-
 export default class ProjectBrief extends Component {
     render() {
         

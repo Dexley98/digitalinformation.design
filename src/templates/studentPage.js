@@ -243,13 +243,9 @@ class studentPage extends Component {
                 <Footer />
              </div>
          )
+/* END OF RETURN */
 
-/**
- * function GetAllCourseArray(projectObject)
- * @param {object} courseObject
- * 
- * put all courses from contentful into an array so that they can be used as a prop in the course block component.
- */
+// put all courses into an array so that it can be pushed as a prop.
          function getAllCourseArray(courseObject){
            let allCourseArray = []
            courseObject.map((index) => {
@@ -258,7 +254,11 @@ class studentPage extends Component {
            return allCourseArray
          }
      }
+/* END OF RENDER */
+
 }
+/* END OF STUDENT TEMPLATE CLASS */
+
 
 studentPage.propTypes = {
   data: PropTypes.object.isRequired

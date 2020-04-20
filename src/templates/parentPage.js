@@ -162,14 +162,8 @@ export default class parentPage extends Component {
                 <Footer />
             </div>
         )
+/* END OF RETURN */
 
-/**
- * function trimConcentrationName(concentrationName)
- * @param {string} concentrationName 
- * 
- * This is cosmetic for display on the page.
- * Trims the page title from contentful to show just the concentration.
- */
         function trimConcentrationName(concentrationName){
           let trimedNameArray = concentrationName.split(" ")
           let trimedName = ""
@@ -194,7 +188,10 @@ export default class parentPage extends Component {
 
         }
   }
+/* END OF RENDER */
+
 }
+/* END OF PARENT TEMPLATE CLASS */
 
 parentPage.propTypes = {
     data: PropTypes.object.isRequired

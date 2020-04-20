@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
 
-/**
- * This Component is similar to the other grad component. 
- * It just fills in more information from contentful. 
- * Such as Where are they now, and how the program prepared them for life and jobs.
- */
-
 export default class LongGrad extends Component {
     render() {
 
@@ -32,15 +26,6 @@ export default class LongGrad extends Component {
             </div>
         )
     }
-
-/**
- * Function makeUniqueGradId
- * @param {string} gradName 
- * @param {string} gradJobTitle 
- * This function takes in the grad's name and job title from contentful.
- * It then creates an Id that can be redirected to upon a link click. 
- * 
- */
 
    makeUniqueGradId(gradName, gradJobTitle){
         let gradNameSplitList = gradName.split(" ")

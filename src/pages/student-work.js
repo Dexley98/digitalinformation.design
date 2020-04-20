@@ -32,14 +32,6 @@ export default class StudentWork extends Component {
       this.setState({sideDrawerOpen: false})
     }
 
-/**
- * function trimPrevPath(prevPath)
- * @param {string} prevPath 
- * 
- * This function is what controls the projects shown in the project block. 
- * It uses the last path to show the relevant projects for that concentration.
- */
-
     trimPrevPath(prevPath){
       const concentrationList = ["massmedia", "commerce", "interactivemedia", "webapps"]
       let prevPathArray = prevPath.split("/")
@@ -90,13 +82,9 @@ export default class StudentWork extends Component {
                 <Footer />
             </div>
         )
+/* END OF RETURN */
 
-/**
- * function GetAllProjectArray(projectObject)
- * @param {object} projectObject 
- * 
- * put all projects from contentful into an array so that they can be used as a prop in the projects block component.
- */
+// put all projects into an array so that it can be pushed as a prop
         function getAllProjectArray(projectObject){
             let allProjectArray = []
             projectObject.map((index) => {
@@ -105,7 +93,10 @@ export default class StudentWork extends Component {
             return allProjectArray
         }
     }
+/* END OF RENDER */
+
 }
+/* END OF STUDENT WORK CLASS */
 
 StudentWork.propTypes = {
     data: PropTypes.object.isRequired

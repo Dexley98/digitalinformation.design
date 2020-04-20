@@ -1,10 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
 
-/**
- * This is just a giant component of links for the site menu.
- */
-
 import DrawerButton from  '../components/drawer-button'
 const MainMenu = props => (
   <header>
