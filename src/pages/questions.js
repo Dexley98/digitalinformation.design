@@ -13,20 +13,12 @@ import Recaptcha from 'react-recaptcha'
 
 import "../css/layout.css"
 
-<<<<<<< HEAD
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-}
-=======
 /**
  * This Componet has the most diverse functionality. 
  * It is the question form for potential students to ask questions. 
  * It utilizes Google's Recaptcha to check for spam.
  * Validations are the same on server side. 
  */
->>>>>>> backend
 
 export default class Questions extends Component {
     constructor(props) {
@@ -128,19 +120,6 @@ export default class Questions extends Component {
             })
         }
 
-<<<<<<< HEAD
-        if(vaildName && vaildEmail && vaildQuestion){
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", ...this.state })
-              })
-                .then(() => alert("Success!"))
-                .catch(error => alert(error))
-
-            this.resetForm()
-            navigate("/question-submitted")
-=======
         if(vaildName && vaildEmail && vaildQuestion && notABot){
             axios({
                 method: "POST",
@@ -157,7 +136,6 @@ export default class Questions extends Component {
                     + "\n Please submit again. " );
             })
             
->>>>>>> backend
         }
         else{
             if(!notABot){
@@ -203,11 +181,7 @@ export default class Questions extends Component {
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>
             </section>
             <section className="questions-form-block">
-<<<<<<< HEAD
-                <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit} >
-=======
                 <form action="httpS://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
->>>>>>> backend
                   <input type="hidden" name="form-name" value="contact" />
                   <label>
                     Full Name
@@ -329,45 +303,3 @@ export default class Questions extends Component {
     }
 
 }
-<<<<<<< HEAD
-/*
-function dummyThicc(){
-    let valid = false
-    if(inputName === "fullName"){
-        valid = this.validateName(inputValue)
-        if(valid){
-            this.setState({
-                [inputName]: inputValue,
-                nameMssg: undefined
-            })
-        }
-        this.setState({
-            nameMssg: "Something doesn't look right. Please try typing your name again."
-        })
-    }
-    if(inputName === "email"){
-        valid = this.validateEmail(inputValue)
-        if(valid){
-            this.setState({
-                [inputName]: inputValue,
-                emailMssg: undefined
-            })
-        }
-        this.setState({
-            emailMssg: "That doesn't look like a valid email. Please try again."
-        })
-    }
-    if(inputName === "question"){
-        valid = true
-        this.setState({
-            [inputName]: inputValue
-        });
-    }
-
-
-    // form stuff from deltona
-
-    action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit}
-}*/
-=======
->>>>>>> backend
