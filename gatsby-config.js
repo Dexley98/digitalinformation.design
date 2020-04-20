@@ -49,6 +49,14 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/DIFD-logo.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: `gatsby-plugin-recaptcha`,
+      options: {
+        async: false,
+        defer: false,
+        args: `?onload=onloadCallback&render=explict`
+      },
     }
   ],
 }
