@@ -395,7 +395,7 @@ div.tagline-item{
       color: #FDFCF3;
       padding: 0px 10px;
       text-align: center !important;
-      margin: -120px auto 0px auto !important;
+      margin: -250px auto 0px auto !important;
       text-shadow: 2px 2px 8px #332531;
       overflow: hidden;
       animation: animate 15s ease-in infinite;
@@ -403,7 +403,7 @@ div.tagline-item{
     @media (min-width: 1024px) {
       .tagline-item h1 {
         font-size: 60px;
-        margin: 0 auto !important;} }
+        margin: -400px auto 0 auto !important;} }
       .tagline-item h1:nth-child(1) {
         animation-delay: 0s; }
       .tagline-item h1:nth-child(2) {
