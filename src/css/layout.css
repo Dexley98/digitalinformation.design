@@ -809,7 +809,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   background-position: left;
   background-size: 60% 100%;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: -0;
   position: relative;
   margin: 100px 0;
 }
@@ -1282,6 +1282,10 @@ div.track-blob:nth-child(3){
 .why-difd-block h1{
   text-align: left;
   margin: 100px -10% 0 10%;
+  background-image: url("../images/bg-shape2.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .why-difd-block img{
   width: 80%;
