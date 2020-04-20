@@ -367,7 +367,6 @@ div.tagline-item{
       text-align: center;
       margin-top: 0px;
       padding-bottom: 0px;
-      position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -380,7 +379,6 @@ div.tagline-item{
         text-align: center;
         margin-top: 0px;
         padding-bottom: 0px;
-        position: absolute;
         margin: 0 auto;} }
 .tagline-item h1{
   font-family: 'Raleway-ExtraBold', sans-serif;
@@ -480,12 +478,11 @@ div.tagline-item{
   background-repeat: no-repeat;}
   @media (min-width: 700px) {
     .whatDoesItMean-block{
-      padding: 100px 60px 180px 0px;
+      padding: 0px 60px 100px 0;
       flex-wrap: nowrap;
       } }
   @media (min-width: 1024px) {
     .whatDoesItMean-block{
-      padding: 100px 60px 180px 0px;
       margin-top: -100px;
       } }
 .whatDoesItMean-block div.meaning-image-background{
@@ -583,7 +580,6 @@ div.tagline-item{
   margin-top: 60px;}
   @media (min-width: 700px) {
     .job-blob-container{
-      padding: 0px 6%;
       margin-top: 40px;} }
   @media (min-width: 1024px) {
     .job-blob-container{

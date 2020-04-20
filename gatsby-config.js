@@ -23,7 +23,7 @@ module.exports = {
     author: `Dom Exley`
   },
   plugins: [
-    // this is where the issues are coming from in npm install. Leaves vulnerabilites and changes to ../files.? 
+    // this is where the issues are coming from in npm install. Leaves vulnerabilites and changes to ../files.?
     // no current fix, but this mean the data is open to manipulation.
     {
       resolve: `gatsby-source-contentful`,

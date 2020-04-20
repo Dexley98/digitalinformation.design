@@ -24,7 +24,7 @@ class studentPage extends Component {
       constructor(props){
         super(props)
         this.state = {
-          sideDrawerOpen: false      
+          sideDrawerOpen: false
         }
      }
 
@@ -40,7 +40,7 @@ class studentPage extends Component {
 
 
      render(){
-        
+
         let sideDrawer = null;
         let backDrop = null;
         if (this.state.sideDrawerOpen) {
@@ -242,14 +242,14 @@ class studentPage extends Component {
                     <h2>WHY CHOOSE WINTHROP'S PROGRAM?</h2>
                     <p>{whyWinthrop1.whyWinthrop1}</p>
                     <p>{whyWinthrop2.whyWinthrop2}</p>
-                  </div>
-                  <p className="why-button">
-                    <Link to="/#tour"
-                          className="main-link"
-                          state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
-                      Learn More
-                    </Link>
-                  </p>
+                    <p className="why-button">
+                      <Link to="/#tour"
+                            className="main-link"
+                            state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
+                        Learn More
+                      </Link>
+                    </p>
+                  </div>  
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
 
