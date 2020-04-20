@@ -1,15 +1,13 @@
-import React, { Component } from 'react'
+import React from "react"
 
-export default class Professor extends Component {
-    render() {
-        return (
-            <div className="prof-blob">
-              <div className="prof-img-container">
-                <img src={this.props.profPicture.file.url} alt={this.props.profPicture.description}/>
-              </div>
-                <h3>{this.props.profName}</h3>
-                <p>{this.props.bio.bio}</p>
-            </div>
-        )
-    }
+function Professor (node){
+    console.log('from Professor', node)
+    return(
+        <div className="Professor">
+            <p>Concentration: {node.node.concentration}</p>
+            <p>Name: {node.node.name}</p>
+        </div>
+    )
 }
+
+export default Professor

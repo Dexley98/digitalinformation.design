@@ -80,22 +80,6 @@ class studentPage extends Component {
         const learningOutcomeList = this.props.data.allContentfulLearningOutcome.edges
         const allTrackProjects = this.props.data.allContentfulProject.edges
 
-
-        console.log(allTrackProjects)
-/*******************************Start Debugging Block***************************************************
-         for(var i = 0; i<taglineList.length; i++){
-             console.log('tagline list number '+ i + ' ' + taglineList[i])
-         }
-
-         console.log('Job list', jobList)
-         console.log('Grad List', gradList)
-         console.log('Learning Outcome List ', learningOutcomeList)
-         console.log('whyWinthropAssets', whyWinthropAsset1)
-         console.log('splashMedia', splashMedia)
-         console.log(this.props.data.allContentfulProject)
-         console.log(this.props.data.allContentfulCourse)
-**********************************End Debugging Block *************************************************/
-
          return(
 
              <div className="body" id="top">
@@ -249,7 +233,7 @@ class studentPage extends Component {
                         Learn More
                       </Link>
                     </p>
-                  </div>  
+                  </div>
                   <img src={whyWinthropAsset1.file.url} />
                   {/*Should this link go to about or to winthrop? */}
 

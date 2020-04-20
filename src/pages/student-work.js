@@ -9,7 +9,6 @@ import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 import Footer from '../components/footer'
 import Apply from '../components/apply'
-import Track from '../components/track'
 import ProjectsBlock from '../components/project'
 
 import "../css/layout.css"
@@ -53,24 +52,13 @@ export default class StudentWork extends Component {
         backDrop = <BackDrop click={this.backdropClickHandler}/>
       }
 
-      console.log(this.state.previousPageSlug)
         const {
             studentWorkBannerImage,
-            studentWorkOverview,
-            capstoneImage,
-            capstoneSummary
+            studentWorkOverview
         } = this.props.data.allContentfulStudentWorkPage.nodes[0]
-
-        const {
-            imBlurb,
-            webAppsBlurb,
-            commerceBlurb,
-            massMediaBlurb
-        } = this.props.data.allContentfulAboutPage.nodes[0]
 
         const allProjectObject = this.props.data.allContentfulProject.edges
         const allProjectArray = getAllProjectArray(allProjectObject)
-        console.log(allProjectArray)      
 
         return (
             <div id="top">

@@ -9,14 +9,9 @@ import Footer from '../components/footer'
 import SideDrawer from '../components/side-drawer'
 import BackDrop from '../components/back-drop'
 
+import Recaptcha from 'react-recaptcha'
 
 import "../css/layout.css"
-
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-}
 
 export default class Questions extends Component {
     constructor(props) {
@@ -28,11 +23,15 @@ export default class Questions extends Component {
         question: undefined,
         nameMssg: undefined,
         emailMssg: undefined,
-        questionMssg: undefined
+        questionMssg: undefined,
+        notABot: false,
+        botMssg: undefined
       };
 
       this.handleInputChange = this.handleInputChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
+      this.verifyCallback = this.verifyCallback.bind(this)
+      this.onloadCallback = this.onloadCallback.bind(this)
     }
 
     drawerToggleClickHandler = () =>{
@@ -47,7 +46,6 @@ export default class Questions extends Component {
 
     handleInputChange(event) {
         const target = event.target
-        console.log(target)
         const inputName = target.name
         const inputValue = target.value
         this.setState({
@@ -61,18 +59,29 @@ export default class Questions extends Component {
             fullName: undefined,
             email: undefined,
             question: undefined,
+            notABot: false
         })
+    }
+
+    verifyCallback(response){
+        if(response){
+            this.setState({
+                notABot: true
+            })
+        }
+    }
+
+    onloadCallback(){
+        console.log("Recaptcha loaded.")
     }
 
     handleSubmit(event){
         event.preventDefault()
 
-        console.log('entire state ', this.state)
         let vaildName = this.validateName(this.state.fullName)
         let vaildEmail = this.validateEmail(this.state.email)
         let vaildQuestion = this.validateQuestion(this.state.question)
-        console.log('question ', this.state.question)
-        console.log(vaildQuestion)
+        let notABot = this.state.notABot
 
         if(vaildName){
             this.setState({
@@ -92,19 +101,29 @@ export default class Questions extends Component {
             })
         }
 
-        if(vaildName && vaildEmail && vaildQuestion){
-            fetch("/", {
+        if(vaildName && vaildEmail && vaildQuestion && notABot){
+            axios({
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", ...this.state })
-              })
-                .then(() => alert("Success!"))
-                .catch(error => alert(error))
-
-            this.resetForm()
-            navigate("/question-submitted")
+                url: "https://deltona.birdnest.org/~acc.exleyd2/451mail.php",
+                data: this.state
+            }).then( () => {
+                this.resetForm()
+                navigate("/question-submitted")
+            })
+            .catch( (error) =>{
+                alert("Submission not successful.\n" 
+                    + "Error Code: " + error.response.status 
+                    + "\nError Message: " + error.response.statusText
+                    + "\n Please submit again. " );
+            })
+            
         }
         else{
+            if(!notABot){
+                this.setState({
+                    botMssg: "Please verify that you are a human!"
+                })
+            }
             if(!vaildName){
                 this.setState({
                     nameMssg: "That name doesn't look right. Please try again."
@@ -117,7 +136,7 @@ export default class Questions extends Component {
             }
             if(!vaildQuestion){
                 this.setState({
-                    questionMssg: "You have to ask a question!"
+                    questionMssg: "Your question has some invalid characters. Please try again."
                 })
             }
         }
@@ -143,7 +162,7 @@ export default class Questions extends Component {
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>
             </section>
             <section className="questions-form-block">
-                <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit} >
+                <form action="httpS://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
                   <input type="hidden" name="form-name" value="contact" />
                   <label>
                     Full Name
@@ -189,18 +208,30 @@ export default class Questions extends Component {
                         <p>{this.state.questionMssg}</p>
                     </section>
                   }
-                  <br />
+                  <center>
+                      <Recaptcha
+                        sitekey = "6Ld0aesUAAAAAGab0eDe5J03IT5Mw6zYMeHbLCr5"
+                        onloadCallback = {this.onloadCallback}
+                        verifyCallback = {this.verifyCallback}
+                      />
+                      {this.state.botMssg &&
+                        <section className="invaild-bot-block">
+                            <p>{this.state.botMssg}</p>
+                        </section>
+                      }
+                  </center>
                   <input type="submit" value="Submit" />
                 </form>
             </section>
             <Footer />
         </div>
       )
+      
     }
 
     validateEmail(mailValue){
 
-        let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/
 
         if(mailValue !== undefined || mailValue !== null){
             if (regex.test(mailValue)){
@@ -216,7 +247,7 @@ export default class Questions extends Component {
     {
         let regex = /^[a-zA-Z ]{2,30}$/
 
-        if(nameValue == undefined || nameValue == null){
+        if(nameValue === undefined || nameValue === null){
             return false
         }else{
             if (regex.test(nameValue)) {
@@ -229,51 +260,15 @@ export default class Questions extends Component {
     }
 
     validateQuestion(questionValue){
-        if(questionValue === undefined){
+        let regex = /^[a-zA-Z0-9?,.' ]*$/
+        if(questionValue === undefined || questionValue === null){
+            return false
+        }else{
+            if (regex.test(questionValue)){
+                return true
+            }
             return false
         }
-        return true
     }
-
-
 
 }
-/*
-function dummyThicc(){
-    let valid = false
-    if(inputName === "fullName"){
-        valid = this.validateName(inputValue)
-        if(valid){
-            this.setState({
-                [inputName]: inputValue,
-                nameMssg: undefined
-            })
-        }
-        this.setState({
-            nameMssg: "Something doesn't look right. Please try typing your name again."
-        })
-    }
-    if(inputName === "email"){
-        valid = this.validateEmail(inputValue)
-        if(valid){
-            this.setState({
-                [inputName]: inputValue,
-                emailMssg: undefined
-            })
-        }
-        this.setState({
-            emailMssg: "That doesn't look like a valid email. Please try again."
-        })
-    }
-    if(inputName === "question"){
-        valid = true
-        this.setState({
-            [inputName]: inputValue
-        });
-    }
-
-
-    // form stuff from deltona
-
-    action="http://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit}
-}*/

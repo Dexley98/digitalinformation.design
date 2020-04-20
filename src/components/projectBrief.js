@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, navigate } from 'gatsby'
+import { Link } from 'gatsby'
 
 export default class ProjectBrief extends Component {
     render() {

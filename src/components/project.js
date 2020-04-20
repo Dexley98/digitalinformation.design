@@ -22,15 +22,12 @@ export default class ProjectsBlock extends Component {
     }
 
     render() {
-//debugging
-        //console.log('state inside render ', this.state.coreArray)
         return (
             <div className="course-list-container">
                 <button
                     id="commerce-projects-button"
                     className={'projects-button'}
                     name="commerce"
-                    autoFocus={this.state.active === 'commerce' ? true : false}
                     onClick={this.handleConcentrationClick}
                     >
                         Digital Commerce
@@ -39,7 +36,6 @@ export default class ProjectsBlock extends Component {
                     id="massmedia-projects-button"
                     className={'projects-button'}
                     name="massmedia"
-                    autoFocus={this.state.active === 'massmedia' ? true : false}
                     onClick={this.handleConcentrationClick}>
                         Digital Mass Media
                 </button>
@@ -47,7 +43,6 @@ export default class ProjectsBlock extends Component {
                     id="interactivemedia-projects-button"
                     className={'projects-button'}
                     name="interactivemedia"
-                    autoFocus={this.state.active === 'interactivemedia' ? true : false}
                     onClick={this.handleConcentrationClick}>
                         Interactive Media
                 </button>
@@ -55,7 +50,6 @@ export default class ProjectsBlock extends Component {
                     id="webapps-projects-button"
                     className={'projects-button'} 
                     name="webapps"
-                    autoFocus={this.state.active === 'webapps' ? true : false}
                     onClick={this.handleConcentrationClick}>
                         Web Applications
                 </button>
@@ -90,7 +84,6 @@ const ConcentrationProjectList = ({array}) => {
             return(
                 <div className="project-blob">
                     {index.projectMedia.map( (image) =>{
-                        console.log('index in project blob for each ', index)
                         return(
                             <img className="project-image" src={image.file.url} alt={image.description} />
                         )
@@ -110,7 +103,6 @@ Fucntion filters the entire course array based on coreName and returns an array 
 */
 function getConcentrationProjects(allProjectArray, concentrationName){
     let projectArray = []
-    console.log('all project array ', allProjectArray)
     allProjectArray.map((index) => {
         if(index.concentrationTag.includes(concentrationName)){
             projectArray.push(index)

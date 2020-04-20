@@ -4,9 +4,7 @@ import { Link } from 'gatsby'
 export default class Grad extends Component {
 
     render() {
-        console.log(this.props)
         const uniqueId = this.makeUniqueGradId(this.props.gradName, this.props.jobTitle)
-        console.log(uniqueId)
         return (
             <div className="grad-blob">
                 <img src={this.props.imgSrc} alt={`${this.props.gradName}, a Winthrop Graduate`} />

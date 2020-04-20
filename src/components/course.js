@@ -93,7 +93,7 @@ if the coreElective field of the passed in array is true, add an aditional class
 */
 
 const CoreCourseList = ({array}) => {
-    if(array.length == 0){
+    if(array.length === 0){
         return(
             <div className="outside-electives-blob">
                 <p>For an approved list of general electives
@@ -146,7 +146,7 @@ if there are only 2 indexs just return the passed in designator.
 */
 function trimDesignator(designator){
     let designatorArray = designator.split(" ")
-    if(designatorArray.length == 3){
+    if(designatorArray.length === 3){
         let updatedDesignator = ""
         designatorArray.pop()
         designatorArray.forEach(index => {
