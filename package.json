@@ -1,0 +1,55 @@
+{
+  "name": "digitalinformation.design",
+  "private": true,
+  "description": "New digitalinformation.design site",
+  "version": "0.1.0",
+  "author": "Dom Exley <dominique.exley@gmail.com>",
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "axios": "^0.19.2",
+    "gatsby": "^2.20.18",
+    "gatsby-cli": "^2.10.9",
+    "gatsby-image": "^2.2.42",
+    "gatsby-plugin-manifest": "^2.3.2",
+    "gatsby-plugin-offline": "^3.0.35",
+    "gatsby-plugin-recaptcha": "^1.0.5",
+    "gatsby-remark-images-contentful": "^2.2.2",
+    "gatsby-source-contentful": "^2.2.3",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-sqip": "^2.2.2",
+    "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-recaptcha": "^2.3.10"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "digital",
+    "information",
+    "Design",
+    "mass media",
+    "commerce",
+    "web applications",
+    "interactive media"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
