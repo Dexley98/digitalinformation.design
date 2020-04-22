@@ -22,7 +22,7 @@ export default class parentPage extends Component {
     constructor(props){
       super(props)
       this.state = {
-        sideDrawerOpen: false      
+        sideDrawerOpen: false
       }
     }
 
@@ -92,6 +92,7 @@ export default class parentPage extends Component {
                 </section>
 
 {/* Job Oppurtunities Section */}
+                <div className="top-curve"></div>
                 <section className="job-oppurtunities-block">
                 <div className=""></div>
                   <div className="job-opportunities-header">
@@ -151,11 +152,13 @@ export default class parentPage extends Component {
                   <section className="student-work-block">
                     <h2>STUDENT WORK</h2>
                     <p>Our students are always hard at work in their classes. Here are some finished projects that demonstrate what you can learn to do.</p>
+                    <div className="projectBrief-container">
                     {allTrackProjects.map((index) =>{
                       return(
                         <ProjectBrief title={index.node.title} shortDesc={index.node.shortDescription} projectMedia={index.node.projectMedia}/>
                         )
                     })}
+                    </div>
                   </section>
                 }
                 <Apply />

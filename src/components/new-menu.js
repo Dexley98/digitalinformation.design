@@ -2,11 +2,12 @@ import { Link } from "gatsby"
 import React from "react"
 
 import DrawerButton from  '../components/drawer-button'
+import Logo from '../images/difd-menu-logo.png'
 const MainMenu = props => (
   <header>
   <nav className="main-menu">
     <DrawerButton click={props.drawerClickHandler}/>
-    <div><a href="/"><img src="../images/difd-menu-logo.png" /></a></div>
+    <div><a href="/"><img src={Logo} /></a></div>
     <div className="topnav new-menu" id="myTopnav">
       <a href="https://apply.winthrop.edu/apply/" className="apply-now">Apply Now</a>
       <div className="dropdown">

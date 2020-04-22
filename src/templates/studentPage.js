@@ -89,10 +89,10 @@ class studentPage extends Component {
 
 {/* Parent Nav */}
                 <nav className="parent-link">
-                  <p>Are you a parent?
+                  <p>Are you a parent? &nbsp;
                     <Link to={`${slug}/parents/#top`}
                           state={{ prevPath: typeof window !== 'undefined' ? window.location.pathname : ''}}>
-                            Click here!
+                              Click here!
                     </Link>
                   </p>
                 </nav>

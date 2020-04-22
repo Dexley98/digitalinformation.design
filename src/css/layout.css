@@ -16,8 +16,8 @@
   display: none;
 }
 html, body{
-  max-width: 1440px;
-  margin: 0;
+  max-width: 1600px;
+  margin: 0 auto;
   padding: 0;
   overflow-x: hidden !important;
 height: 100%;}
@@ -171,8 +171,7 @@ button.drop-down-button{
       display: none;} }
 button.drop-down-button:focus{
   outline: none;
-}
-nav.side-drawer, div.side-drawer{
+}      side-drawer{
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -198,7 +197,7 @@ nav.side-drawer{
 .topnav, .side-topnav {
   background-color: #332531;
   overflow: hidden;
-  height: 55px;}
+  height: 50px;}
 .topnav a, .side-topnav a {
   float: right;
   display: block;
@@ -998,11 +997,7 @@ p.elective-name, p.name{
 
 /* SPLASH IMAGE */
 div.parent-splash{
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 100%;
+  padding: 50px 0;
 }
 h1.parent-splash{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
@@ -1090,6 +1085,10 @@ h2.parent-splash{
       } }
 .median-salary-block{
   margin-top: 100px;
+  padding: 0px 4% 0px 4%;
+}
+.median-salary-block p{
+  padding: 50px 4% 50px 4%;
 }
 /* JOB OPPORTUNITIES */
 
@@ -1121,7 +1120,7 @@ h2.parent-splash{
 
 /* SPLASH IMAGE AREA */
 
-.about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img, .random-image-block img{
+.about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img, .random-image-block img, .hero-image.parents{
   width: 100%;
   height: 380px;
   object-fit: cover;
@@ -1212,19 +1211,19 @@ h1.ourPeople-header, p.ourPeople-header{
       } }
 div.track-blob:first-child{
   background-image: url("../images/top-left-blob.png");
-  background-position: center;
+  background-position: left center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 div.track-blob:nth-child(2){
   background-image: url("../images/top-right-blob.png");
-  background-position: left;
+  background-position: left top;
   background-size: contain;
   background-repeat: no-repeat;
 }
 div.track-blob:nth-child(3){
   background-image: url("../images/bottom-left-blob.png");
-  background-position:center top;
+  background-position:left top;
   background-size: contain;
   background-repeat: no-repeat;
 }div.track-blob:nth-child(4){
@@ -1274,6 +1273,10 @@ div.track-blob:nth-child(3){
 .why-difd-block{
   display: flex;
   margin: 100px 0px;
+  background-image: url("../images/why-difd-blob.png");
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .why-difd-block h1{
   text-align: left;
@@ -1364,7 +1367,7 @@ div.track-blob:nth-child(3){
       max-width: 700px;} }
   @media (min-width: 1024px) {
     .studentWork-overview-block{
-      padding: 100px 0 100px 10%;
+      padding: 20px 0 100px 10%;
       max-width: 700px;} }
 .studentWork-overview-block p, .studentWork-overview-block h1{
   text-align: left;
@@ -1390,14 +1393,14 @@ div.track-blob:nth-child(3){
 }
 .ourPeople-professors-block h2, .ourPeople-professors-block p{
   text-align: left;
+  padding: 0;
 }
 .professors-title{
   margin: 0 0 100px 8%;
   width: 80%;}
   @media (min-width: 700px) {
     .professors-title{
-      margin: 0 0 100px 6%;
-      width: 700px;} }
+      margin: 0 0 100px 6%;} }
   @media (min-width: 1024px) {
     .professors-title{
       margin: 0 0 100px 10%;
@@ -1407,15 +1410,21 @@ div.track-blob:nth-child(3){
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0 6%;}
+  @media (min-width: 700px) {
+    .prof-blob-container{
+      } }
+  @media (min-width: 1024px) {
+    .prof-blob-container{
+      } }
 .prof-blob{
   width: 100%;
   margin-bottom: 100px;}
-@media (min-width: 700px) {
-  .prof-blob{
-    max-width: 200px;} }
-@media (min-width: 1024px) {
-  .prof-blob{
-    max-width: 200px;} }
+  @media (min-width: 700px) {
+    .prof-blob{
+      max-width: 200px;} }
+  @media (min-width: 1024px) {
+    .prof-blob{
+      max-width: 200px;} }
 .prof-blob img{
   width: 100%;
   margin: 0 auto;
@@ -1426,12 +1435,11 @@ div.track-blob:nth-child(3){
   width: 70%;
   overflow: hidden;
   border-radius: 51% 49% 52% 48% / 36% 54% 46% 64% ;
-  animation: wobble2 12s linear alternate infinite;
-  box-shadow: -10px -10px #F6BC93;}
+  animation: wobble2 12s linear alternate infinite;}
   @media (min-width: 700px) {
     .prof-img-container{
-      width: 300px;
-      height: 300px;} }
+      width: 200px;
+      height: 200px;} }
   @media (min-width: 1024px) {
     .prof-img-container{
       width: 100%;
@@ -1463,7 +1471,7 @@ div.track-blob:nth-child(3){
   @media (min-width: 700px) {
     .prof-blob p{
       font-size: 16px;
-      line-height: 38px;} }
+      line-height: 20px;} }
   @media (min-width: 1024px) {
     .prof-blob p{
       font-size: 14px;
@@ -1475,8 +1483,8 @@ div.track-blob:nth-child(3){
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .graduates-title{
-  width: 100%;
   margin: 0 auto;
   padding: 50px 4%;}
   @media (min-width: 700px) {
@@ -1493,15 +1501,27 @@ div.track-blob:nth-child(3){
 
 .ourPeople-grad-blob{
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding: 6%;
-
-}
+  margin-bottom: 50px;}
+  @media (min-width: 700px) {
+    .ourPeople-grad-blob{
+      flex-wrap: nowrap;} }
 .ourPeople-grad-blob img{
   border-radius: 56% 44% 58% 42% / 35% 55% 45% 65% ;
   animation: wobble4 12s linear alternate infinite;
-  box-shadow: -20px -20px #F6BC93;
-}
+  box-shadow: -8px -8px #F6BC93;}
+  @media (min-width: 700px) {
+    .ourPeople-grad-blob img{
+      box-shadow: -20px -20px #F6BC93;} }
+.grad-blob-overview{
+  }
+  @media (min-width: 700px) {
+    .grad-blob-overview{
+      } }
+  @media (min-width: 1200px) {
+    .grad-blob-overview{
+      margin-bottom: -120px;} }
 .grad-blob-overview h3{
   text-align: left;
   font-weight: 900;
@@ -1520,6 +1540,8 @@ div.track-blob:nth-child(3){
   line-height: 22px;
   color: #332531;
   font-style: normal;
+  margin-block-start: 1em;
+    margin-block-end: 1em;
 }
 .grad-info-block{
   display: flex;
@@ -1527,26 +1549,42 @@ div.track-blob:nth-child(3){
   padding-left: 20px;
 }
 .grad-blob-difd-prep, .grad-blob-where-are-they-now{
-  max-width: 40%;
-  padding: 0 6% 0 0;
-}
+  max-width: 100%;
+  }
+  @media (min-width: 700px) {
+    .grad-blob-difd-prep, .grad-blob-where-are-they-now{
+      max-width: 40%;
+      padding: 0 6% 0 0;} }
+  @media (min-width: 1024px) {
+    .grad-blob-difd-prep, .grad-blob-where-are-they-now{
+      } }
 .grad-blob-difd-prep p, .grad-blob-where-are-they-now p{
   text-align: left;
   font-size: 14px;
   line-height: 18px;
 }
+.grad-blob-picture{
+  margin: 0 auto;
+}
 .grad-blob-picture img{
-  max-width: 360px;
-  padding: 10px 50px;
-}
-.ourPeople-grad-blob:nth-child(3),
-.ourPeople-grad-blob:nth-child(5),
-.ourPeople-grad-blob:nth-child(7),
-.ourPeople-grad-blob:nth-child(9),
-.ourPeople-grad-blob:nth-child(11),
-.ourPeople-grad-blob:nth-child(13){
-  flex-direction: row-reverse;
-}
+  width: 100%;
+  margin: 0 auto;}
+@media (min-width: 700px) {
+  .grad-blob-picture img{
+    width: 200px;
+    padding: 10px 50px;} }
+@media (min-width: 1024px) {
+  .grad-blob-picture img{
+    width: 500px;} }
+@media (min-width: 700px) {
+  .ourPeople-grad-blob:nth-child(3),
+  .ourPeople-grad-blob:nth-child(5),
+  .ourPeople-grad-blob:nth-child(7),
+  .ourPeople-grad-blob:nth-child(9),
+  .ourPeople-grad-blob:nth-child(11),
+  .ourPeople-grad-blob:nth-child(13){
+    flex-direction: row-reverse;
+  }}
 
 /* FORM PAGE */
 

@@ -23,13 +23,13 @@ export default class OurPeople extends Component {
           sideDrawerOpen: false
         }
     }
-    
+
     drawerToggleClickHandler = () =>{
         this.setState((prevState) => {
           return {sideDrawerOpen: !prevState.sideDrawerOpen}
         })
     };
-  
+
     backdropClickHandler = () => {
         this.setState({sideDrawerOpen: false});
     }
@@ -41,7 +41,7 @@ export default class OurPeople extends Component {
             sideDrawer = <SideDrawer />
             backDrop = <BackDrop click={this.backdropClickHandler}/>
         }
-        
+
         const {
             bannerImage,
             ourPeopleOverview,
@@ -67,7 +67,7 @@ export default class OurPeople extends Component {
                 <section className="ourPeople-professors-block">
                   <div className="top-curve"></div>
                   <div className="middle-bg">
-                    <div className="professors-title">
+                    <div className="professors-title" id="professors">
                       <h2>MEET THE PROFESSORS</h2>
                       <p>{professorsOverview.professorsOverview}</p>
                     </div>
@@ -85,7 +85,7 @@ export default class OurPeople extends Component {
                     </div>
                     <div className="bottom-curve"></div>
                 </section>
-                <section className="ourPeople-graduates-block">
+                <section className="ourPeople-graduates-block" id="graduates">
                   <div className="graduates-title">
                     <h2>MEET THE GRADUATES</h2>
                     <p>{graduatesOverview.graduatesOverview}</p>
