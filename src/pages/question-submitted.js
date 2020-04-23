@@ -53,7 +53,7 @@ export default class QuestionSubmitted extends Component {
                 <section className="question-received-block">
                     <h1>THANK YOU!</h1>
                     <p>Someone on our team will get back to you ASAP!</p>
-                    <Link to="/"
+                    <Link to="/#top"
                           state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
                           className="main-link">
                               Home

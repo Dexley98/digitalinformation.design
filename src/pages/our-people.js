@@ -53,11 +53,11 @@ export default class OurPeople extends Component {
         const gradList = this.props.data.allContentfulGraduate.edges
 
         return (
-            <div>
+            <div id="top">
             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
             {sideDrawer}
             {backDrop}
-                <section className="ourPeople-bannerImg-block" id="top">
+                <section className="ourPeople-bannerImg-block">
                     <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
                 <section className="ourPeople-overview-block">
@@ -85,8 +85,8 @@ export default class OurPeople extends Component {
                     </div>
                     <div className="bottom-curve"></div>
                 </section>
-                <section className="ourPeople-graduates-block" id="graduates">
-                  <div className="graduates-title">
+                <section className="ourPeople-graduates-block" >
+                  <div className="graduates-title" id="graduates">
                     <h2>MEET THE GRADUATES</h2>
                     <p>{graduatesOverview.graduatesOverview}</p>
                 </div>
