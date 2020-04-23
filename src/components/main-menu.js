@@ -8,7 +8,7 @@ const MainMenu = props => (
   <header>
   <nav className="main-menu">
     <DrawerButton click={props.drawerClickHandler}/>
-    <div><Link to="/"><img src={DIFDLOGO} className="main-menu-logo" alt="the logo for DIFD"/></Link></div>
+    <div><Link to="/"><img src={DIFDLOGO} className="main-menu-logo" alt="DIFD logo"/></Link></div>
     <div className="topnav new-menu" id="myTopnav">
       <a href="https://apply.winthrop.edu/apply/" className="apply-now">Apply Now</a>
       <div className="dropdown">
