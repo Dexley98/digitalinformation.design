@@ -13,12 +13,13 @@ import ProjectsBlock from '../components/project'
 
 import "../css/layout.css"
 
+
 export default class StudentWork extends Component {
   constructor(props){
     super(props)
     this.state = {
       sideDrawerOpen: false, 
-      previousPageSlug: props.location.state !== null ? props.location.state.prevPath : '/commerce'
+      previousPageSlug: props.location.state ? props.location.state.prevPath : '/commerce'
     }
   }  
 
