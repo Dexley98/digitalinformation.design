@@ -18,7 +18,7 @@ export default class StudentWork extends Component {
     super(props)
     this.state = {
       sideDrawerOpen: false, 
-      previousPageSlug: props.location.state !== undefined ? props.location.state.prevPath : '/commerce'
+      previousPageSlug: props.location.state !== null ? props.location.state.prevPath : '/commerce'
     }
   }  
 
