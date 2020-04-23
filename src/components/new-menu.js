@@ -3,6 +3,7 @@ import React from "react"
 
 import DrawerButton from  '../components/drawer-button'
 import Logo from '../images/difd-menu-logo.png'
+
 const MainMenu = props => (
   <header>
   <nav className="main-menu">
@@ -54,7 +55,7 @@ const MainMenu = props => (
       </div>
       <Link to="/"
             state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
-            className="active">
+            className="active apply-now">
               About
       </Link>
     </div>
