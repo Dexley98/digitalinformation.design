@@ -25,6 +25,7 @@ export default class Questions extends Component {
         emailMssg: undefined,
         questionMssg: undefined,
         notABot: false,
+        gRecaptchaResponse: undefined,
         botMssg: undefined
       };
 
@@ -66,6 +67,8 @@ export default class Questions extends Component {
     verifyCallback(response){
         if(response){
             this.setState({
+                // can only be verified once
+                gRecaptchaResponse: response,
                 notABot: true
             })
         }
@@ -162,7 +165,7 @@ export default class Questions extends Component {
                 <p>Fill out your information and a brief description of what you're looking for and we will get back to you as soon as we can!</p>
             </section>
             <section className="questions-form-block">
-                <form action="httpS://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
+                <form action="https://deltona.birdnest.org/~acc.exleyd2/451mail.php" method="POST" onSubmit={this.handleSubmit} >
                   <input type="hidden" name="form-name" value="contact" />
                   <label>
                     Full Name
