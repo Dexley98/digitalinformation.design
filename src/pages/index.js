@@ -74,11 +74,11 @@ export default class About extends Component {
         const whyWinthropAsset2 = whyWinthropAssets[1]
 
         return(
-            <div>
+            <div id="top">
             <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
             {sideDrawer}
             {backDrop}
-                <section className="about-bannerImg-block" id="top">
+                <section className="about-bannerImg-block" >
                     <img src={bannerImage.file.url} alt={bannerImage.description} />
                 </section>
                 <section className="what-is-difd-block">
@@ -132,8 +132,8 @@ export default class About extends Component {
                     })}
                     </div>
                 </section>
-                <section id="tour" className="why-winthrop-block">
-                  <div>
+                <section className="why-winthrop-block">
+                  <div id="tour" >
                     <h2>OUR CAMPUS</h2>
                     {/*top content */}
                     <p>{whyWinthrop1.whyWinthrop1}</p>
