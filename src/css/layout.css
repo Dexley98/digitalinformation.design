@@ -16,7 +16,7 @@
   display: none;
 }
 html, body{
-  max-width: 1600px;
+  
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden !important;
@@ -154,6 +154,16 @@ a.main-link, input[type=submit]{
   padding-top: 100px;
 }
 /* MAIN MENU CSS */
+img.main-menu-logo{
+  max-width: 40px;
+  padding: 4% 10%;
+  background-color: #FFF8F2;
+  border-radius: 10px;
+  margin: 10% 16px 0 0;}
+  @media (min-width: 700px) {
+    img.main-menu-logo{
+      margin: 6% 40%;
+      padding: 4% 24%;} }
 nav.main-menu{
   display: flex;
   justify-content: space-between;
@@ -264,11 +274,13 @@ nav.side-drawer{
   width: 120px;
   padding: 6px;
   border-radius: 0px 0px 10px 10px;
+  border-top: #664363 solid 5px;
   position: relative;
   z-index: 50;}
   @media (min-width: 700px) {
     .parent-link{
-      width: 260px;
+      border-top: #664363 solid 0px;
+      width: 240px;
       padding: 10px;} }
 .parent-link p{
   font-family: Avenir, sans-serif;
