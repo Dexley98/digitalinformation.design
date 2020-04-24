@@ -20,7 +20,7 @@ html, body{
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden !important;
-height: 100%;}
+  height: 100%;}
 h1{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-size: 35px;
@@ -156,13 +156,13 @@ a.main-link, input[type=submit]{
 /* MAIN MENU CSS */
 img.main-menu-logo{
   max-width: 40px;
-  padding: 4% 10%;
+  padding: 4% 20%;
   background-color: #FFF8F2;
   border-radius: 10px;
   margin: 10% 16px 0 0;}
   @media (min-width: 700px) {
     img.main-menu-logo{
-      margin: 8% 40%;
+      margin: 6% 40%;
       padding: 4% 24%;} }
 nav.main-menu{
   display: flex;
@@ -371,9 +371,11 @@ div.footer a{
   width: 100%;
   position: relative;
   opacity: .5;
+  margin-bottom: 0;
+  bottom: 0;
 }
 div.tagline-item{
-  padding: 40px 4% 20px 4%;
+  margin: 40px 4% 20px 4%;
   position: relative;
   }
   @media (min-width: 700px) {
@@ -494,12 +496,10 @@ div.tagline-item{
   @media (min-width: 700px) {
     .whatDoesItMean-block{
       padding: 0px 60px 100px 0;
-      flex-wrap: nowrap;
-      } }
+      flex-wrap: nowrap;} }
   @media (min-width: 1024px) {
     .whatDoesItMean-block{
-      margin-top: -100px;
-      } }
+      margin-top: -100px;} }
 .whatDoesItMean-block div.meaning-image-background{
   background-image: url("../images/blob-shape1-dark.svg");
   background-position: left;
@@ -531,8 +531,7 @@ div.tagline-item{
   border-radius:39% 61% 47% 53% / 48% 66% 34% 52% ;}
   @media (min-width: 700px) {
     .whatDoesItMean-block img.meaning-image{
-      position: static;
-      } }
+      position: static;} }
   @media (min-width: 1024px) {
     .whatDoesItMean-block img.meaning-image{
       max-width: 500px;} }
@@ -576,18 +575,14 @@ div.tagline-item{
 /* CAREER BLOCKS */
 
 .career-block{
-  margin-top: 100px;
-}
+  margin-top: 100px;}
 @media (min-width: 700px) {
   .career-block{
-    margin-top: 0px;} }
-@media (min-width: 1024px) {
-  .career-block{
-    } }
+    margin-top: 0px;
+    margin-bottom: 140px;} }
 .career-block > p{
   margin: 50px 0px;
-  padding: 0px 10%;
-}
+  padding: 0px 10%;}
 .job-blob-container{
   display: flex;
   flex-wrap: wrap;
@@ -596,10 +591,6 @@ div.tagline-item{
   @media (min-width: 700px) {
     .job-blob-container{
       margin-top: 40px;} }
-  @media (min-width: 1024px) {
-    .job-blob-container{
-
-      } }
 .job-blob{
   max-width: 50%;
   margin: 20px 16%;
@@ -615,8 +606,7 @@ div.tagline-item{
     .job-blob{
       max-width: 160px;
       margin: 10px 20px;
-      padding: 24px 40px;
-      } }
+      padding: 24px 40px;} }
   .job-blob:nth-child(1){
     border-radius: 53% 47% 51% 49% / 40% 62% 38% 60%;
     animation: wobble 12s linear alternate infinite;}
@@ -651,13 +641,11 @@ div.tagline-item{
       100%{ border-radius: 51% 49% 55% 45% / 40% 58% 42% 60%;}}
 .job-blob h4{
   border-bottom: 2px solid #FDFCF3;
-  padding-bottom: 10px;
-}
+  padding-bottom: 10px;}
 .job-blob p{
   color: #FDFCF3;
   font-size: 12px;
-  line-height: 16px;
-}
+  line-height: 16px;}
 
 /* GARDUATE SECTION*/
 
@@ -733,14 +721,14 @@ flex-wrap: wrap;}
       margin: 20px 0px;} }
   @media (min-width: 1024px) {
     .grad-blob p{
+
       } }
 
 /* KEY LEARNING OUTCOMES*/
 
 .learningOutcomes-block{
   margin-top: 0px;
-  padding-top: 0px;
-}
+  padding-top: 0px;}
 div.learningOutcomes-info, div.job-opportunities-header{
   display: flex;
   flex-wrap: wrap;
@@ -754,8 +742,7 @@ div.learningOutcomes-info, div.job-opportunities-header{
       background-position: right top;} }
   @media (min-width: 1024px) {
     div.learningOutcomes-info, div.job-opportunities-header{
-      padding-top: 100px;
-      } }
+      padding-top: 100px;} }
 div.learningOutcomes-info h2, div.job-opportunities-header h2{
   text-align: left;
   padding: 10% 10% 0px 10%;}
@@ -798,24 +785,20 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   border-radius: 53% 47% 51% 49% / 40% 62% 38% 60%;
   animation: wobble 12s linear alternate infinite;
     background-color: #FFF8F2;
-    padding: 15px;
-}
+    padding: 15px;}
 .learningOutcome-blob-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 100px;
-}
+  margin-top: 100px;}
 .learningOutcome-blob-container > div{
   max-width: 240px;
   padding: 20px;
-  margin: 0px 10px;
-}
+  margin: 0px 10px;}
 
 /* STUDENT WORK BLOCK */
 .course-list-container{
-  margin: 50px auto;
-}
+  margin: 50px auto;}
 .student-work-block{
   background-image: url("../images/bg-shape2.png");
   background-position: left;
@@ -823,12 +806,10 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   background-repeat: no-repeat;
   z-index: 0;
   position: relative;
-  margin: 100px 0;
-}
+  margin: 100px 0;}
 .student-work-block p{
   max-width: 700px;
-  margin: 0 auto;
-}
+  margin: 0 auto;}
   @media (min-width: 700px) {
     .student-work-block p{
       max-width: 500px;
@@ -840,26 +821,35 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
 .project-container, .projectBrief-container, .projects-list{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
-.projectBrief-blob, .project-blob{
+  justify-content: center;}
+.projectBrief-blob{
   flex-wrap: wrap;
   max-width: 100%;
   margin: 50px;}
   @media (min-width: 700px) {
-    .projectBrief-blob, .project-blob{
-      max-width: 350px;
+    .projectBrief-blob{
       margin: 40px;} }
   @media (min-width: 1024px) {
-    .projectBrief-blob, .project-blob{
-      max-width: 300px;
-      margin: 50px;} }
+    .projectBrief-blob{
+      margin: 50px;
+      max-width: 500px;} }
+.project-blob{
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  margin: 50px;}
+  @media (min-width: 700px) {
+    .project-blob{
+      margin: 40px;} }
+  @media (min-width: 1024px) {
+    .project-blob{
+      margin: 50px 30px;
+      max-width: 500px;} }
 .projectBrief-blob img, .project-blob img{
   max-width: 100%;
   position: relative;
   z-index: -1;
-  box-shadow: 6px 6px 0px #F6BC93, 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
+  box-shadow: 6px 6px 0px #F6BC93, 0px 4px 4px rgba(0, 0, 0, 0.25);}
 .projectBrief-blob h3, .project-blob h3{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: left !important;
@@ -873,9 +863,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   text-align: left;
   margin: -10px 0 20px 0;
   font-size: 16px;
-  line-height: 20px;
-
-}
+  line-height: 20px;}
 
 /* COURSEWORK BLOCK*/
 
@@ -998,11 +986,9 @@ p.elective-name, p.name{
   text-align: center;
   margin: 0px;
   padding: 20px 4% 100px 4%;
-  background-color: #FFF8F2;
-}
+  background-color: #FFF8F2;}
 .apply-now-block p{
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px;}
 
 
 
@@ -1059,20 +1045,17 @@ h2.parent-splash{
   padding: 100px 0px;
   background-image: url("../images/bg-shape2.png");
   background-size: contain;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat;}
 .whatDoesItMean-block-parents h2{
   text-transform: uppercase;
   text-align: right;
   align-self: flex-start;
-  padding: 20px;
-}
+  padding: 20px;}
 .whatDoesItMean-block-parents p{
   text-align: left;
   align-self: flex-start;
   max-width: 500px;
-  padding: 40px;
-}
+  padding: 40px;}
 
 /* EMPLOYMENT OUTLOOK */
 
@@ -1098,7 +1081,7 @@ h2.parent-splash{
       margin: 0 auto;
       } }
 .median-salary-block{
-  margin-top: 100px;
+  margin: 100px 0;
   padding: 0px 4% 0px 4%;
 }
 .median-salary-block p{
@@ -1134,7 +1117,7 @@ h2.parent-splash{
 
 /* SPLASH IMAGE AREA */
 
-.about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img, .random-image-block img, .hero-image.parents{
+.about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img, .random-image-block img, .hero-image.parents, .lost-image{
   width: 100%;
   height: 380px;
   object-fit: cover;
@@ -1291,12 +1274,10 @@ div.track-blob:nth-child(3){
   background-image: url("../images/why-difd-blob.png");
   background-position: left center;
   background-size: contain;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat;}
 .why-difd-block h1{
   text-align: left;
-  margin: 100px -10% 0 10%;
-}
+  margin: 100px -10% 0 10%;}
 .why-difd-block img{
   width: 80%;
   position: relative;
@@ -1492,7 +1473,9 @@ div.track-blob:nth-child(3){
   background-size: contain;
   background-repeat: no-repeat;
 }
-
+.graduates-block h2{
+  margin-bottom: 100px;
+}
 .graduates-title{
   margin: 0 auto;
   padding: 50px 4%;}
@@ -1536,11 +1519,9 @@ div.track-blob:nth-child(3){
   line-height: 34px;
   text-transform: uppercase;
   color: #664363;
-  font-style: normal;
-}
+  font-style: normal;}
 .grad-blob-overview p{
-  text-align: left;
-}
+  text-align: left;}
 .ourPeople-grad-blob > div > div > h4{
   text-align: left;
   font-size: 16px;
@@ -1548,13 +1529,11 @@ div.track-blob:nth-child(3){
   color: #332531;
   font-style: normal;
   margin-block-start: 1em;
-    margin-block-end: 1em;
-}
+  margin-block-end: 1em;}
 .grad-info-block{
   display: flex;
   flex-wrap: wrap;
-  padding-left: 20px;
-}
+  padding-left: 20px;}
 .grad-blob-difd-prep, .grad-blob-where-are-they-now{
   max-width: 100%;
   }
@@ -1568,11 +1547,9 @@ div.track-blob:nth-child(3){
 .grad-blob-difd-prep p, .grad-blob-where-are-they-now p{
   text-align: left;
   font-size: 14px;
-  line-height: 18px;
-}
+  line-height: 18px;}
 .grad-blob-picture{
-  margin: 0 auto;
-}
+  margin: 0 auto;}
 .grad-blob-picture img{
   width: 100%;
   margin: 0 auto;}
@@ -1590,8 +1567,7 @@ div.track-blob:nth-child(3){
   .ourPeople-grad-blob:nth-child(9),
   .ourPeople-grad-blob:nth-child(11),
   .ourPeople-grad-blob:nth-child(13){
-    flex-direction: row-reverse;
-  }}
+    flex-direction: row-reverse;}}
 
 /* FORM PAGE */
 
@@ -1658,12 +1634,10 @@ input[type=email]:focus, input[type=text]:focus, select:focus{
   color: red;
   text-align: left;
   font-style: italic;}
-
 .invaild-bot-block p{
   font-size: 12px;
   color: red;
-  font-style: italic;
-}
+  font-style: italic;}
 
 input[type=email]:hover, input[type=text]:hover, select:hover {
   border: .5px solid #D3C5AE;}
@@ -1678,11 +1652,9 @@ input[type=email]:hover, input[type=text]:hover, select:hover {
   display: flex;
   justify-content: center;
   margin: 40px auto 100px;
-  width: 80px;
-}
+  width: 80px;}
 .question-received-block{
-  padding: 0 6%;
-}
+  padding: 0 6%;}
 
 /* QUESTIONS BUBBLE */
 .questions-bubble{
@@ -1691,27 +1663,33 @@ input[type=email]:hover, input[type=text]:hover, select:hover {
   right: 0;
   text-decoration: none;
   background-color: #664363;
-  padding: 8px 16px;
-  margin-bottom: 60px;
-  margin-right: 40px;
+  padding: 4px 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
   width: 100px;
   border-radius: 56% 44% 58% 42% / 35% 55% 45% 65% ;
   animation: wobble4 12s linear alternate infinite;
   box-shadow: 2px 6px 8px #332531;
-  z-index: 80;
-}
+  z-index: 80;}
+  @media (min-width: 700px) {
+    .questions-bubble{
+      padding: 8px 16px;
+      margin-bottom: 60px;
+      margin-right: 40px;} }
 .questions-bubble p{
   font-style: normal;
   font-weight: 900;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 26px;
   text-align: center;
   color: #FFF8F2;
-  font-family: 'AvenirLTStd', Arial, sans-serif;
-}
-
+  font-family: 'AvenirLTStd', Arial, sans-serif;}
+  @media (min-width: 700px) {
+    .questions-form-overview{
+      font-weight: 900;
+      font-size: 16px;
+      line-height: 20px;} }
 /* 404 PAGE */
 
 .lost-section{
-  padding: 100px 6%;
-}
+  padding: 50px 6% 100px 6%;}

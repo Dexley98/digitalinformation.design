@@ -94,7 +94,6 @@ export default class parentPage extends Component {
 {/* Job Oppurtunities Section */}
                 <div className="top-curve"></div>
                 <section className="job-oppurtunities-block">
-                <div className=""></div>
                   <div className="job-opportunities-header">
                     <div>
                       <h2>Job Opportunities</h2>
