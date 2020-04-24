@@ -16,7 +16,7 @@
   display: none;
 }
 html, body{
-
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden !important;
@@ -843,7 +843,6 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   justify-content: center;
 }
 .projectBrief-blob, .project-blob{
-  display: flex;
   flex-wrap: wrap;
   max-width: 100%;
   margin: 50px;}
@@ -853,7 +852,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
       margin: 40px;} }
   @media (min-width: 1024px) {
     .projectBrief-blob, .project-blob{
-      max-width: 420px;
+      max-width: 300px;
       margin: 50px;} }
 .projectBrief-blob img, .project-blob img{
   max-width: 100%;
@@ -1143,19 +1142,20 @@ h2.parent-splash{
 
 /* HEADER TEXT AREAS */
 
-h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1{
+h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1, .lost-header{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: center;
   color: #EC6A12;
   font-size: 40px;
   line-height: 50px;
-  text-shadow: none;}
+  text-shadow: none;
+  text-transform: uppercase;}
   @media (min-width: 700px) {
-    h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1{
+    h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1, .lost-header{
       font-size: 60px;
       line-height: 70px;} }
   @media (min-width: 1024px) {
-    h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1{
+    h1.about-header, h1.student-work-header, h1.ourPeople-header, .questions-form-overview h1, .question-received-block h1, .lost-header{
       font-size: 80px;
       line-height: 90px;} }
 .purple-highlight{
@@ -1393,14 +1393,7 @@ div.track-blob:nth-child(3){
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.project-blob{
-  width: 100%;;}
-  @media (min-width: 700px) {
-    .project-blob{
-      max-width: 500px;} }
-  @media (min-width: 1024px) {
-    .project-blob{
-      max-width: 500px;} }
+
 
 /* OUR PEOPLE */
 
@@ -1715,4 +1708,10 @@ input[type=email]:hover, input[type=text]:hover, select:hover {
   text-align: center;
   color: #FFF8F2;
   font-family: 'AvenirLTStd', Arial, sans-serif;
+}
+
+/* 404 PAGE */
+
+.lost-section{
+  padding: 100px 6%;
 }

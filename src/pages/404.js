@@ -27,7 +27,7 @@ class NotFoundPage extends Component {
     }
 
     render(){
-      
+
       let sideDrawer = null;
       let backDrop = null;
       if (this.state.sideDrawerOpen) {
@@ -40,23 +40,23 @@ class NotFoundPage extends Component {
           <MainMenu drawerClickHandler={this.drawerToggleClickHandler}/>
           {sideDrawer}
           {backDrop}
-
-          <h1>Fiddle Sticks!</h1>
-          <h3>Are you lost?</h3>
-          <p>You're looking for something that doesn't exist...</p>
-          <br/>
-          <p>Try going to our homepage.</p>
-          <p><Link to='/#top'
-              state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
-              className="main-link">
-                GO
-          </Link></p>
+          <div className="lost-section">
+            <h1 className="lost-header">Nothing to See Here!</h1>
+            <p>Are you lost? You're looking for something that doesn't exist...</p>
+            <br/>
+            <p>Try going to our homepage.</p>
+            <p><Link to='/#top'
+                state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}
+                className="main-link">
+                  GO
+            </Link></p>
+          </div>
           <Footer />
         </div>
       )
     }
-    
-    
+
+
 }
 
 
