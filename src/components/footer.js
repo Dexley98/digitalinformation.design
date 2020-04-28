@@ -38,9 +38,9 @@ class Footer extends React.Component {
                 state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
                   Student Work
           </Link>
-          <Link to="/our-people#graduates" className="bad-link"
+          <Link to="/our-people#top" className="bad-link"
                 state={{ prevPath: typeof window !== 'undefined' ?  window.location.pathname  :  ' '}}>
-                  Our Grads
+                  Our People
           </Link>
           <a href="https://apply.winthrop.edu/apply/">Apply Now</a>
         </div>

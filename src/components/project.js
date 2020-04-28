@@ -24,12 +24,12 @@ export default class ProjectsBlock extends Component {
     render() {
         return (
             <div className="course-list-container">
+            <div className="button-container">
                 <button
                     id="commerce-projects-button"
                     className={'projects-button'}
                     name="commerce"
-                    onClick={this.handleConcentrationClick}
-                    >
+                    onClick={this.handleConcentrationClick}>
                         Digital Commerce
                 </button>
                 <button
@@ -48,11 +48,12 @@ export default class ProjectsBlock extends Component {
                 </button>
                 <button
                     id="webapps-projects-button"
-                    className={'projects-button'} 
+                    className={'projects-button'}
                     name="webapps"
                     onClick={this.handleConcentrationClick}>
                         Web Applications
                 </button>
+                </div>
 
 {/*give functional componet CoreCourseList the coreArray for rendering */}
                 <div className="projects-list">

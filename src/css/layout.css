@@ -1,20 +1,16 @@
-
-
 @font-face {
   font-family: 'AvenirLTStd';
   src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Book.otf) format('opentype');
   src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Light.otf) format('opentype');
-  src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Roman.otf) format('opentype');
-}
+  src: local('AvenirLTStd'), url(../fonts/AvenirLTStd-Roman.otf) format('opentype');}
 @font-face {
   font-family: 'Raleway';
   src: local('Raleway'), url(../fonts/Raleway-Regular.ttf) format('truetype');
   src: local('Raleway'), url(../fonts/Raleway-ExtraBold.ttf) format('truetype');
-  src: local('Raleway'), url(../fonts/Raleway-Black.ttf) format('truetype');
-}
+  src: local('Raleway'), url(../fonts/Raleway-Black.ttf) format('truetype');}
+
 .hide{
-  display: none;
-}
+  display: none;}
 html, body{
   max-width: 1600px;
   margin: 0 auto;
@@ -25,8 +21,7 @@ h1{
   font-family: 'AvenirLTStd', Arial, sans-serif;
   font-size: 35px;
   color: #FDFCF3;
-  text-shadow: 2px 2px 8px #332531;
-}
+  text-shadow: 2px 2px 8px #332531;}
 h2{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: center;
@@ -138,21 +133,17 @@ a.main-link, input[type=submit]{
   background-color: #FFF8F2;
   border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
   padding: 40px 0px 0px 0px;
-  margin-bottom: 0px;
-}
+  margin-bottom: 0px;}
 .middle-bg{
   background-color: #FFF8F2;
-  padding: 100px 0px 50px 0px;
-}
+  padding: 100px 0px 50px 0px;}
 .bottom-curve{
   background-color: #FFF8F2;
   border-radius: 50% 50% 50% 50% / 0% 0% 100% 100% ;
   padding: 0px 0px 40px 0px;
-  margin-top: 0px;
-}
+  margin-top: 0px;}
 .top-padding{
-  padding-top: 100px;
-}
+  padding-top: 100px;}
 /* MAIN MENU CSS */
 img.main-menu-logo{
   max-width: 40px;
@@ -169,7 +160,8 @@ nav.main-menu{
   justify-content: space-between;
   width: 100%;
   background-color: #332531;
-}
+  margin-bottom: 0;}
+
 button.drop-down-button{
   background: transparent;
   border: none;
@@ -180,13 +172,11 @@ button.drop-down-button{
     button.drop-down-button{
       display: none;} }
 button.drop-down-button:focus{
-  outline: none;
-}
+  outline: none;}
 .side-drawer{
   height: 100vh;
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column;}
 nav.side-drawer{
   position: fixed;
   top: 0;
@@ -194,8 +184,7 @@ nav.side-drawer{
   width: 70%;
   max-width: 400px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-  z-index: 200;
-}
+  z-index: 200;}
 .back-drop{
   position: fixed;
   width: 100%;
@@ -203,12 +192,14 @@ nav.side-drawer{
   top: 0;
   left: 0;
   background: rgba(0,0,0,0.3);
-  z-index: 100;
-}
+  z-index: 100;}
 .topnav, .side-topnav {
   background-color: #332531;
   overflow: hidden;
-  height: 50px;}
+  height: 60px;}
+  @media (min-width: 700px) {
+    .topnav, .side-topnav {
+      height: 50px;} }
 .side-topnav{
   height: 100%;
 }
@@ -267,14 +258,12 @@ nav.side-drawer{
   @media (max-width: 700px) {
     .topnav.new-menu {
       display: none;} }
-
 .parent-link{
   background-color: #664363;
   margin: 0 20px;
   width: 120px;
-  padding: 6px;
+  padding: 10px;
   border-radius: 0px 0px 10px 10px;
-  border-top: #664363 solid 5px;
   position: relative;
   z-index: 50;}
   @media (min-width: 700px) {
@@ -306,11 +295,13 @@ nav.side-drawer{
     .parent-link a {
       font-size: 16px;
       line-height: 20px;} }
-/* FOOTER CSS */
 
+/* FOOTER CSS */
 
 .footer{
   width: 100%;
+  position: static;
+  z-index: 100;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -347,12 +338,11 @@ div.footer a{
       font-weight: 500;
       font-size: 12px;} }
 .bad-link{
-  margin: 0 14px;
-}
+  margin: 0 14px;}
 @media (min-width: 700px) {
 .bad-link{
-  margin: 0;
-}}
+  margin: 0;}}
+
 /* STUDENT TEMPLATED PAGES */
 
 /* SPLASH IMAGE */
@@ -377,6 +367,7 @@ div.footer a{
 div.tagline-item{
   margin: 40px 4% 20px 4%;
   position: relative;
+  padding-bottom: 20px;
   }
   @media (min-width: 700px) {
     div.tagline-item{
@@ -511,9 +502,6 @@ div.tagline-item{
     .whatDoesItMean-block div.meaning-image-background{
       background-size: contain;
       padding: 80px 50px;} }
-  @media (min-width: 1024px) {
-    .whatDoesItMean-block div.meaning-image-background{
-      } }
 .whatDoesItMean-block div{
   width: 100%;
   padding: 0px;}
@@ -669,9 +657,6 @@ div.tagline-item{
     .grad-blob-container{
       width: 100%;
       margin: 50px auto;} }
-  @media (min-width: 1024px) {
-    .grad-blob-container{
-      } }
 .grad-blob{
   margin: 60px 5% 0px 5%;
 justify-content: center;
@@ -719,10 +704,6 @@ flex-wrap: wrap;}
       font-size: 12px;
       line-height: 16px;
       margin: 20px 0px;} }
-  @media (min-width: 1024px) {
-    .grad-blob p{
-
-      } }
 
 /* KEY LEARNING OUTCOMES*/
 
@@ -797,6 +778,11 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   margin: 0px 10px;}
 
 /* STUDENT WORK BLOCK */
+
+.button-container{
+ display: flex;
+flex-wrap: wrap;
+justify-content: center;}
 .course-list-container{
   margin: 50px auto;}
 .student-work-block{
@@ -808,7 +794,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
   position: relative;
   margin: 100px 0;}
 .student-work-block p{
-  max-width: 700px;
+  padding: 0 6%;
   margin: 0 auto;}
   @media (min-width: 700px) {
     .student-work-block p{
@@ -869,8 +855,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
 
 .coursework-block-title{
   padding: 0 6%;
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px;}
   @media (min-width: 700px) {
     .coursework-block-title{
       padding: 0 8%;} }
@@ -894,14 +879,9 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
       border: 4px solid #D3C5AE;
       padding: 6% 4%;} }
 .course-list-container{
-  margin: 0 4%;
-  }
-  @media (min-width: 700px) {
-    .course-list-container{
-      margin: 0 4%;} }
+  margin: 0 4%;}
 .course-legend{
-  margin-top: 20px;
-}
+  margin-top: 20px;}
 .course-list-container button{
   background-color: #332531;
   color: #FDFCF3;
@@ -925,8 +905,7 @@ div.learningOutcomes-info img, div.job-opportunities-header img{
       padding: 16px 24px;} }
 .course-list-container button:focus{
   background-color: #423040;
-  outline: none;
-}
+  outline: none;}
 .course-blob {
   display: flex;
   flex-wrap: nowrap;
@@ -964,24 +943,20 @@ p.elective-name, p.name{
   color: #EC6A12;
 }*/
 .outside-electives-blob a{
-  color: #664363;
-}
+  color: #664363;}
 /* WHY WINTHROP BLOCK */
 
 .why-winthrop-block img{
-  width: 100%;
-}
+  width: 100%;}
 
 
 /* APPLY NOW */
 .apply-now-block{
-  margin-bottom: 0;
-}
+  margin-bottom: 0;}
 @media (min-width: 700px) {
   p.elective-name, p.name{
     font-size: 12px;
     padding: 0;} }
-
 .apply-now-block div:last-child{
   text-align: center;
   margin: 0px;
@@ -990,15 +965,11 @@ p.elective-name, p.name{
 .apply-now-block p{
   margin-bottom: 50px;}
 
-
-
-
 /*PARENTS PAGE*/
 
 /* SPLASH IMAGE */
 div.parent-splash{
-  padding: 50px 0;
-}
+  padding: 50px 0;}
 h1.parent-splash{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   color: #FDFCF3;
@@ -1007,11 +978,7 @@ h1.parent-splash{
   margin: 0 auto !important;
   text-shadow: 2px 2px 8px #332531;
   text-transform: uppercase;
-  position: relative;
-  }
-  @media (min-width: 700px) {
-    h1.parent-splash{
-      } }
+  position: relative;}
   @media (min-width: 1024px) {
     h1.parent-splash{
       font-size: 60px;
@@ -1025,9 +992,6 @@ h2.parent-splash{
   margin: 0 auto !important;
   text-shadow: 2px 2px 8px #332531;
   text-transform: uppercase;}
-  @media (min-width: 700px) {
-    h2.parent-splash{
-      } }
   @media (min-width: 1024px) {
     h2.parent-splash{
       font-size: 40px;
@@ -1077,16 +1041,14 @@ h2.parent-splash{
       font-size: 40px;
       line-height: 50px;
       padding: 0px 10% 200px 10%;
-      max-width: 700px;
-      margin: 0 auto;
-      } }
+      max-width: 80%;
+      margin: 0 auto;} }
 .median-salary-block{
   margin: 100px 0;
-  padding: 0px 4% 0px 4%;
-}
+  padding: 0px 4% 0px 4%;}
 .median-salary-block p{
-  padding: 50px 4% 50px 4%;
-}
+  padding: 50px 4% 50px 4%;}
+
 /* JOB OPPORTUNITIES */
 
 .job-oppurtunities-block{
@@ -1094,24 +1056,16 @@ h2.parent-splash{
   flex-wrap: wrap;
   justify-content: center;
   background-color: #FFF8F2;
-  margin-top: -40px;
-  padding: 20px 0;
-}
+  padding: 20px 0;}
 .job-opportunities-header{
   width: 40%;
-  padding: 0 2%;
-}
+  padding: 0 2%;}
 .job-opportunities-header h2, .job-opportunities-header p{
-  text-align: right;
-}
+  text-align: right;}
 .job-opportunities-header h2{
-  text-transform: uppercase;
-}
+  text-transform: uppercase;}
 .spacing{
-  margin: 100px 0 50px 0;
-}
-
-
+  margin: 100px 0 50px 0;}
 
 /* GENERAL MULTI PAGE CSS */
 
@@ -1120,8 +1074,7 @@ h2.parent-splash{
 .about-bannerImg-block img, .bannerImage-block img, .ourPeople-bannerImg-block img, .random-image-block img, .hero-image.parents, .lost-image{
   width: 100%;
   height: 380px;
-  object-fit: cover;
-}
+  object-fit: cover;}
 
 /* HEADER TEXT AREAS */
 
@@ -1163,9 +1116,7 @@ h1.ourPeople-header, p.ourPeople-header{
 
 /* WHAT IS DIFD BLOCK */
 .what-is-difd-block{
-  margin: 100px 0;
-}
-
+  margin: 100px 0;}
 .what-is-difd-block p{
   padding: 0 10%;
   margin-top: 20px;}
@@ -1185,17 +1136,13 @@ h1.ourPeople-header, p.ourPeople-header{
   flex-wrap: wrap;
   justify-content: center;
   margin: 100px auto 0 auto;}
-  @media (min-width: 700px) {
-    .tracks-container{
-      } }
   @media (min-width: 1024px) {
     .tracks-container{
       margin: 100px auto 0 auto;} }
 .track-blob{
   max-width: 100%;
   height: 300px;
-  padding: 0 8%;
-  }
+  padding: 0 8%;}
   @media (min-width: 700px) {
     .track-blob{
       max-width: 260px;
@@ -1205,31 +1152,27 @@ h1.ourPeople-header, p.ourPeople-header{
     .track-blob{
       max-width: 300px;
       padding: 0 8%;
-      height: 300px;
-      } }
+      height: 300px;} }
 div.track-blob:first-child{
   background-image: url("../images/top-left-blob.png");
   background-position: left center;
   background-size: contain;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat;}
 div.track-blob:nth-child(2){
   background-image: url("../images/top-right-blob.png");
   background-position: left top;
   background-size: contain;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat;}
 div.track-blob:nth-child(3){
   background-image: url("../images/bottom-left-blob.png");
   background-position:left top;
   background-size: contain;
-  background-repeat: no-repeat;
-}div.track-blob:nth-child(4){
+  background-repeat: no-repeat;}
+div.track-blob:nth-child(4){
   background-image: url("../images/bottom-right-blob.png");
   background-position:center left;
   background-size: contain;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat;}
 .track-blob h3{
   font-family: 'Raleway-ExtraBold', Tahoma, sans-serif;
   text-align: left;
@@ -1264,8 +1207,7 @@ div.track-blob:nth-child(3){
 .track-blob a{
   position: relative;
   bottom: 0;
-  left: 0;
-}
+  left: 0;}
 
 /* WHY CHOOSE DIFD */
 .why-difd-block{
@@ -1298,63 +1240,42 @@ div.track-blob:nth-child(3){
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 20px 20px 40px 20px;
-}
+  padding: 20px 20px 40px 20px;}
 @media (min-width: 700px) {
   .why-winthrop-block{
     padding: 160px 20px;} }
-@media (min-width: 1024px) {
-  .why-winthrop-block{
-    } }
 .why-winthrop-block div, .why-winthrop-block img {
   width: 100%;
   height: 100%;
   border-radius: 39% 61% 47% 53% / 48% 66% 34% 52%;
-  margin: 10% 0 0 4%;
-}
+  margin: 10% 0 0 4%;}
   @media (min-width: 700px) {
     .why-winthrop-block div,.why-winthrop-block img {
       width: 40%;} }
-  @media (min-width: 1024px) {
-    .why-winthrop-block div,.why-winthrop-block img {
-      } }
 .why-winthrop-block img {
   box-shadow: -10px 14px 0px #332531;
-  margin-top: 100px;
-}
+  margin-top: 100px;}
 .why-winthrop-block h2, .why-winthrop-block p, .why-button{
   text-align: left;
   padding-left: 0;}
-  @media (min-width: 700px) {
-    .why-winthrop-block h2, .why-winthrop-block p {
-      } }
-  @media (min-width: 1024px) {
-    .why-winthrop-block h2, .why-winthrop-block p{
-      } }
 .why-button{
   margin-bottom: 0;
-  padding-bottom: 0;
-}
+  padding-bottom: 0;}
 
 /* STUDENT  WORK */
-@media (max-width: 700px){
+@media screen and (max-width: 700px){
 .projects-button{
-
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
   border-radius: 10px !important;
   width: 160px;
-  margin: 4px;
-}
+  margin: 4px;}}
 .projects-button:active{
-  border-bottom: none;
-}}
-
+  border-bottom: none;}
 .projects-list{
   display: flex;
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px;}
 .studentWork-overview-block{
   padding: 80px 0 80px 6%;
   width: 80%;}
@@ -1367,24 +1288,19 @@ div.track-blob:nth-child(3){
       padding: 20px 0 100px 10%;
       max-width: 700px;} }
 .studentWork-overview-block p, .studentWork-overview-block h1{
-  text-align: left;
-  }
+  text-align: left;}
 .projects-block{
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
+  justify-content: flex-start;}
 
 /* OUR PEOPLE */
 
 .ourPeople-overview-block{
-  margin: 100px 0px;
-}
+  margin: 100px 0px;}
 .ourPeople-professors-block h2, .ourPeople-professors-block p{
   text-align: left;
-  padding: 0;
-}
+  padding: 0;}
 .professors-title{
   margin: 0 0 100px 8%;
   width: 80%;}
@@ -1400,12 +1316,6 @@ div.track-blob:nth-child(3){
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0 6%;}
-  @media (min-width: 700px) {
-    .prof-blob-container{
-      } }
-  @media (min-width: 1024px) {
-    .prof-blob-container{
-      } }
 .prof-blob{
   width: 100%;
   margin-bottom: 100px;}
@@ -1418,8 +1328,7 @@ div.track-blob:nth-child(3){
 .prof-blob img{
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
-}
+  overflow: hidden;}
 .prof-img-container{
   margin: 0 auto;
   width: 70%;
@@ -1434,7 +1343,6 @@ div.track-blob:nth-child(3){
     .prof-img-container{
       width: 100%;
       height: 240px;} }
-
 .prof-blob h3{
   font-size: 20px;
   line-height: 26px;
@@ -1466,16 +1374,13 @@ div.track-blob:nth-child(3){
     .prof-blob p{
       font-size: 14px;
       line-height: 16px;} }
-
 .ourPeople-graduates-block{
   background-image: url("../images/bg-shape1.png");
   background-position: right;
   background-size: contain;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat;}
 .graduates-block h2{
-  margin-bottom: 100px;
-}
+  margin-bottom: 100px;}
 .graduates-title{
   margin: 0 auto;
   padding: 50px 4%;}
@@ -1504,11 +1409,6 @@ div.track-blob:nth-child(3){
   @media (min-width: 700px) {
     .ourPeople-grad-blob img{
       box-shadow: -20px -20px #F6BC93;} }
-.grad-blob-overview{
-  }
-  @media (min-width: 700px) {
-    .grad-blob-overview{
-      } }
   @media (min-width: 1200px) {
     .grad-blob-overview{
       margin-bottom: -120px;} }
@@ -1535,15 +1435,11 @@ div.track-blob:nth-child(3){
   flex-wrap: wrap;
   padding-left: 20px;}
 .grad-blob-difd-prep, .grad-blob-where-are-they-now{
-  max-width: 100%;
-  }
+  max-width: 100%;}
   @media (min-width: 700px) {
     .grad-blob-difd-prep, .grad-blob-where-are-they-now{
       max-width: 40%;
       padding: 0 6% 0 0;} }
-  @media (min-width: 1024px) {
-    .grad-blob-difd-prep, .grad-blob-where-are-they-now{
-      } }
 .grad-blob-difd-prep p, .grad-blob-where-are-they-now p{
   text-align: left;
   font-size: 14px;
@@ -1638,7 +1534,6 @@ input[type=email]:focus, input[type=text]:focus, select:focus{
   font-size: 12px;
   color: red;
   font-style: italic;}
-
 input[type=email]:hover, input[type=text]:hover, select:hover {
   border: .5px solid #D3C5AE;}
 
